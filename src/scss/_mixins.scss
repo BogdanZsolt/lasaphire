@@ -1,0 +1,37 @@
+// ABSOLUTE CENTER
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin atSmall {
+  @media (min-width: 530px) {
+    @content;
+  }
+}
+
+@mixin atSmallMedium {
+  @media (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin atMedium {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin glassSupports {
+  @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+    @content;
+  }
+}
+
+@mixin notGlassSupports {
+  @supports not ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+    @content;
+  }
+}

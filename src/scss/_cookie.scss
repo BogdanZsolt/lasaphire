@@ -1,0 +1,27 @@
+.cookie-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    padding: 20px 40px;
+    z-index: -1;
+    border-radius: var(--border-radius-md);
+    transform: translate(-50%, 100%);
+    background: var(--base-color);
+    color: var(--secondary-darker-color);
+    transition: transform 1s;
+}
+
+.cookie-container.show {
+    z-index: 3000;
+    transform: translate(-50%, 0);
+}
+
+.cookie-content p {
+    font-size: 14px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

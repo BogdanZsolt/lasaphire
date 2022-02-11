@@ -1,0 +1,67 @@
+/* FAQs Page */
+section#faqs {
+  position: relative;
+}
+
+#faq-category-list {
+  position: sticky;
+  top: 150px;
+
+  & .list-group-item {
+      font-family: var(--tertiary-fonts);
+
+      &.active {
+          color: var(--secondary-darker-color) !important;
+          background-color: var(--base-color);
+          border-color: var(--primary-color);
+        }
+    }
+}
+
+#faq-accordion {
+    & button {
+
+        &::before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 1.25rem;
+            opacity: 0.25;
+            transition: all 0.3s ease;
+            vertical-align: bottom;
+            position: absolute;
+            top: 15px;
+            left: 5px;
+        }
+
+        &[aria-expanded="false"]::before {
+            content: "\f067";
+            transform: rotate(90deg);
+        }
+
+        &[aria-expanded="true"]::before {
+            content: "\f068";
+        }
+    }
+
+    & .list-category-title {
+        margin-bottom: 1rem;
+
+        &:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+    }
+
+    & .btn.focus,
+    & .btn:focus {
+        box-shadow: none;
+    }
+
+    & .btn-link {
+        font-size: 1.5rem;
+    }
+}

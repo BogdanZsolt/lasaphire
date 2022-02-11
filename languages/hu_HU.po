@@ -1,0 +1,952 @@
+# Blank WordPress Pot
+# Copyright 2014 ...
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: lasaphire v1.0.0\n"
+"POT-Creation-Date: 2021-10-12 16:00+0200\n"
+"PO-Revision-Date: 2021-12-21 06:33+0000\n"
+"Language-Team: Hungarian\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:"
+"1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Last-Translator: \n"
+"Language: hu_HU\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Loco-Version: 2.5.5; wp-5.8.2"
+
+#: 404.php:18
+msgid "Page not found"
+msgstr "Az oldal nem található"
+
+#: 404.php:19
+msgid "Unfortunately, the page you tried to reach does not exist on this site."
+msgstr ""
+"Sajnos az az oldal, amelyet megpróbált elérni, nem létezik ezen a webhelyen."
+
+#: 404.php:24
+msgid "Take a Look at Our Latest Posts"
+msgstr "Nézze meg legújabb bejegyzéseinket"
+
+#: comments.php:29
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:34
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:69
+msgid "Comments are closed."
+msgstr "Hozzászólások lezárva."
+
+#: footer.php:15
+msgid "Privacy Note"
+msgstr "Adatvédelmi megjegyzés"
+
+#: footer.php:17
+msgid "This website uses cookies to improve your experience. Read our"
+msgstr ""
+"Ez a weboldal cookie -kat használ a felhasználói élmény javítása érdekében. "
+"Olvassa el a mi"
+
+#: footer.php:19
+msgid "Privacy Policy"
+msgstr "Adatvédelmi irányelv"
+
+#: footer.php:20
+msgid "and"
+msgstr "és"
+
+#: footer.php:21
+msgid "Cookie Policy"
+msgstr "Süti szabályzat"
+
+#: footer.php:22
+msgid "to learn more."
+msgstr "többet tanulni."
+
+#: footer.php:26
+msgid "I understand"
+msgstr "Megértem"
+
+#: footer.php:62
+msgid "Copyright X - All Rights Reserved"
+msgstr "Szerzői jog X - Minden jog fenntartva"
+
+#: footer.php:74
+msgid "Website by PegazusDesigns"
+msgstr "A PegazusDesigns webhelye"
+
+#: functions.php:52
+msgid "La Saphire Main Menu"
+msgstr "La Saphire főmenü"
+
+#: functions.php:53
+msgid "La Saphire Footer Menu"
+msgstr "La Saphire lábléc menü"
+
+#: functions.php:54
+msgid "La Saphire Social Menu"
+msgstr "La Saphire Szocial Media Menü"
+
+#: functions.php:55
+msgid "La Saphire Shop Category Menu"
+msgstr "La Saphire Shop Kategória menü"
+
+#: functions.php:149
+msgid "La Saphire Main Sidebar"
+msgstr "La Saphire fő oldalsáv"
+
+#: functions.php:151 functions.php:173 functions.php:184 functions.php:195
+msgid "Drag and drop your widgets here"
+msgstr "Húzza ide a widgeteket"
+
+#: functions.php:160
+msgid "La Saphire Sidebar Shop"
+msgstr "La Saphire bolt oldalsáv"
+
+#: functions.php:162
+msgid "Drag and drop your WooCommerce widgets here"
+msgstr "Húzza ide a WooCommerce modulokat"
+
+#: functions.php:171
+msgid "La Saphire Footer Sidebar 1"
+msgstr "La Saphire lábléc oldalsáv 1"
+
+#: functions.php:182
+msgid "La Saphire Footer Sidebar 2"
+msgstr "La Saphire lábléc oldalsáv 2"
+
+#: functions.php:193
+msgid "La Saphire Footer Sidebar 3"
+msgstr "La Saphire lábléc oldalsáv 3"
+
+#: header-old.php:74 header.php:87
+msgid "Toggle navigation"
+msgstr "Váltás a navigáció között"
+
+#: header.php:110
+msgid "My Account"
+msgstr "Fiókom"
+
+#: inc/add-cpt.php:42
+msgid "Hero Sliders"
+msgstr "Hero csúszka"
+
+#: inc/add-cpt.php:43
+msgid "Add New Hero Slider"
+msgstr "Új Hero csúszka hozzáadása"
+
+#: inc/add-cpt.php:44
+msgid "Edit Hero Slider"
+msgstr "Hero csúszka szerkesztése"
+
+#: inc/add-cpt.php:45
+msgid "All Hero Sliders"
+msgstr "Minden Hero Csúszka"
+
+#: inc/add-cpt.php:46
+msgid "Hero Slider"
+msgstr "Hero Csúszka"
+
+#: inc/add-cpt.php:69
+msgid "Questions"
+msgstr "Kérdések"
+
+#: inc/add-cpt.php:70 inc/add-cpt.php:72 inc/add-cpt.php:448
+#: inc/add-cpt.php:520
+msgid "Question"
+msgstr "Kérdés"
+
+#: inc/add-cpt.php:71
+msgid "Quiz"
+msgstr "Kvíz"
+
+#: inc/add-cpt.php:73 inc/add-cpt.php:120
+msgid "Add New "
+msgstr "Új hozzáadása "
+
+#: inc/add-cpt.php:74
+msgid "Add New Question"
+msgstr "Új kérdés hozzáadása"
+
+#: inc/add-cpt.php:75 inc/add-cpt.php:90
+msgid "All Questions"
+msgstr "Minden kérdés"
+
+#: inc/add-cpt.php:76 inc/add-cpt.php:93
+msgid "Search Questions"
+msgstr "Kérdések keresése"
+
+#: inc/add-cpt.php:77
+msgid "No Question Found"
+msgstr "Nem található kérdés"
+
+#: inc/add-cpt.php:78
+msgid "No Question in Trash"
+msgstr "Nem található kérdés a kukában"
+
+#: inc/add-cpt.php:79
+msgid "Question Cover Image"
+msgstr "Kérdés borító képe"
+
+#: inc/add-cpt.php:80
+msgid "Set cover image"
+msgstr "Borítókép beállítása"
+
+#: inc/add-cpt.php:81
+msgid "Remove cover image"
+msgstr ""
+
+#: inc/add-cpt.php:82
+msgid "Use as cover image"
+msgstr ""
+
+#: inc/add-cpt.php:83
+msgid "Question archives"
+msgstr ""
+
+#: inc/add-cpt.php:84
+msgid "Insert into question"
+msgstr ""
+
+#: inc/add-cpt.php:85
+msgid "Uploaded to this question"
+msgstr ""
+
+#: inc/add-cpt.php:86
+msgid "Filter question list"
+msgstr ""
+
+#: inc/add-cpt.php:87
+msgid "Questions list navigation"
+msgstr ""
+
+#: inc/add-cpt.php:88
+msgid "Questions list"
+msgstr ""
+
+#: inc/add-cpt.php:89
+msgid "New Question"
+msgstr ""
+
+#: inc/add-cpt.php:91
+msgid "Edit Question"
+msgstr "Kérdés szerkesztése"
+
+#: inc/add-cpt.php:92
+msgid "View Question"
+msgstr ""
+
+#: inc/add-cpt.php:118 inc/add-cpt.php:119
+msgid "FAQs"
+msgstr "GYIK-ok"
+
+#: inc/add-cpt.php:121
+msgid "Add New FAQ"
+msgstr "új GYIK hozzáadása"
+
+#: inc/add-cpt.php:122
+msgid "New FAQ"
+msgstr ""
+
+#: inc/add-cpt.php:123
+msgid "All FAQs"
+msgstr "összes GYIK"
+
+#: inc/add-cpt.php:124
+msgid "Edit FAQ"
+msgstr "GYIK szerkesztése"
+
+#: inc/add-cpt.php:125
+msgid "View FAQ"
+msgstr ""
+
+#: inc/add-cpt.php:126
+msgid "Search FAQs"
+msgstr ""
+
+#: inc/add-cpt.php:127
+msgid "No FAQs Found"
+msgstr ""
+
+#: inc/add-cpt.php:166
+msgid "Quiz Category"
+msgstr ""
+
+#: inc/add-cpt.php:167
+msgid "Add New Quiz Category"
+msgstr "új kvíz kategória hozzáadása"
+
+#: inc/add-cpt.php:168
+msgid "New Quiz Category"
+msgstr ""
+
+#: inc/add-cpt.php:182
+msgid "FAQ Category"
+msgstr "GYIK kategória"
+
+#: inc/add-cpt.php:183
+msgid "Add New FAQ Category"
+msgstr "új GYIK kategória hozzáadása"
+
+#: inc/add-cpt.php:184
+msgid "New FAQ Category"
+msgstr ""
+
+#: inc/add-cpt.php:348
+msgid "Hero Slider Name"
+msgstr ""
+
+#: inc/add-cpt.php:349
+msgid "Button Text"
+msgstr "Gomb szövege"
+
+#: inc/add-cpt.php:350
+msgid "Button Url"
+msgstr "Gomb Url-je"
+
+#: inc/add-cpt.php:351
+msgid "Featured Image"
+msgstr ""
+
+#: inc/add-cpt.php:352 inc/add-cpt.php:451 inc/add-cpt.php:522
+msgid "Date"
+msgstr "Dátum"
+
+#: inc/add-cpt.php:449
+msgid "Question Index"
+msgstr ""
+
+#: inc/add-cpt.php:450 template-parts/content/content-archive.php:19
+#: template-parts/content/content-single.php:16
+#: template-parts/content/content.php:26
+msgid "Categories"
+msgstr "Kategóriák"
+
+#: inc/add-cpt.php:521
+msgid "Category"
+msgstr "Kategória"
+
+#: inc/class-boo-settings-helper.php:188 inc/class-boo-settings-helper.php:225
+#: inc/class-boo-settings-helper.php:238
+msgid "Settings"
+msgstr ""
+
+#: inc/class-boo-settings-helper.php:325 inc/class-boo-settings-helper.php:327
+msgid "Plugin Options"
+msgstr ""
+
+#: inc/class-boo-settings-helper.php:1022
+#: inc/class-boo-settings-helper.php:1121
+#: inc/class-boo-settings-helper.php:1136
+#: inc/class-boo-settings-helper.php:1164
+msgid "Select"
+msgstr ""
+
+#: inc/class-boo-settings-helper.php:1046
+msgid "Upload"
+msgstr ""
+
+#: inc/class-wp-bootstrap-navwalker.php:369
+msgid "Add a menu"
+msgstr "menü hozzáadása"
+
+#: inc/customizer.php:14
+msgid "Copyright Settings"
+msgstr "Szerzői jogi beállítások"
+
+#: inc/customizer.php:15
+msgid "Copyright Section"
+msgstr "Szerzői jogi rész"
+
+#: inc/customizer.php:30
+msgid "Copyright"
+msgstr "Szerzői jog"
+
+#: inc/customizer.php:31
+msgid "Please, add your copyright information here"
+msgstr ""
+
+#: inc/customizer.php:41
+msgid "Home Page Products and Blog Settings"
+msgstr ""
+
+#: inc/customizer.php:42
+msgid "Home Page Section"
+msgstr ""
+
+#: inc/customizer.php:57 inc/customizer.php:58
+msgid "Products Button Text"
+msgstr ""
+
+#: inc/customizer.php:75
+msgid "Show New Arrivals?"
+msgstr ""
+
+#: inc/customizer.php:92 inc/customizer.php:93
+msgid "New Arrivals Max Number"
+msgstr ""
+
+#: inc/customizer.php:110 inc/customizer.php:111
+msgid "New Arrivals Max Columns"
+msgstr ""
+
+#: inc/customizer.php:129
+msgid "Show Deal of the Week?"
+msgstr ""
+
+#: inc/customizer.php:146
+msgid "Deal of the Week Product ID"
+msgstr "A hét akciója termékazonosító"
+
+#: inc/customizer.php:147
+msgid "Product ID to Display"
+msgstr ""
+
+#: inc/customizer.php:166 inc/customizer.php:167
+msgid "Deal of the Week Background Image Set."
+msgstr "A hét ajánlata háttérkép-készlet."
+
+#: inc/customizer.php:174 inc/customizer.php:179 inc/customizer.php:206
+#: inc/customizer.php:211 inc/customizer.php:336 inc/customizer.php:341
+#: inc/customizer.php:368 inc/customizer.php:373 inc/customizer.php:400
+#: inc/customizer.php:405 inc/customizer.php:432 inc/customizer.php:437
+#: inc/customizer.php:464 inc/customizer.php:469 inc/customizer.php:496
+#: inc/customizer.php:501 inc/customizer.php:528 inc/customizer.php:533
+#: inc/customizer.php:560 inc/customizer.php:565 inc/customizer.php:872
+#: inc/customizer.php:877
+msgid "Select Image"
+msgstr ""
+
+#: inc/customizer.php:175 inc/customizer.php:207 inc/customizer.php:337
+#: inc/customizer.php:369 inc/customizer.php:401 inc/customizer.php:433
+#: inc/customizer.php:465 inc/customizer.php:497 inc/customizer.php:529
+#: inc/customizer.php:561 inc/customizer.php:873
+msgid "Change Image"
+msgstr "Kép módosítása"
+
+#: inc/customizer.php:176 inc/customizer.php:208 inc/customizer.php:338
+#: inc/customizer.php:370 inc/customizer.php:402 inc/customizer.php:434
+#: inc/customizer.php:466 inc/customizer.php:498 inc/customizer.php:530
+#: inc/customizer.php:562 inc/customizer.php:874
+msgid "Remove"
+msgstr ""
+
+#: inc/customizer.php:177 inc/customizer.php:209 inc/customizer.php:339
+#: inc/customizer.php:371 inc/customizer.php:403 inc/customizer.php:435
+#: inc/customizer.php:467 inc/customizer.php:499 inc/customizer.php:531
+#: inc/customizer.php:563 inc/customizer.php:875
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: inc/customizer.php:178 inc/customizer.php:210 inc/customizer.php:340
+#: inc/customizer.php:372 inc/customizer.php:404 inc/customizer.php:436
+#: inc/customizer.php:468 inc/customizer.php:500 inc/customizer.php:532
+#: inc/customizer.php:564 inc/customizer.php:876
+msgid "No image selected"
+msgstr ""
+
+#: inc/customizer.php:180 inc/customizer.php:212 inc/customizer.php:342
+#: inc/customizer.php:374 inc/customizer.php:406 inc/customizer.php:438
+#: inc/customizer.php:470 inc/customizer.php:502 inc/customizer.php:534
+#: inc/customizer.php:566 inc/customizer.php:878
+msgid "Choose Image"
+msgstr "Kép kiválaztáa"
+
+#: inc/customizer.php:198 inc/customizer.php:199
+msgid "For me promotion Background Image Set."
+msgstr ""
+
+#: inc/customizer.php:229 inc/customizer.php:230
+msgid "Our Values Card-1 Title"
+msgstr ""
+
+#: inc/customizer.php:247 inc/customizer.php:248
+msgid "Our Values Card-2 Title"
+msgstr ""
+
+#: inc/customizer.php:265 inc/customizer.php:266
+msgid "Our Values Card-3 Title"
+msgstr ""
+
+#: inc/customizer.php:283 inc/customizer.php:284
+msgid "Our Values Card-4 Title"
+msgstr ""
+
+#: inc/customizer.php:301
+msgid "News Title"
+msgstr ""
+
+#: inc/customizer.php:302
+msgid "La Saphire News Section title"
+msgstr ""
+
+#: inc/customizer.php:311
+msgid "Home Page Gallery Images Settings"
+msgstr ""
+
+#: inc/customizer.php:312
+msgid "Home Page Gallery Section"
+msgstr ""
+
+#: inc/customizer.php:328
+msgid "Home Gallery Image 1 Setting"
+msgstr ""
+
+#: inc/customizer.php:329
+msgid "Home Gallery Image 1 Setting (size max 1500 x auto px)"
+msgstr ""
+
+#: inc/customizer.php:360
+msgid "Home Gallery Image 2 Setting"
+msgstr ""
+
+#: inc/customizer.php:361
+msgid "Home Gallery Image 2 Setting (size max 1500 x auto px)"
+msgstr ""
+
+#: inc/customizer.php:392
+msgid "Home Gallery Image 3 Setting"
+msgstr ""
+
+#: inc/customizer.php:393
+msgid "Home Gallery Image 3 Setting (size max 1500 x auto px)"
+msgstr ""
+
+#: inc/customizer.php:424
+msgid "Home Gallery Image 4 Setting"
+msgstr ""
+
+#: inc/customizer.php:425
+msgid "Home Gallery Image 4 Setting (size max 1500 x auto px)"
+msgstr ""
+
+#: inc/customizer.php:456
+msgid "Home Gallery Image 5 Setting"
+msgstr ""
+
+#: inc/customizer.php:457
+msgid "Home Gallery Image 5 Setting (size max 1500 x auto px)"
+msgstr ""
+
+#: inc/customizer.php:488
+msgid "Home Gallery Image 6 Setting"
+msgstr ""
+
+#: inc/customizer.php:489
+msgid "Home Gallery Image 6 Setting (size max 1500 x auto px)"
+msgstr ""
+
+#: inc/customizer.php:520
+msgid "Home Gallery Image 7 Setting"
+msgstr ""
+
+#: inc/customizer.php:521
+msgid "Home Gallery Image 7 Setting (size max 1500 x auto px)"
+msgstr ""
+
+#: inc/customizer.php:552
+msgid "Home Gallery Image 8 Setting"
+msgstr ""
+
+#: inc/customizer.php:553
+msgid "Home Gallery Image 8 Setting (size max 1500 x auto px)"
+msgstr ""
+
+#: inc/customizer.php:577
+msgid "Standard Color"
+msgstr ""
+
+#: inc/customizer.php:578
+msgid "Standard Colors Section"
+msgstr ""
+
+#: inc/customizer.php:593
+msgid "Base Color"
+msgstr "Aplapszín"
+
+#: inc/customizer.php:594
+msgid "Setup Base Color"
+msgstr ""
+
+#: inc/customizer.php:611
+msgid "Call To Action Darker Color"
+msgstr ""
+"Cselekvésre ösztönző Sötétebb szín\n"
+
+#: inc/customizer.php:612
+msgid "Setup Call To Action Darker Color"
+msgstr ""
+
+#: inc/customizer.php:628
+msgid "Call To Action Color"
+msgstr "Cselekvésre ösztönző szín"
+
+#: inc/customizer.php:629
+msgid "Setup Call To Action Color"
+msgstr ""
+
+#: inc/customizer.php:646
+msgid "Primary Darker Color"
+msgstr ""
+
+#: inc/customizer.php:647
+msgid "Setup Primary Darker Color"
+msgstr ""
+
+#: inc/customizer.php:663
+msgid "Primary Color"
+msgstr ""
+
+#: inc/customizer.php:664
+msgid "Setup Primary Color"
+msgstr ""
+
+#: inc/customizer.php:680
+msgid "Primary Color Lighter"
+msgstr ""
+
+#: inc/customizer.php:681
+msgid "Setup Primary Lighter Color"
+msgstr ""
+
+#: inc/customizer.php:697
+msgid "Primary Color Lightest"
+msgstr ""
+
+#: inc/customizer.php:698
+msgid "Setup Primary Lightest Color"
+msgstr ""
+
+#: inc/customizer.php:716
+msgid "Secondary Darker Color"
+msgstr ""
+
+#: inc/customizer.php:717
+msgid "Setup Secondary Darker Color"
+msgstr ""
+
+#: inc/customizer.php:732
+msgid "Secondary Color"
+msgstr ""
+
+#: inc/customizer.php:733
+msgid "Setup Secondary Color"
+msgstr ""
+
+#: inc/customizer.php:749
+msgid "Secondary Color Lighter"
+msgstr ""
+
+#: inc/customizer.php:750
+msgid "Setup Secondary Lighter Color"
+msgstr ""
+
+#: inc/customizer.php:766
+msgid "Secondary Color Lightest"
+msgstr ""
+
+#: inc/customizer.php:767
+msgid "Setup Secondary Lightest Color"
+msgstr ""
+
+#: inc/customizer.php:784
+msgid "Tertiary Darker Color"
+msgstr ""
+
+#: inc/customizer.php:785
+msgid "Setup Tertiary Darker Color"
+msgstr ""
+
+#: inc/customizer.php:801
+msgid "Tertiary Color"
+msgstr ""
+
+#: inc/customizer.php:802
+msgid "Setup Tertiary Color"
+msgstr ""
+
+#: inc/customizer.php:818
+msgid "Tertiary Color Lighter"
+msgstr ""
+
+#: inc/customizer.php:819
+msgid "Setup Tertiary Lighter Color"
+msgstr ""
+
+#: inc/customizer.php:835
+msgid "Tertiary Color Lightest"
+msgstr ""
+
+#: inc/customizer.php:836
+msgid "Setup Tertiary Lightest Color"
+msgstr ""
+
+#: inc/customizer.php:847
+msgid "Site Footer"
+msgstr ""
+
+#: inc/customizer.php:848
+msgid "Site Footer elements setup."
+msgstr ""
+
+#: inc/customizer.php:864 inc/customizer.php:865
+msgid "Site Footer Background Image Set."
+msgstr ""
+
+#: inc/settings.bkp.php:10 inc/settings.bkp.php:11
+msgid "Connections Config Page"
+msgstr "Kapcsolatok konfigurációs oldala"
+
+#: inc/settings.bkp.php:63
+msgid "API key"
+msgstr "API key"
+
+#: inc/settings.bkp.php:71 inc/settings.php:43
+msgid "Subscribe Group"
+msgstr ""
+
+#: inc/settings.php:15 inc/settings.php:16
+msgid "Connections settings"
+msgstr "Kapcolatok beállítáa"
+
+#: inc/settings.php:24
+msgid "Newsletter subscribe Settings"
+msgstr ""
+
+#: inc/settings.php:25
+msgid "These are Newsletter subscribe settings"
+msgstr ""
+
+#: inc/settings.php:30
+msgid "Email SMTP Settings"
+msgstr "Email SMTP beállítása"
+
+#: inc/settings.php:31
+msgid "These are email smtp settings"
+msgstr ""
+
+#: inc/settings.php:39
+msgid "API Key"
+msgstr "API kulcs"
+
+#: inc/settings.php:54
+msgid "Host"
+msgstr ""
+
+#: inc/settings.php:58
+msgid "Authentication"
+msgstr "Hitelesítés"
+
+#: inc/settings.php:64
+msgid "User"
+msgstr ""
+
+#: inc/settings.php:68
+msgid "Password"
+msgstr ""
+
+#: inc/settings.php:73
+msgid "From"
+msgstr ""
+
+#: inc/settings.php:77 template-parts/content/form-contact.php:3
+msgid "Name"
+msgstr ""
+
+#: inc/settings.php:81
+msgid "SMTP Port"
+msgstr ""
+
+#: inc/settings.php:86
+msgid "SMTP Secure"
+msgstr ""
+
+#: index.php:48 page-faqs.php:94 page-for-me.php:18
+#: template-parts/home/home-news.php:56
+msgid "Nothing to display."
+msgstr ""
+
+#: page-contact.php:24
+msgid "Bravely Reach Out in Person!"
+msgstr "Érdeklődj bátran személyesen!"
+
+#: page-contact.php:25
+msgid "address"
+msgstr "cím"
+
+#: page-contact.php:31
+msgid "Contact hours"
+msgstr "Kapcsolati órák"
+
+#: page-contact.php:33
+msgid "Telephone"
+msgstr ""
+
+#: page-contact.php:37
+msgid "Email"
+msgstr "Email"
+
+#: page-contact.php:54
+msgid "Enquiries"
+msgstr "Megkeresések"
+
+#: searchform.php:10
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:11
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: template-parts/content/content-archive.php:16
+#: template-parts/content/content-single.php:15
+#: template-parts/content/content.php:23
+msgid "Published by"
+msgstr ""
+
+#: template-parts/content/content-archive.php:16
+#: template-parts/content/content-single.php:15
+#: template-parts/content/content.php:23
+msgid "on"
+msgstr ""
+
+#: template-parts/content/content-archive.php:23
+#: template-parts/content/content-single.php:18
+#: template-parts/content/content.php:30
+msgid "Tags"
+msgstr ""
+
+#: template-parts/content/content-single.php:35
+msgid "Pages"
+msgstr ""
+
+#: template-parts/content/form-contact.php:4
+msgid "Enter Your Name..."
+msgstr "Adja meg nevét..."
+
+#: template-parts/content/form-contact.php:7
+msgid "Email address"
+msgstr "Email cím"
+
+#: template-parts/content/form-contact.php:8
+msgid "Enter Your email..."
+msgstr "Adja meg e-mail címét..."
+
+#: template-parts/content/form-contact.php:9
+msgid "We&prime;ll never share your email with anyone else."
+msgstr ""
+
+#: template-parts/content/form-contact.php:12
+msgid "Phone Number"
+msgstr ""
+
+#: template-parts/content/form-contact.php:13
+msgid "Enter Your phone number..."
+msgstr "Adja meg a telefonszámát..."
+
+#: template-parts/content/form-contact.php:16
+msgid "Enquiry"
+msgstr "Megkeresés"
+
+#: template-parts/content/form-contact.php:17
+msgid "Type enquiry..."
+msgstr ""
+
+#: template-parts/content/form-contact.php:19
+msgid "Send"
+msgstr ""
+
+#: template-parts/content/form-contact.php:22
+msgid "Enquiry Successfully submitted, thank you!"
+msgstr "A megkeresés sikeresen elküldve, köszönjük!"
+
+#: template-parts/content/form-contact.php:23
+msgid "There was a problem with the Contact Form, please try again!"
+msgstr ""
+
+#: template-parts/content/form-subscribe.php:1
+msgid "Email address successfully added"
+msgstr "E-mail cím sikeresen hozzáadva"
+
+#: template-parts/content/form-subscribe.php:5
+msgid "How to call..."
+msgstr ""
+
+#: template-parts/content/form-subscribe.php:8
+msgid "Email..."
+msgstr "Email..."
+
+#: template-parts/content/form-subscribe.php:11
+msgid "subscribe"
+msgstr ""
+
+#: template-parts/content/form-subscribe.php:18
+msgid ""
+"Be the first to find out about new products, events and news at La Saphire"
+msgstr ""
+"Legyen Ön az első, aki értesül a La Sapphire új termékeiről, eseményeiről és "
+"híreiről"
+
+#: template-parts/home/home-forme.php:13
+msgid "Find the right products to nourish your skin"
+msgstr ""
+
+#: template-parts/home/home-forme.php:14
+msgid ""
+"Complete our skin or hair care quiz to find out which products are ideal for "
+"you."
+msgstr ""
+"Töltse ki bőr- vagy hajápolási kvízünket, hogy megtudja, mely termékek "
+"ideálisak az Ön számára."
+
+#: template-parts/home/home-forme.php:15
+msgid "Get Started"
+msgstr ""
+
+#: template-parts/home/home-news.php:12
+msgid "News"
+msgstr ""
+
+#: template-parts/home/home-ourvalues.php:20
+msgid "All natural skin care"
+msgstr "Teljesen természetes bőrápoló"
+
+#: template-parts/home/home-ourvalues.php:33
+msgid "Manufacture of small batches"
+msgstr ""
+
+#: template-parts/home/home-ourvalues.php:46
+msgid "Beauty with intent"
+msgstr "Szépség szándékosan"
+
+#: template-parts/home/home-ourvalues.php:58
+msgid "Reliability"
+msgstr ""
+
+#: template-parts/home/home-products.php:14
+msgid "Browse All Products"
+msgstr "Böngésszen az összes termék között"
+
+#: template-parts/home/home-promotion.php:24
+msgid "I&prime;ll check"
+msgstr ""

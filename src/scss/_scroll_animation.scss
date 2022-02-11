@@ -1,0 +1,79 @@
+/* Scroll Animation */
+
+.koa-zoom {
+  opacity: 0;
+  transform: scale(0);
+  transition: var(--koa-transition) !important;
+
+  &.koa-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.koa-fade-left {
+  opacity: 0;
+  transform: translateX(-15rem);
+  transition: var(--koa-transition) !important;
+
+  &.koa-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.koa-fade-right {
+  opacity: 0;
+  transform: translateX(15rem);
+  transition: var(--koa-transition) !important;
+
+  &.koa-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.koa-fade-down {
+  opacity: 0;
+  transform: translateY(-15rem);
+  transition: var(--koa-transition) !important;
+
+  &.koa-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.koa-fade-up {
+  opacity: 0;
+  transform: translateY(15rem);
+  transition: var(--koa-transition) !important;
+
+  &.koa-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.koa-flip-left {
+  opacity: 0;
+  transform: rotateY(-180deg);
+  transition: var(--koa-transition) !important;
+
+  &.koa-active {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
+
+
+.koa-flip-right {
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: var(--koa-transition) !important;
+
+  &.koa-active {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}

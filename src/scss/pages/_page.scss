@@ -1,0 +1,116 @@
+/* page template */
+.page-template-default {
+  padding: 0;
+
+  & p {
+    color: var(--secondary-darker-color);
+    font-size: 1rem;
+  }
+
+  & .blocks-gallery-grid img {
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 25px rgb(var(--secondary-darker-color-rgb));
+  }
+}
+
+.wp-block-columns,
+.blocks-gallery-grid {
+  margin-top: 1.75rem;
+}
+
+.page-template-template-home-php .content-area {
+  padding: 0;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+.banner .overlay {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: linear-gradient(to bottom,
+  //   rgba(var(--base-color-rgb), 0.9) 0%,
+  //   rgba(214, 137, 151, 0.01) 40%,
+  //   rgba(248, 221, 226, 0.12) 55%,
+  //   var(--base-color) 100%
+  // );
+}
+
+.banner img {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.35) brightness(0.45);
+
+  &.img-fluid {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.banner-content {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  place-items: center center;
+
+  h1 {
+    position: relative;
+    display: block;
+    color: var(--primary-lightest-color);
+    font-weight: 800;
+    font-size: calc(2rem + 1.25vw);
+
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: -0.25rem;
+    //   left: -1rem;
+    //   right: -1rem;
+    //   bottom: -0.5rem;
+    //   background: linear-gradient(to bottom, rgba(var(--base-color-rgb), 0.85), rgba(var(--base-color-rgb), 0.25));
+    //   box-shadow: 0 0.5rem 1rem -0.5rem var(--secondary-darker-color);
+    //   border-radius: 0.625rem;
+    //   z-index: -1;
+
+    //   @include glassSupports {
+    //     background: rgba(var(--base-color-rgb), 0.35);
+    //     backdrop-filter: blur(10px);
+    //     border: 1px solid rgba(var(--base-color-rgb), 0.18);
+    //   }
+    // }
+  }
+
+  .banner-title {
+    margin: 0 auto;
+    max-width: 80%;
+    text-align: center;
+  }
+}
+
+.lasaphire-feature {
+
+  & .lasaphire-svgicon {
+    box-shadow: 0 5px 25px rgb(var(--secondary-darker-color-rgb));
+  }
+
+  & h5 {
+    color: var(--primary-darker-color);
+    font-size: 1.875rem;
+  }
+}
+
+
+

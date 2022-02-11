@@ -1,0 +1,118 @@
+/* Ingredients page */
+#ingredients-section {
+  position: relative;
+  padding-bottom: 3rem;
+  background-color: var(--base-color);
+
+  & .slide {
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+
+    & img {
+      position: fixed;
+    }
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+
+  & .content {
+    position: relative;
+    // position: static;
+    top: 8rem;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
+    display: grid;
+    place-items: start center;
+  }
+
+  & h4,
+  & h6 {
+    color: var(--secondary-darker-color);
+    font-family: var(--secondary-fonts);
+  }
+
+  & h4+p {
+    font-family: var(--tertiary-fonts);
+    color: var(--secondary-lighter-color);
+  }
+
+  & p {
+    font-family: var(--primary-fonts);
+    color: var(--secondary-color);
+  }
+
+  & ul.found-in {
+    list-style: none;
+
+    & a {
+      font-size: 0.875rem;
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+  }
+
+  & .product-link {
+    color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.clearfix.glassmorph::after,
+.item-wrapper.glassmorph::after {
+  z-index: -1;
+}
+
+nav.ingredient-pagination {
+    text-align: center;
+
+    & ul span.current,
+    & ul a:focus,
+    & ul a:hover {
+        background: var(--primary-color);
+        color: var(--base-color);
+    }
+
+    & ul span.current:hover {
+        background-color: var(--primary-color);
+        opacity: 0.5;
+    }
+
+    & ul.page-numbers span.page-numbers,
+    & ul.page-numbers a.page-numbers {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        border-radius: var(--border-radius-round);
+        border: 1px solid var(--primary-color);
+        overflow: hidden;
+    }
+
+    & ul {
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px 0 9px;
+        border-left: none;
+        margin: 1px;
+
+        & a,
+        & span {
+            margin: 0;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 12px;
+            line-height: 1;
+            font-size: 1em;
+            font-weight: 400;
+            min-width: 1em;
+            border: 1px solid var(--primary-color);
+            border-right: none;
+        }
+    }
+}

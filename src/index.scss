@@ -1,0 +1,26 @@
+@import "./scss/base";
+@import "./scss/mixins";
+@import "./scss//animations";
+@import "./scss/scroll_animation";
+@import "./scss/pages/page";
+@import "./scss/button";
+@import "./scss/main_menu";
+@import "./scss/slider";
+@import "./scss/search";
+@import "./scss/cookie";
+@import "./scss/footer";
+@import "./scss/_woocommerce";
+@import "./scss/general";
+@import "./scss/mobile";
+
+/* Home Page Template */
+@import "./scss/pages/page-front";
+@import "./scss/pages/page-for-me";
+@import "./scss/pages/page-our-values";
+@import "./scss/pages/page-ingredients";
+@import "./scss/pages/page-faq";
+@import "./scss/pages/page-contact";
+@import "./scss/pages/page-blogandarchive";
+@import "./scss/pages/page-about";
+
+/* Make dropdown visible on hover */

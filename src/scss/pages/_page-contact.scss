@@ -1,0 +1,76 @@
+/* Contact Page */
+.contact-container {
+  display: grid;
+  place-items: center start;
+
+  & h2 {
+    color: var(--secondary-darker-color);
+  }
+
+  & h3 {
+    color: var(--secondary-lighter-color);
+    font-family: var(--tertiary-fonts) !important;
+  }
+
+  & p,
+  & a {
+    font-family: var(--primary-fonts);
+    color: var(--secondary-color);
+  }
+}
+
+#contact {
+    & .form-control {
+        border: 1px solid var(--secondary-color);
+    }
+
+    & .form-group,
+    & .text-muted {
+        color: var(--secondary-color) !important;
+    }
+
+    label {
+      color: var(--secondary-darker-color);
+      font-family: var(--tertiary-fonts);
+      font-size: 1.75rem;
+    }
+}
+
+input.form-control::-webkit-input-placeholder,
+textarea.form-control::-webkit-input-placeholder {
+  font-size: .875rem;
+  color: var(--secondary-color);
+}
+
+input.form-control:-moz-placeholder,
+textarea.form-control:-moz-placeholder {
+  font-size: .875rem;
+  color: var(--secondary-color);
+}
+
+input.form-control:-ms-input-placeholder,
+textarea.form-control:-ms-input-placeholder {
+  font-size: .875rem;
+  color: var(--secondary-color);
+}
+
+input.form-control::-moz-placeholder,
+textarea.form-control::-moz-placeholder {
+  font-size: .875rem;
+  color: var(--secondary-color);
+}
+
+.field-msg {
+  color: var(--secondary-color);
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.form-success, .form-error {
+  display: none;
+}
+
+.form-success.show, .form-error.show {
+  display: inline-block;
+}
+
