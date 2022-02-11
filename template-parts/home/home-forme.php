@@ -7,11 +7,7 @@
 ?>
 
 <section id="for-me" class="mb-10 col">
-<<<<<<< HEAD
-	<div class="container border-rounded" style="background-image: url(<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_forme_bg_image' ), 'la-saphire-page-banner', false ); ?>); ">
-=======
 	<div class="container border-rounded">
->>>>>>> eefff23 (home page style setup change with Pepi)
 		<div class="row">
 			<div class="col">
 				<h2><?php _e( 'Találd meg a hozzád legjobban illő termékeket', 'lasaphire' ); ?></h2>
