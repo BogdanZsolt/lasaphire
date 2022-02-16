@@ -41,6 +41,8 @@
   //   rgba(248, 221, 226, 0.12) 55%,
   //   var(--base-color) 100%
   // );
+  background: linear-gradient(to bottom, transparent 60%, rgba(var(--base-color-rgb), 0.01) 60%, var(--base-color) 100%);
+
 }
 
 .banner img {

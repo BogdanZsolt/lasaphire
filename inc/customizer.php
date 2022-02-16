@@ -581,6 +581,24 @@ function la_saphire_customizer( $wp_customize ){
 
 		//
 		$wp_customize->add_setting(
+			'set_bg_color', array(
+				'default'			=> '#ffffff',
+				'transport' 		=> 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control( $wp_customize, 'set_bg_color',
+				array(
+					'label'			=> __( 'Háttérszín', 'lasaphire' ),
+					'description'	=> __( 'Háttérszín beállítása', 'lasaphire' ),
+					'section'		=> 'sec_standard_color',
+				),
+			)
+		);
+
+		//
+		$wp_customize->add_setting(
 			'set_base_color', array(
 				'default'			=> '#ffffff',
 				'transport' 		=> 'refresh',
@@ -991,6 +1009,8 @@ function lasaphire_customize_css(){ ?>
 
 	<style>
 		:root {
+			--base-bg-color: <?php echo get_theme_mod( 'set_bg_color' ); ?>; /* #ffffff */
+			--base-bg-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_bg_color' ) ); ?>;
 			--base-color: <?php echo get_theme_mod( 'set_base_color' ); ?>; /* #ffffff */
 			--base-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_base_color' ) ); ?>;
 

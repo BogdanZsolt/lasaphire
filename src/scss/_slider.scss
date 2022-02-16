@@ -10,7 +10,7 @@
   //   rgba(var(--base-color-rgb), 0.1) 30%,
   //   var(--base-color) 100%
   // );
-  background: linear-gradient(to bottom, transparent 60%, rgba(var(--base-color-rgb), 0.01) 60%, var(--base-color) 100%);
+  background: linear-gradient(to bottom, transparent 60%, rgba(var(--base-bg-color-rgb), 0.01) 60%, var(--base-bg-color) 100%);
 }
 
 .slide {
