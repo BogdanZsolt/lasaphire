@@ -18,8 +18,8 @@ function lasaphireSearchResults($data){
 	$results = array(
 		'products'					=> array(),
 		'ingredients'		=> array(),
-		'posts'									=>	array(),
-		'pages'							 	=> array(),
+		'posts'								=>	array(),
+		'pages'							 => array(),
 		'faqs'									=> array(),
 	);
 

@@ -22,6 +22,7 @@ class Search {
     this.results;
     this.resultBtns;
     this.activeResultBtn;
+    this.btnText = {'products': 'termékek', 'ingredients': 'összetevők', 'posts': 'bejegyzések', 'pages': 'oldalak', 'faqs': "gyik-ek"};
   }
 
   // 2. events
@@ -98,15 +99,17 @@ class Search {
           this.searchField.value
       );
       this.results = posts.data;
-      // console.log(this.results);
+      console.log(this.results);
+      console.log(this.btnText['products']);
       this.resultBtns = Object.keys(this.results);
       this.resultBtns.map((item) => this.results[item]);
       this.resultBtns = this.resultBtns.filter(
         (item) => this.results[item].length > 0
       );
+      console.log(this.resultBtns);
       this.activeResultBtn = this.resultBtns[0];
-      // console.log(this.activeResultBtn);
-      // console.log(this.resultBtns.map((item) => this.results[item].length));
+      console.log(this.activeResultBtn);
+      console.log(this.resultBtns.map((item) => this.results[item]));
       if (this.resultBtns.length > 0){
         this.resultsDiv.innerHTML = `
           <div class="row result-btn-wrapper">
@@ -114,7 +117,7 @@ class Search {
               (item) =>
                 `<button id="${item}" class="btn-alt btn-normal btn-normal-search ${
                   item === this.activeResultBtn ? "active" : ""
-                }">${item}<span class="search-badge">${
+                }">${this.btnText[item]}<span class="search-badge">${
                   this.results[item].length
                 }</span></button>`
             )}
@@ -124,7 +127,7 @@ class Search {
       } else {
         this.resultsDiv.innerHTML = `
           <div class="row result-btn-wrapper">
-            <h2>unfortunately there are no results for your search.</h2>
+            <h2>sajnos nincs találat a keresésre.</h2>
           </div>
         `;
       }
@@ -176,7 +179,7 @@ class Search {
             <div class="container relative">
               <form id="search-form">
                 <div id="search-cover">
-                <input type="text" class="search-term" placeholder="start typing what you are looking for" id="search-term" autocomplete="off">
+                <input type="text" class="search-term" placeholder="kezdje el beírni, amit keres" id="search-term" autocomplete="off">
                 <i class="fas fa-search search-overlay__icon" aria-hidden="true"></i>
                 </div>
               </form>
@@ -200,11 +203,11 @@ class Search {
       <div id="posts" class="result-row ${
         this.activeResultBtn === "posts" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">Posts</h2>
+        <h2 class="search-overlay__section-title">Bejegyzések</h2>
         ${
           this.results.posts.length
             ? '<ul class="post-cards">'
-            : "<p>No posts information matches that search.</p>"
+            : "<p>Egyetlen bejegyzés sem felel meg a keresésnek.</p>"
         }
         ${this.results.posts
           .map(
@@ -237,11 +240,11 @@ class Search {
       <div id="pages" class="result-row ${
         this.activeResultBtn === "pages" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">Pages Information</h2>
+        <h2 class="search-overlay__section-title">Oldal Információk</h2>
         ${
           this.results.pages.length
             ? '<ul class="link-list min-list pages-list">'
-            : "<p>No pages information matches that search.</p>"
+            : "<p>Egyetlen oldal információ sem felel meg a keresésnek.</p>"
         }
         ${this.results.pages
           .map(
@@ -268,11 +271,11 @@ class Search {
       <div id="products" class="result-row ${
         this.activeResultBtn === "products" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">Products</h2>
+        <h2 class="search-overlay__section-title">Termékek</h2>
         ${
           this.results.products.length
             ? '<ul class="product-cards">'
-            : `<p>No products matches that search. <a href="${lasaphireData.root_url}/shop">View our all products.</a></p>`
+            : `<p>Egyetlen termék sem felel meg a keresésnek. <a href="${lasaphireData.root_url}/shop">Tekintse meg összes termékünket.</a></p>`
         }
         ${this.results.products
           .map(
@@ -310,11 +313,11 @@ class Search {
       <div id="ingredients" class="result-row ${
         this.activeResultBtn === "ingredients" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">Ingredients</h2>
+        <h2 class="search-overlay__section-title">Hatóanyagok</h2>
         ${
           this.results.ingredients.length
             ? '<ul class="link-list min-list">'
-            : `<p>No ingredients matches that search.</p>`
+            : `<p>Egyetlen összetevő sem felel meg a keresésnek.</p>`
         }
         ${this.results.ingredients
           .map(
@@ -326,11 +329,12 @@ class Search {
                     <p>${item.description}</p>
                   </div>
                   <div class="ingredient-img col-md-2">
-                    ${item.image ?
-                      `
+                    ${
+                      item.image
+                        ? `
                       <img class"img-fluid src="${item.image}" />
                       `
-                      : ''
+                        : ""
                     }
                   </div>
                 </a>
@@ -345,16 +349,16 @@ class Search {
 
   addFaqsInfo(){
     this.resultsDiv.insertAdjacentHTML(
-      'beforeend',
+      "beforeend",
       `
       <div id="faqs" class="result-row ${
         this.activeResultBtn === "faqs" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">FAQs</h2>
+        <h2 class="search-overlay__section-title">Gyakori Kérdések</h2>
         ${
           this.results.faqs.length
             ? '<ul class="link-list min-list">'
-            : `<p>No faqs matches that search.</p>`
+            : `<p>Egyetlen gyakori kérdés sem felel meg a keresésnek.</p>`
         }
         ${this.results.faqs
           .map(
