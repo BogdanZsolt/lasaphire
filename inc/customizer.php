@@ -1044,6 +1044,15 @@ function lasaphire_customize_css(){ ?>
 			--tertiary-lightest-color: <?php echo get_theme_mod( 'set_tertiary_lightest_color' ); ?>; /* #A8CD7F */
 			--tertiary-lightest-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_tertiary_lightest_color' ) ); ?>;
 		}
+
+		footer {
+				background-image: linear-gradient(to top, transparent, rgba(255,255,255,0.01) 30%, var(--base-color) 100%), url(<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_footer_image' ), 'full', false); ?>);
+		}
+
+		.home footer {
+				background-image: linear-gradient(to top, transparent, rgba(255,255,255,0.01) 30%, var(--base-bg-color) 100%), url(<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_footer_image' ), 'full', false); ?>);
+		}
+
 		.glassmorph::after,
 		#top-bar.scrollBgColor::after,
 		#top-bar::after,

@@ -99,17 +99,17 @@ class Search {
           this.searchField.value
       );
       this.results = posts.data;
-      console.log(this.results);
-      console.log(this.btnText['products']);
+      // console.log(this.results);
+      // console.log(this.btnText['products']);
       this.resultBtns = Object.keys(this.results);
       this.resultBtns.map((item) => this.results[item]);
       this.resultBtns = this.resultBtns.filter(
         (item) => this.results[item].length > 0
       );
-      console.log(this.resultBtns);
+      // console.log(this.resultBtns);
       this.activeResultBtn = this.resultBtns[0];
-      console.log(this.activeResultBtn);
-      console.log(this.resultBtns.map((item) => this.results[item]));
+      // console.log(this.activeResultBtn);
+      // console.log(this.resultBtns.map((item) => this.results[item]));
       if (this.resultBtns.length > 0){
         this.resultsDiv.innerHTML = `
           <div class="row result-btn-wrapper">
