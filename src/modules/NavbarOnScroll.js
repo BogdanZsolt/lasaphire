@@ -1,4 +1,5 @@
 import { getElement } from "./tool";
+import { throttle } from "lodash";
 
 class NavbarOnScroll {
  constructor(){
@@ -9,11 +10,11 @@ class NavbarOnScroll {
  }
 
  events(){
-  window.addEventListener('scroll', this.changeElements.bind(this))
+  window.addEventListener('scroll', throttle(()=>this.changeElements(), 200))
  }
 
  changeElements(){
-  if(window.scrollY > 100){
+  if(window.scrollY > 60){
    this.navBar.classList.add('scrollBgColor')
    this.logo.classList.add('scroll')
    this.toTopBtn.classList.add('scroll')
