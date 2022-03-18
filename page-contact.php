@@ -24,16 +24,16 @@ get_header();
 			<div class="row">
 				<div class="col-12 col-md-6">
 					<div class="contact-container">
-						<h2 class="mb-4"><?php _e( 'Érdeklődjön bátran személyesen!', 'lasaphire' ); ?></h2>
-						<h3><i class="fas fa-map-marker-alt"></i><?php _e( 'cím', 'lasaphire' ); ?></h3>
+						<h2 class="mb-4"><?php _e( 'Bravely Reach Out in Person!', 'lasaphire' ); ?></h2>
+						<h3><i class="fas fa-map-marker-alt"></i><?php _e( 'Address', 'lasaphire' ); ?></h3>
 						<p>
 							<a href="https://goo.gl/maps/sZa4oh4PzDrCwscn6"target="_blank" rel="noopener">
 								1122 Budapest Határőr út 40. <br />Hungary
 							</a>
 						</p>
-						<h3><?php _e( 'Kapcsolattartási órák', 'lasaphire' ); ?></h3>
+						<h3><?php _e( 'contact hours', 'lasaphire' ); ?></h3>
 						<p>Hétfő - péntek 8:30 - 16:30</p>
-						<h3><i class="fas fa-phone-alt"></i><?php _e( 'Telefon', 'lasaphire' ); ?></h3>
+						<h3><i class="fas fa-phone-alt"></i><?php _e( 'telephone', 'lasaphire' ); ?></h3>
 						<p>
 							<a href="tel:+36301234567" title="<?php _e( 'Telefon La Saphire', 'lasaphire' ); ?>">+36 (30) 123-4567</a>
 						</p>
@@ -54,8 +54,8 @@ get_header();
 				</div>
 
 				<div class="col-12 col-md-6">
-					<h2 class="mb-1"><?php _e( 'Megkeresések', 'lasaphire' ); ?></h2>
-					<p>(<?php _e( 'küldjön üzenetet!', 'lasaphire' ); ?>)</p>
+					<h2 class="mb-1"><?php _e( 'Enquiries', 'lasaphire' ); ?></h2>
+					<p>(<?php _e( 'Send a message!', 'lasaphire' ); ?>)</p>
 					<?php get_template_part('template-parts/content/form', 'contact'); ?>
 				</div>
 			</div>

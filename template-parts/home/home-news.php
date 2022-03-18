@@ -9,7 +9,7 @@
 <section id="news" class="blog my-10">
 	<div class="container">
 		<div class="section-title">
-			<h2><?php echo get_theme_mod( 'set_blog_title', __( 'News', 'lasaphire' ) ); ?></h2>
+			<h2><?php echo get_theme_mod( 'set_blog_title', esc_html__( 'News', 'lasaphire' ) ); ?></h2>
 		</div>
 		<div class="row">
 			<?php

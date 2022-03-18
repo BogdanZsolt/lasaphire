@@ -20,10 +20,10 @@
 		?>
 	</div>
 	<div class="meta">
-		<p><?php _e( 'Publikálta', 'lasaphire' ); ?> <?php the_author_posts_link(); ?> <?php echo get_the_date(); ?>
+		<p><?php _e( 'Published by', 'lasaphire' ); ?> <?php the_author_posts_link(); ?> <?php echo get_the_date(); ?>
 		<br />
 		<?php if( has_category() ): ?>
-			<?php _e( 'Kategóriák', 'lasaphire' ); ?>: <span><?php the_category( ' ' ); ?></span>
+			<?php _e( 'Categories', 'lasaphire' ); ?>: <span><?php the_category( ' ' ); ?></span>
 			<br />
 		<?php endif; ?>
 		<?php if( has_tag() ): ?>

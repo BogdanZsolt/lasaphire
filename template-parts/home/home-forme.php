@@ -10,9 +10,9 @@
 	<div class="container border-rounded">
 		<div class="row">
 			<div class="col">
-				<h2><?php _e( 'Találd meg a hozzád legjobban illő termékeket', 'lasaphire' ); ?></h2>
-				<p><?php _e( 'Töltsd ki a rövid kvízt, tudj meg többet magadról', 'lasaphire' ); ?></p>
-				<a href="<?php echo home_url( '/for-me' ) ?>" class="btn-alt btn-normal"><?php _e( 'Kezdjük el', 'lasaphire' ); ?></a>
+				<h2><?php _e( 'Find the right products to nourish your skin', 'lasaphire' ); ?></h2>
+				<p><?php _e( 'Complete our skin or hair care quiz to find out which products are ideal for you.', 'lasaphire' ); ?></p>
+				<a href="<?php echo home_url( '/for-me' ) ?>" class="btn-alt btn-normal"><?php _e( 'Get Started', 'lasaphire' ); ?></a>
 			</div>
 		</div>
 	</div>

@@ -22,7 +22,7 @@ class Search {
     this.results;
     this.resultBtns;
     this.activeResultBtn;
-    this.btnText = {'products': 'termékek', 'ingredients': 'összetevők', 'posts': 'bejegyzések', 'pages': 'oldalak', 'faqs': "gyik-ek"};
+    this.btnText = {'products': lasaphireData.productsName, 'ingredients': lasaphireData.ingredientsName, 'posts': lasaphireData.postsName, 'pages': lasaphireData.pagesName, 'faqs': lasaphireData.faqsName};
   }
 
   // 2. events
@@ -127,7 +127,7 @@ class Search {
       } else {
         this.resultsDiv.innerHTML = `
           <div class="row result-btn-wrapper">
-            <h2>sajnos nincs találat a keresésre.</h2>
+            <h2>${lasaphireData.noResults}</h2>
           </div>
         `;
       }
@@ -179,7 +179,7 @@ class Search {
             <div class="container relative">
               <form id="search-form">
                 <div id="search-cover">
-                <input type="text" class="search-term" placeholder="kezdje el beírni, amit keres" id="search-term" autocomplete="off">
+                <input type="text" class="search-term" placeholder="${lasaphireData.inputPlaceholder}" id="search-term" autocomplete="off">
                 <i class="fas fa-search search-overlay__icon" aria-hidden="true"></i>
                 </div>
               </form>
@@ -203,7 +203,7 @@ class Search {
       <div id="posts" class="result-row ${
         this.activeResultBtn === "posts" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">Bejegyzések</h2>
+        <h2 class="search-overlay__section-title">${this.btnText['posts']}</h2>
         ${
           this.results.posts.length
             ? '<ul class="post-cards">'
@@ -240,7 +240,7 @@ class Search {
       <div id="pages" class="result-row ${
         this.activeResultBtn === "pages" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">Oldal Információk</h2>
+        <h2 class="search-overlay__section-title">${this.btnText['pages']}</h2>
         ${
           this.results.pages.length
             ? '<ul class="link-list min-list pages-list">'
@@ -271,7 +271,7 @@ class Search {
       <div id="products" class="result-row ${
         this.activeResultBtn === "products" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">Termékek</h2>
+        <h2 class="search-overlay__section-title">${this.btnText['products']}</h2>
         ${
           this.results.products.length
             ? '<ul class="product-cards">'
@@ -313,7 +313,7 @@ class Search {
       <div id="ingredients" class="result-row ${
         this.activeResultBtn === "ingredients" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">Hatóanyagok</h2>
+        <h2 class="search-overlay__section-title">${this.btnText['ingredients']}</h2>
         ${
           this.results.ingredients.length
             ? '<ul class="link-list min-list">'
@@ -354,7 +354,7 @@ class Search {
       <div id="faqs" class="result-row ${
         this.activeResultBtn === "faqs" ? "result-show" : ""
       }">
-        <h2 class="search-overlay__section-title">Gyakori Kérdések</h2>
+        <h2 class="search-overlay__section-title">${this.btnText['faqs']}</h2>
         ${
           this.results.faqs.length
             ? '<ul class="link-list min-list">'

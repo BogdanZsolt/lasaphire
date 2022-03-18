@@ -64,7 +64,7 @@
 								<ul id="la-saphire-additional-menu" class="nav navbar-nav ml-auto mr-5">
 									<?php if( class_exists( 'WooCommerce' ) ) : ?>
 									<li id="myaccount-link">
-										<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link"><?php _e( 'Fiókom', 'laspahire' ); ?></a>
+										<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link"><?php esc_html_e( 'My Account', 'lasaphire' ); ?></a>
 									</li>
 									<?php endif; ?>
 									<li id="search" class="search">

@@ -17,16 +17,16 @@
 		<div class="col-9 cookie-content">
 			<h5 class="cookie-title"><?php _e( 'Privacy Note', 'lasaphire' ); ?></h5>
 			<p>
-				<?php _e( 'Ez a weboldal cookie-kat használ az élmény javítása érdekében. Olvassa el ', 'lasaphire' ); ?>
+				<?php _e( 'This website uses cookies to improve your experience. Read our ', 'lasaphire' ); ?>
 
-				<a href="<? echo get_privacy_policy_url(); ?>"><?php _e( 'Adatvédelmi irányelveinket', 'lasaphire' ); ?></a>
+				<a href="<? echo get_privacy_policy_url(); ?>"><?php _e( 'Privacy Policy', 'lasaphire' ); ?></a>
 				<?php _e( 'and', 'lasaphire' ); ?>
-				<a href="<?php echo esc_url( $cookie_page ); ?>"><?php _e( 'Cookie-szabályzatunkat', 'lasaphire' ); ?></a>
-				<?php _e( '. Tudjon meg többet.', 'lasaphire' ); ?>
+				<a href="<?php echo esc_url( $cookie_page ); ?>"><?php _e( 'Cookie Policy', 'lasaphire' ); ?></a>
+				<?php _e( 'to learn more.', 'lasaphire' ); ?>
 			</p>
 		</div>
 		<div class="col-md-3 buttons">
-			<button class="btn-alt btn-normal" type="submit"><?php _e( 'Megértettem', 'lasaphire' ) ?></button>
+			<button class="btn-alt btn-normal" type="submit"><?php _e( 'I understand', 'lasaphire' ) ?></button>
 		</div>
 	</div>
 </div>
@@ -60,7 +60,7 @@
 		<section class="copyright">
 			<div class="row">
 				<div class="copyright-text col-12 col-md-3">
-					<p><?php echo get_theme_mod( 'set_copyright', __( 'Copyright X - All Rights Reserved', 'lasaphire' ) ); ?></p>
+					<p><?php echo get_theme_mod( 'set_copyright', esc_html__( 'Copyright X - All Rights Reserved', 'lasaphire' ) ); ?></p>
 				</div>
 				<div class="footer-menu col-12 col-md-6 text-center">
 					<?php
@@ -72,7 +72,7 @@
 					?>
 				</div>
 				<div class="madeby-text col-12 col-md-3">
-					<a href="https://pegazusdesigns.hu" target="_blank"><?php _e( 'Website by PegazusDesigns', 'lasaphire' ) ?></a>
+					<a href="https://pegazusdesigns.hu" target="_blank"><?php esc_html_e( 'Website by PegazusDesigns', 'lasaphire' ) ?></a>
 				</div>
 			</div>
 		</section>

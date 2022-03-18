@@ -12,10 +12,10 @@
 	<header>
 		<?php if(get_post_type() === 'post'){?>
 			<div class="meta">
-				<p><?php _e( 'Publikálta', 'lasaphire' ); ?> <?php the_author_posts_link(); ?> <?php echo get_the_date(); ?><br />
-					<?php _e( 'Kategóriák', 'lasaphire' ); ?>: <span><?php the_category( ' ' ); ?></span><br />
+				<p><?php _e( 'Published by', 'lasaphire' ); ?> <?php the_author_posts_link(); ?> <?php echo get_the_date(); ?><br />
+					<?php _e( 'Categories', 'lasaphire' ); ?>: <span><?php the_category( ' ' ); ?></span><br />
 					<?php if( has_tag() ): ?>
-						<?php _e( 'Cimkék', 'lasaphire' ); ?>: <span><?php the_tags( '', ', ' ); ?></span>
+						<?php _e( 'Tags', 'lasaphire' ); ?>: <span><?php the_tags( '', ', ' ); ?></span>
 					<?php endif; ?>
 				</p>
 			</div>
@@ -27,7 +27,7 @@
 		<?php
 			wp_link_pages(
 				array(
-					'before'		=> '<p class="inner-pagination">' . __( 'Pages', 'lasaphire' ),
+					'before'		=> '<p class="inner-pagination">' . esc_html__( 'Pages', 'lasaphire' ),
 					'after'			=> '</p>',
 				)
 			);

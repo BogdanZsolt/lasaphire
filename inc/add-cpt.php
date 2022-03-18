@@ -12,11 +12,11 @@ function lasaphire_cpt() {
 
     // Hero Slider CPT
     $hs_labels = array(
-        'name'                  => __( 'Hero Sliders', 'lasaphire'),
-		'add_new_item'			=> __( 'Add New Hero Slider', 'lasaphire' ),
-		'edit_item'				=> __( 'Edit Hero Slider', 'lasaphire' ),
-		'all_items'				=> __( 'All Hero Sliders', 'lasaphire' ),
-        'singular_name'         => __( 'Hero Slider', 'lasaphire' ),
+        'name'                  => esc_html__( 'Hero Sliders', 'lasaphire'),
+		'add_new_item'			=> esc_html__( 'Add New Hero Slider', 'lasaphire' ),
+		'edit_item'				=> esc_html__( 'Edit Hero Slider', 'lasaphire' ),
+		'all_items'				=> esc_html__( 'All Hero Sliders', 'lasaphire' ),
+        'singular_name'         => esc_html__( 'Hero Slider', 'lasaphire' ),
     );
 
     $hs_args = array(
@@ -39,16 +39,16 @@ function lasaphire_cpt() {
 
     // FAQ CPT
     $faq_labels = array(
-        'name'          => __( 'FAQs', 'lasaphire' ),
-        'menu_name'     => __( 'FAQs', 'lasaphire' ),
-        'add_new'       => __( 'Add New ', 'lasaphire' ),
-        'add_new_item'  => __( 'Add New FAQ', 'lasaphire' ),
-        'new_item'      => __( 'New FAQ', 'lasaphire' ),
-        'all_items'     => __( 'All FAQs', 'lasaphire' ),
-        'edit_item'     => __( 'Edit FAQ', 'lasaphire' ),
-        'view_item'     => __( 'View FAQ', 'lasaphire' ),
-        'search_items'  => __( 'Search FAQs', 'lasaphire' ),
-        'not_found'     => __( 'No FAQs Found', 'lasaphire' ),
+        'name'          => esc_html__( 'FAQs', 'lasaphire' ),
+        'menu_name'     => esc_html__( 'FAQs', 'lasaphire' ),
+        'add_new'       => esc_html__( 'Add New ', 'lasaphire' ),
+        'add_new_item'  => esc_html__( 'Add New FAQ', 'lasaphire' ),
+        'new_item'      => esc_html__( 'New FAQ', 'lasaphire' ),
+        'all_items'     => esc_html__( 'All FAQs', 'lasaphire' ),
+        'edit_item'     => esc_html__( 'Edit FAQ', 'lasaphire' ),
+        'view_item'     => esc_html__( 'View FAQ', 'lasaphire' ),
+        'search_items'  => esc_html__( 'Search FAQs', 'lasaphire' ),
+        'not_found'     => esc_html__( 'No FAQs Found', 'lasaphire' ),
     );
 
     $faq_args = array(
@@ -88,9 +88,9 @@ function laspahire_create_taxonomies() {
         'ls_faq',
         array(
             'labels' => array(
-                'name' => __( 'FAQ Category', 'lasaphire' ),
-                'add_new_item' => __( 'Add New FAQ Category', 'lasaphire' ),
-                'new_item_name' => __( 'New FAQ Category', 'lasaphire' )
+                'name' => esc_html__( 'FAQ Category', 'lasaphire' ),
+                'add_new_item' => esc_html__( 'Add New FAQ Category', 'lasaphire' ),
+                'new_item_name' => esc_html__( 'New FAQ Category', 'lasaphire' )
             ),
             'show_ui' => true,
             'show_tagcloud' => false,
@@ -149,11 +149,11 @@ function set_heroslider_columns($columns) {
 
     $columns = array(
 
-        'title'             => __( 'Hero Slider Name', 'lasaphire' ),
-        'button_text'       => __( 'Button Text', 'lasaphire' ),
-        'button_url'        => __( 'Button Url', 'lasaphire' ),
-        'featured_image'    => __( 'Featured Image', 'lasaphire' ),
-        'date'              => __( 'Date', 'lasaphire' ),
+        'title'             => esc_html__( 'Hero Slider Name', 'lasaphire' ),
+        'button_text'       => esc_html__( 'Button Text', 'lasaphire' ),
+        'button_url'        => esc_html__( 'Button Url', 'lasaphire' ),
+        'featured_image'    => esc_html__( 'Featured Image', 'lasaphire' ),
+        'date'              => esc_html__( 'Date', 'lasaphire' ),
     );
 
     return $columns;
@@ -186,9 +186,9 @@ function set_ls_faq_columns($columns) {
 
     $columns = array(
 
-        'title'         => __( 'Question', 'lasaphire' ),
-        'faq_category'  => __( 'Category', 'lasaphire' ),
-        'date'          => __( 'Date', 'lasaphire' ),
+        'title'         => esc_html__( 'Question', 'lasaphire' ),
+        'faq_category'  => esc_html__( 'Category', 'lasaphire' ),
+        'date'          => esc_html__( 'Date', 'lasaphire' ),
     );
 
     return $columns;

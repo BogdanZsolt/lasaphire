@@ -21,7 +21,7 @@ if( $showdeal == 1 && ( !empty( $deal ) ) ):
 			<div class="content col-12 col-md-6" style="background-image: url(<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_deal_bg_image' ), 'full', false); ?>);">
 				<h2><?php echo get_the_title( $deal ); ?></h2>
 				<p class="card-text"><?php echo get_the_excerpt( $deal ); ?></p>
-				<a href="<?php echo get_the_permalink( $deal ); ?>" class="btn-alt btn-normal"><?php _e( 'Megnézem', 'lasaphire' ); ?></a>
+				<a href="<?php echo get_the_permalink( $deal ); ?>" class="btn-alt btn-normal"><?php _e( 'I&prime;ll check', 'lasaphire' ); ?></a>
 			</div>
 		</div>
 	</div>

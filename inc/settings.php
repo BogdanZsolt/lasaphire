@@ -12,8 +12,8 @@ function newsletter_settings(){
 		'tabs'	=> true,
 		'menu'	=> array(
 			'slug'	=> 'connections',
-			'page_title'	=> __( 'Connections settings', 'lasaphire' ),
-			'menu_title' 	=> __( 'Connections settings', 'lasaphire' ),
+			'page_title'	=> esc_html__( 'Connections settings', 'lasaphire' ),
+			'menu_title' 	=> esc_html__( 'Connections settings', 'lasaphire' ),
 			'parent'		=> 'options-general.php',
 			'submenu'		=> true,
 		),
@@ -21,14 +21,14 @@ function newsletter_settings(){
 			// Newsletter Settings Section
 			array(
 				'id'			=> 'newletter_settings',
-				'title'			=> __( 'Newsletter subscribe Settings', 'lasaphire' ),
-				'desc'			=> __( 'These are Newsletter subscribe settings', 'lasaphire' ),
+				'title'			=> esc_html__( 'Newsletter subscribe Settings', 'lasaphire' ),
+				'desc'			=> esc_html__( 'These are Newsletter subscribe settings', 'lasaphire' ),
 			),
 			// Email SMTP Settings Section
 			array(
 				'id'			=> 'email_smtp_settings',
-				'title'			=> __( 'Email SMTP Settings', 'lasaphire' ),
-				'desc'			=> __( 'These are email smtp settings', 'lasaphire' ),
+				'title'			=> esc_html__( 'Email SMTP Settings', 'lasaphire' ),
+				'desc'			=> esc_html__( 'These are email smtp settings', 'lasaphire' ),
 			)
 		),
 		'fields'	=> array(
@@ -36,11 +36,11 @@ function newsletter_settings(){
 			'newletter_settings' => array(
 				array(
 					'id'		=> 'lasaphire_newsletter_apikey_field',
-					'label'		=> __( 'API Key', 'lasaphire' ),
+					'label'		=> esc_html__( 'API Key', 'lasaphire' ),
 				),
 				array(
 					'id'		=> 'lasaphire_newsletter_group',
-					'label'		=> __( 'Subscribe Group', 'lasaphire' ),
+					'label'		=> esc_html__( 'Subscribe Group', 'lasaphire' ),
 					'type'		=> 'select',
 					'options'	=> array(
 						'108724643' => 'LaSaphire',
@@ -51,39 +51,39 @@ function newsletter_settings(){
 			'email_smtp_settings' => array(
 				array(
 					'id'		=> 'smtp_host',
-					'label'		=> __( 'Host', 'lasaphire' ),
+					'label'		=> esc_html__( 'Host', 'lasaphire' ),
 				),
 				array(
 					'id'		=> 'smtp_auth',
-					'label'		=> __( 'Authentication', 'lasaphire' ),
+					'label'		=> esc_html__( 'Authentication', 'lasaphire' ),
 					'type'		=> 'checkbox',
 					'default'	=> true,
 				),
 				array(
 					'id'		=> 'smtp_user',
-					'label'		=> __( 'User', 'lasaphire' ),
+					'label'		=> esc_html__( 'User', 'lasaphire' ),
 				),
 				array(
 					'id'		=> 'smtp_pass',
-					'label'		=> __( 'Password', 'lasaphire' ),
+					'label'		=> esc_html__( 'Password', 'lasaphire' ),
 					'type'		=> 'password',
 				),
 				array(
 					'id'		=> 'smtp_from',
-					'label'		=> __( 'From', 'lasaphire' ),
+					'label'		=> esc_html__( 'From', 'lasaphire' ),
 				),
 				array(
 					'id'		=> 'smtp_name',
-					'label'		=> __( 'Name', 'lasaphire' ),
+					'label'		=> esc_html__( 'Name', 'lasaphire' ),
 				),
 				array(
 					'id'		=> 'smtp_port',
-					'label'		=> __( 'SMTP Port', 'lasaphire' ),
+					'label'		=> esc_html__( 'SMTP Port', 'lasaphire' ),
 					'default'	=> 465,
 				),
 				array(
 					'id'		=> 'smtp_secure',
-					'label'		=> __( 'SMTP Secure', 'lasaphire' ),
+					'label'		=> esc_html__( 'SMTP Secure', 'lasaphire' ),
 					'type'		=> 'select',
 					'options'	=> array(
 						'tls'	=> 'TLS',

@@ -11,8 +11,8 @@ function la_saphire_customizer( $wp_customize ){
 	// Copyright Section
 	$wp_customize->add_section(
 		'sec_copyright', array(
-			'title'			=> __( 'Copyright Settings', 'lasaphire' ),
-			'description'	=> __( 'Copyright Section', 'lasaphire' )
+			'title'			=> esc_html__( 'Copyright Settings', 'lasaphire' ),
+			'description'	=> esc_html__( 'Copyright Section', 'lasaphire' )
 		)
 	);
 
@@ -27,8 +27,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_copyright', array(
-				'label'			=> __( 'Szerzői jog', 'lasaphire' ),
-				'description'	=> __( 'Kérem, add meg itt a szerzői jogi információd', 'lasaphire' ),
+				'label'			=> esc_html__( 'Copyright', 'lasaphire' ),
+				'description'	=> esc_html__( 'Please, add your copyright information here', 'lasaphire' ),
 				'section'		=> 'sec_copyright',
 				'type'			=> 'text'
 			)
@@ -38,8 +38,8 @@ function la_saphire_customizer( $wp_customize ){
 	//Home Page Settings
 	$wp_customize->add_section(
 		'sec_home_page', array(
-			'title'			=> __( 'Kezdőoldal Termékek és Blog beállítások', 'lasaphire' ),
-			'description'	=> __( 'Kezdőoldal Section', 'lasaphire' )
+			'title'			=> esc_html__( 'Home Page Products and Blog Settings', 'lasaphire' ),
+			'description'	=> esc_html__( 'Home Page Section', 'lasaphire' )
 		)
 	);
 
@@ -54,8 +54,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_products_button_text', array(
-				'label'			=> __( 'Termékek gomb szövege', 'lasaphire' ),
-				'description'	=> __( 'Termékek gomb szövege', 'lasaphire' ),
+				'label'			=> esc_html__( 'Products Button Text', 'lasaphire' ),
+				'description'	=> esc_html__( 'Products Button Text', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'text'
 			)
@@ -72,7 +72,7 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_new_arrivals_show', array(
-				'label'			=> __( 'Megjeleníti az újdonságokat?', 'lasaphire' ),
+				'label'			=> esc_html__( 'Show New Arrivals?', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'checkbox'
 			)
@@ -89,8 +89,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_new_arrivals_max_num', array(
-				'label'			=> __( 'Újdonságok maximális mennyisége', 'lasaphire' ),
-				'description'	=> __( 'Újdonságok maximális mennyisége', 'lasaphire' ),
+				'label'			=> esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
+				'description'	=> esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'number'
 			)
@@ -107,8 +107,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_new_arrivals_max_col', array(
-				'label'			=> __( 'Újdonságok max. oszlopa', 'lasaphire' ),
-				'description'	=> __( 'Újdonságok max. oszlopa', 'lasaphire' ),
+				'label'			=> esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
+				'description'	=> esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'number'
 			)
@@ -126,7 +126,7 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_deal_show', array(
-				'label'			=> __( 'Megjeleníti a hét ajánlatát?', 'lasaphire' ),
+				'label'			=> esc_html__( 'Show Deal of the Week?', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'checkbox'
 			)
@@ -143,8 +143,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_deal', array(
-				'label'			=> __( 'A hét ajánlatának termék azonosítója', 'lasaphire' ),
-				'description'	=> __( 'Termék azonosító a megjelenítésre', 'lasaphire' ),
+				'label'			=> esc_html__( 'Deal of the Week Product ID', 'lasaphire' ),
+				'description'	=> esc_html__( 'Product ID to Display', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'number'
 			)
@@ -163,21 +163,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_deal_bg_image',
 				array(
-					'label'			=> __( 'A hét ajánlat Háttérkép beállítás', 'lasaphire' ),
-					'description'	=> __( 'A hét ajánlat Háttérkép beállítás', 'lasaphire' ),
+					'label'			=> esc_html__( 'Deal of the Week Background Image Set.', 'lasaphire' ),
+					'description'	=> esc_html__( 'Deal of the Week Background Image Set.', 'lasaphire' ),
 					'section'		=> 'sec_home_page',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -195,21 +195,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_forme_bg_image',
 				array(
-					'label'			=> __( '"Nekem" promóció Háttérkép beállítása.', 'lasaphire' ),
-					'description'	=> __( '"Nekem" promóció Háttérkép beállítása.', 'lasaphire' ),
+					'label'			=> esc_html__( 'For me promotion Background Image Set.', 'lasaphire' ),
+					'description'	=> esc_html__( 'For me promotion Background Image Set.', 'lasaphire' ),
 					'section'		=> 'sec_home_page',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -226,8 +226,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_values_card1_title', array(
-				'label'			=> __( 'Ars Poetika kártya-1 Címe', 'lasaphire' ),
-				'description'	=> __( 'Ars Poetika kártya-1 Címe', 'lasaphire' ),
+				'label'			=> esc_html__( 'Ars Poetics Card-1 Title', 'lasaphire' ),
+				'description'	=> esc_html__( 'Ars Poetics Card-1 Title', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'text'
 			)
@@ -244,8 +244,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_values_card2_title', array(
-				'label'			=> __( 'Ars Poetika kártya-2 Címe', 'lasaphire' ),
-				'description'	=> __( 'Ars Poetika kártya-2 Címe', 'lasaphire' ),
+				'label'			=> esc_html__( 'Ars Poetics Card-2 Title', 'lasaphire' ),
+				'description'	=> esc_html__( 'Ars Poetics Card-2 Title', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'text'
 			)
@@ -262,8 +262,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_values_card3_title', array(
-				'label'			=> __( 'Ars Poetika kártya-3 Címe', 'lasaphire' ),
-				'description'	=> __( 'Ars Poetika kártya-3 Címe', 'lasaphire' ),
+				'label'			=> esc_html__( 'Ars Poetics Card-3 Title', 'lasaphire' ),
+				'description'	=> esc_html__( 'Ars Poetics Card-3 Title', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'text'
 			)
@@ -280,8 +280,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_values_card4_title', array(
-				'label'			=> __( 'Ars Poetika kártya-4 Címe', 'lasaphire' ),
-				'description'	=> __( 'Ars Poetika kártya-4 Címe', 'lasaphire' ),
+				'label'			=> esc_html__( 'Ars Poetics Card-4 Title', 'lasaphire' ),
+				'description'	=> esc_html__( 'Ars Poetics Card-4 Title', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'text'
 			)
@@ -291,15 +291,15 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_setting(
 			'set_blog_title', array(
 				'type'				=> 'theme_mod',
-				'default'			=> 'Hírem @lasaphire-tól',
+				'default'			=> esc_html__( 'News from @lasaphire' ),
 				'sanitize_callback'	=> 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_blog_title', array(
-				'label'			=> __( 'Hírek Címe', 'lasaphire' ),
-				'description'	=> __( 'La Saphire Hírek Szekció (blog) címe', 'lasaphire' ),
+				'label'			=> esc_html__( 'News Title', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire News Section title', 'lasaphire' ),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'text'
 			)
@@ -308,8 +308,8 @@ function la_saphire_customizer( $wp_customize ){
 	//Image Gallery Section Settings
 	$wp_customize->add_section(
 		'sec_gallery', array(
-			'title'			=> __( 'Kezdőlap Galéria Képek beállítása', 'lasaphire' ),
-			'description'	=> __( 'Kezdőlap Galéria Szekció', 'lasaphire' )
+			'title'			=> esc_html__( 'Home Page Gallery Images Settings', 'lasaphire' ),
+			'description'	=> esc_html__( 'Home Page Gallery Section', 'lasaphire' )
 		)
 	);
 
@@ -325,21 +325,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image1',
 				array(
-					'label'			=> __( 'Kezdőlap Galéria Kép 1 beállítása', 'lasaphire' ),
-					'description'	=> __( 'Kezdőlap Galéria Kép 1 beállítása (méret max 1500 x auto pixel)', 'lasaphire' ),
+					'label'			=> esc_html__( 'Home Gallery Image 1 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 1 Setting (size max 1500 x auto px)', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -357,21 +357,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image2',
 				array(
-					'label'			=> __( 'Kezdőlap Galéria Kép 2 beállítása', 'lasaphire' ),
-					'description'	=> __( 'Kezdőlap Galéria Kép 2 beállítása (méret max 1500 x auto pixel)', 'lasaphire' ),
+					'label'			=> esc_html__( 'Home Gallery Image 2 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 2 Setting (size max 1500 x auto px)', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -389,21 +389,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image3',
 				array(
-					'label'			=> __( 'Kezdőlap Galéria Kép 3 beállítása', 'lasaphire' ),
-					'description'	=> __( 'Kezdőlap Galéria Kép 3 beállítása (méret max 1500 x auto pixel)', 'lasaphire' ),
+					'label'			=> esc_html__( 'Home Gallery Image 3 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 3 Setting (size max 1500 x auto px)', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -421,21 +421,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image4',
 				array(
-					'label'			=> __( 'Kezdőlap Galéria Kép 4 beállítása', 'lasaphire' ),
-					'description'	=> __( 'Kezdőlap Galéria Kép 4 beállítása (méret max 1500 x auto pixel)', 'lasaphire' ),
+					'label'			=> esc_html__( 'Home Gallery Image 4 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 4 Setting (size max 1500 x auto px)', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -453,21 +453,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image5',
 				array(
-					'label'			=> __( 'Kezdőlap Galéria Kép 5 beállítása', 'lasaphire' ),
-					'description'	=> __( 'Kezdőlap Galéria Kép 5 beállítása (méret max 1500 x auto pixel)', 'lasaphire' ),
+					'label'			=> esc_html__( 'Home Gallery Image 5 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 5 Setting (size max 1500 x auto px)', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -485,21 +485,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image6',
 				array(
-					'label'			=> __( 'Kezdőlap Galéria Kép 6 beállítása', 'lasaphire' ),
-					'description'	=> __( 'Kezdőlap Galéria Kép 6 beállítása (méret max 1500 x auto pixel)', 'lasaphire' ),
+					'label'			=> esc_html__( 'Home Gallery Image 6 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 6 Setting (size max 1500 x auto px)', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -517,21 +517,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image7',
 				array(
-					'label'			=> __( 'Kezdőlap Galéria Kép 7 beállítása', 'lasaphire' ),
-					'description'	=> __( 'Kezdőlap Galéria Kép 7 beállítása (méret max 1500 x auto pixel)', 'lasaphire' ),
+					'label'			=> esc_html__( 'Home Gallery Image 7 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 7 Setting (size max 1500 x auto px)', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -549,21 +549,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image8',
 				array(
-					'label'			=> __( 'Kezdőlap Galéria Kép 8 beállítása', 'lasaphire' ),
-					'description'	=> __( 'Kezdőlap Galéria Kép 8 beállítása (méret max 1500 x auto pixel)', 'lasaphire' ),
+					'label'			=> esc_html__( 'Home Gallery Image 8 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 8 Setting (size max 1500 x auto px)', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -574,8 +574,8 @@ function la_saphire_customizer( $wp_customize ){
 	*/
 	$wp_customize->add_section(
 		'sec_standard_color', array(
-			'title'			=> __( 'Standard Szín', 'lasaphire' ),
-			'description'	=> __( 'Standard Színek Szekció', 'lasaphire' )
+			'title'			=> esc_html__( 'Standard Color', 'lasaphire' ),
+			'description'	=> esc_html__( 'Standard Color Section', 'lasaphire' )
 		)
 	);
 
@@ -590,8 +590,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_bg_color',
 				array(
-					'label'			=> __( 'Háttérszín', 'lasaphire' ),
-					'description'	=> __( 'Háttérszín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Background Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Background Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -608,8 +608,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_base_color',
 				array(
-					'label'			=> __( 'Alapszín', 'lasaphire' ),
-					'description'	=> __( 'Alapszín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Base Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Base Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -626,8 +626,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_cta_darker_color',
 				array(
-					'label'			=> __( 'Cselekvésre ösztönző Sötétebb szín', 'lasaphire' ),
-					'description'	=> __( 'Cselekvésre ösztönző Sötétebb szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Call To Action Darker Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Call To Action Darker Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -643,8 +643,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_cta_color',
 				array(
-					'label'			=> __( 'Cselekvésre ösztönző szín', 'lasaphire' ),
-					'description'	=> __( 'Cselekvésre ösztönző szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Call To Action Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Call To Action Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -661,8 +661,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_primary_darker_color',
 				array(
-					'label'			=> __( 'Elsődleges sötétebb szín', 'lasaphire' ),
-					'description'	=> __( 'Elsődleges sötétebb szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Primary Darker Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Primary Darker Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -678,8 +678,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_primary_color',
 				array(
-					'label'			=> __( 'Elsődleges szín', 'lasaphire' ),
-					'description'	=> __( 'Elsődleges szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Primary Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Primary Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -695,8 +695,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_primary_lighter_color',
 				array(
-					'label'			=> __( 'Elsődleges világosabb szín', 'lasaphire' ),
-					'description'	=> __( 'Elsődleges világosabb szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Primary Color Lighter', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Primary Color Lighter', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -712,8 +712,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_primary_lightest_color',
 				array(
-					'label'			=> __( 'Elsődleges legvilágosabb szin', 'lasaphire' ),
-					'description'	=> __( 'Elsődleges legvilágosabb szin beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Primary Color Lightest', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Primary Color Lightest', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -731,8 +731,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_secondary_darker_color',
 				array(
-					'label'			=> __( 'Másodlagos sötétebb szín', 'lasaphire' ),
-					'description'	=> __( 'Másodlagos sötétebb szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Secondary Darker Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Secondary Darker Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -747,8 +747,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_secondary_color',
 				array(
-					'label'			=> __( 'Másodlagos szín', 'lasaphire' ),
-					'description'	=> __( 'Másodlagos szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Secondary Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Secondary Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -764,8 +764,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_secondary_lighter_color',
 				array(
-					'label'			=> __( 'Másodlagos világosabb szín', 'lasaphire' ),
-					'description'	=> __( 'Másodlagos világosabb szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Secondary Color Lighter', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Secondary Color Lighter', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -781,8 +781,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_secondary_lightest_color',
 				array(
-					'label'			=> __( 'Másodlagos legvilágosabb szín', 'lasaphire' ),
-					'description'	=> __( 'Másodlagos legvilágosabb szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Secondary Color Lightest', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Secondary Color Lightest', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -799,8 +799,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_tertiary_darker_color',
 				array(
-					'label'			=> __( 'Harmadlagos sötétebb szín', 'lasaphire' ),
-					'description'	=> __( 'Harmadlagos sötétebb szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Tertiary Darker Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Tertiary Darker Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -816,8 +816,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_tertiary_color',
 				array(
-					'label'			=> __( 'Harmadlagos szín', 'lasaphire' ),
-					'description'	=> __( 'Harmadlagos szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Tertiary Color', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Tertiary Color', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -833,8 +833,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_tertiary_lighter_color',
 				array(
-					'label'			=> __( 'Harmadlagos világosabb szín', 'lasaphire' ),
-					'description'	=> __( 'Harmadlagos világosabb szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Tertiary Color Lighter', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Tertiary Color Lighter', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -850,8 +850,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, 'set_tertiary_lightest_color',
 				array(
-					'label'			=> __( 'Harmadlagos legvilágosabb szín', 'lasaphire' ),
-					'description'	=> __( 'Harmadlagos legvilágosabb szín beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Tertiary Color Lightest', 'lasaphire' ),
+					'description'	=> esc_html__( 'Setup Tertiary Color Lightest', 'lasaphire' ),
 					'section'		=> 'sec_standard_color',
 				),
 			)
@@ -862,8 +862,8 @@ function la_saphire_customizer( $wp_customize ){
 	*/
 	$wp_customize->add_section(
 		'sec_footer', array(
-			'title'			=> __( 'Webhely Lábléc', 'lasaphire' ),
-			'description'	=> __( 'Webhely lábléc elemeinek beállítása.', 'lasaphire' )
+			'title'			=> esc_html__( 'Site Footer', 'lasaphire' ),
+			'description'	=> esc_html__( 'Site Footer elements setup.', 'lasaphire' )
 		)
 	);
 
@@ -879,21 +879,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_footer_image',
 				array(
-					'label'			=> __( 'Webhely lábléc Háttérkép Beállítása.', 'lasaphire' ),
-					'description'	=> __( 'Webhely lábléc Háttérkép Beállítása.', 'lasaphire' ),
+					'label'			=> esc_html__( 'Site Footer Background Image Set.', 'lasaphire' ),
+					'description'	=> esc_html__( 'Site Footer Background Image Set.', 'lasaphire' ),
 					'section'		=> 'sec_footer',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 1500,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -904,8 +904,8 @@ function la_saphire_customizer( $wp_customize ){
 	*/
 	$wp_customize->add_section(
 		'sec_forme', array(
-			'title'			=> __( '"Nekem" oldal', 'lasaphire' ),
-			'description'	=> __( '"Nekem" oldal elemeinek beállítása', 'lasaphire' )
+			'title'			=> esc_html__( 'For Me page', 'lasaphire' ),
+			'description'	=> esc_html__( 'For Me elements setup.', 'lasaphire' )
 		)
 	);
 
@@ -921,21 +921,21 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_forme_grunge_image',
 				array(
-					'label'			=> __( '"Nekem" oldal grunge háttér', 'lasaphire' ),
-					'description'	=> __( '"Nekem" oldal grunge háttér beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'For Me Grunge Image Set.', 'lasaphire' ),
+					'description'	=> esc_html__( 'For Me Page Grunge Image Set.', 'lasaphire' ),
 					'section'		=> 'sec_forme',
 					'flex_width'	=> 'false',
 					'flex_height'	=> 'true',
 					'width' 		=> 640,
 					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon képet', 'lasaphire' ),
-						'change' 		=>  __( 'Kép cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs kép kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon képet', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon képet', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -947,8 +947,8 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_section(
 				'sec_about', array(
-				'title'			=> __( 'Rólunk oldalak beállításai', 'lasaphire' ),
-				'description'	=> __( 'A "Rólunk" menühöz tartozó almenük beállításai', 'lasaphire' )
+				'title'			=> esc_html__( 'About menu', 'lasaphire' ),
+				'description'	=> esc_html__( 'Settings for the submenus for the "About" menu', 'lasaphire' )
 			)
 		);
 
@@ -965,17 +965,17 @@ function la_saphire_customizer( $wp_customize ){
 			new WP_Customize_Media_Control( $wp_customize, 'set_ourvalues_video',
 				array(
 					'mime-type' => 'video',
-					'label'			=> __( 'Banner video beállítása', 'lasaphire' ),
-					'description'	=> __( '"Ars Poetika" oldal banner video beállítása', 'lasaphire' ),
+					'label'			=> esc_html__( 'Video banner set.', 'lasaphire' ),
+					'description'	=> esc_html__( '"Ars Poetics" page banner video setting', 'lasaphire' ),
 					'section'		=> 'sec_about',
 					'button_labels' => array( // Optional.
-						'select' 		=>  __( 'Válasszon videót', 'lasaphire' ),
-						'change' 		=>  __( 'videó cseréje', 'lasaphire' ),
-						'remove' 		=>  __( 'Eltávolít', 'lasaphire' ),
-						'default' 		=>  __( 'Alapértelmezett', 'lasaphire' ),
-						'placeholder' 	=>  __( 'Nincs videó kiválasztva', 'lasaphire' ),
-						'frame_title' 	=>  __( 'Válasszon videót', 'lasaphire' ),
-						'frame_button' 	=>  __( 'Válasszon videót', 'lasaphire' ),
+						'select' 		=>  esc_html__( 'Select video', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change video', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No video selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select video', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose video', 'lasaphire' ),
 					),
 				)
 			)

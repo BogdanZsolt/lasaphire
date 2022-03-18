@@ -1,26 +1,26 @@
 <form id="contact-email-form">
 	<div class="form-group">
-		<label for="name"><?php _e( 'Név', 'lasaphire' ); ?></label>
-		<input type="text" class="form-control" id="name" name="name" placeholder="<?php _e( 'Adja meg a nevét...', 'lasaphire' ); ?>" required>
+		<label for="name"><?php _e( 'Name', 'lasaphire' ); ?></label>
+		<input type="text" class="form-control" id="name" name="name" placeholder="<?php _e( 'Enter Your Name...', 'lasaphire' ); ?>" required>
 	</div>
 	<div class="form-group">
-		<label for="email"><?php _e( 'Email cím', 'lasaphire' ); ?></label>
-		<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="<?php _e( 'Adja meg az email címét...', 'lasaphire' ); ?>" required>
-		<small id="emailHelp" class="form-text text-muted"><?php _e( 'Mi soha nem osztjuk meg email címét mással.', 'lasaphire' ); ?></small>
+		<label for="email"><?php _e( 'Email address', 'lasaphire' ); ?></label>
+		<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="<?php _e( 'Enter Your email...', 'lasaphire' ); ?>" required>
+		<small id="emailHelp" class="form-text text-muted"><?php _e( 'We′ll never share your email with anyone else.', 'lasaphire' ); ?></small>
 	</div>
 	<div class="form-group">
-		<label for="phone"><?php _e( 'Telefonszám', 'lasaphire' ); ?></label>
-		<input type="tel" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" placeholder="<?php _e( 'Adja meg a telefonszámát...', 'lasaphire' ); ?>">
+		<label for="phone"><?php _e( 'Phone number', 'lasaphire' ); ?></label>
+		<input type="tel" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" placeholder="<?php _e( 'Enter Your phone number...', 'lasaphire' ); ?>">
 	</div>
 	<div class="form-group">
-		<label for="enquiry"><?php _e( 'Megkeresések', 'lasaphire' ); ?></label>
-		<textarea id="enquiry" class="form-control" id="enquiry" name="enquiry" rows="5" placeholder="<?php _e( 'Adja meg az üzenetet...', 'lasaphire' ); ?>" required></textarea>
+		<label for="enquiry"><?php _e( 'Enquiry', 'lasaphire' ); ?></label>
+		<textarea id="enquiry" class="form-control" id="enquiry" name="enquiry" rows="5" placeholder="<?php _e( 'Type enquiry...', 'lasaphire' ); ?>" required></textarea>
 	</div>
-	<button type="submit" class="col-6 col-md-3 btn-alt btn-normal" id="send-email"><?php _e( 'Elküld', 'lasaphire' ); ?></button>
+	<button type="submit" class="col-6 col-md-3 btn-alt btn-normal" id="send-email"><?php _e( 'Send', 'lasaphire' ); ?></button>
 	<div class=row>
 		<div class="col-6 col-md-9">
-			<small class="field-msg success form-success"><?php _e( 'A megkeresés sikeresen elküldve, köszönjük!', 'lasaphire' ); ?></small>
-			<small class="field-msg error form-error"><?php _e( 'Probléma merült fel az űrlap elküldése során. Kérem próbálja meg újra!', 'lasaphire' ); ?></small>
+			<small class="field-msg success form-success"><?php _e( 'Enquiry Successfully submitted, thank you!', 'lasaphire' ); ?></small>
+			<small class="field-msg error form-error"><?php _e( 'There was a problem with the Contact Form, please try again!', 'lasaphire' ); ?></small>
 		</div>
 	</div>
 

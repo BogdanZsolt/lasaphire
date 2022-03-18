@@ -50,7 +50,11 @@ body.home {
 
 .buy-message {
   h2 {
-    color: #D105A4;
+    color: #80276c;
+    font-family: var(--primary-fonts) !important;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.4;
   }
 }
 
