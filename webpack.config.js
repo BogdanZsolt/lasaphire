@@ -44,7 +44,12 @@ let cssConfig = {
 
 let sassConfig = {
   test: /\.(s[ac]|c)ss$/,
-  use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", "postcss-loader"],
+  use: [
+    MiniCssExtractPlugin.loader,
+    "css-loader",
+    "sass-loader",
+    "postcss-loader",
+  ],
 };
 
 let config = {
@@ -53,18 +58,12 @@ let config = {
     admin: path.resolve(__dirname, "src/main-admin.js"),
   },
   output: {
-    filename: "[name].js",
+    filename: "[name][ext]",
     path: path.resolve(__dirname, "./assets"),
     clean: true,
   },
-  module:{
-   rules: [
-    cssConfig,
-    sassConfig,
-    imagesConfig,
-    fontsConfig,
-    svgConfig,
-   ],
+  module: {
+    rules: [cssConfig, sassConfig, imagesConfig, fontsConfig, svgConfig],
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -73,31 +72,31 @@ let config = {
   ],
 };
 
-if(currentTask === 'dev'){
- config.mode = 'development',
- config.devtool = 'source-map',
- config.watch = true,
- config.watchOptions = {
-  ignored: /node_modules/,
- }
+if (currentTask === "dev") {
+  (config.mode = "development"),
+    (config.devtool = "source-map"),
+    (config.watch = true),
+    (config.watchOptions = {
+      ignored: /node_modules/,
+    });
 }
 
-if(currentTask === 'build'){
- (config.mode = "production"),
-   config.module.rules.push({
-     test: /\.js$/,
-     exclude: /node_modules/,
-     use: {
-       loader: "babel-loader",
-       options: {
-         presets: ["@babel/preset-env"],
-         plugins: [
-          "@babel/plugin-proposal-class-properties",
-          "@babel/transform-runtime",
-         ],
-       },
-     },
-   });
+if (currentTask === "build") {
+  (config.mode = "production"),
+    config.module.rules.push({
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader",
+        options: {
+          presets: ["@babel/preset-env"],
+          plugins: [
+            "@babel/plugin-proposal-class-properties",
+            "@babel/transform-runtime",
+          ],
+        },
+      },
+    });
 }
 
 module.exports = config;
