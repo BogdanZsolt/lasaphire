@@ -9,7 +9,8 @@ import OurValuesCardsResize from './modules/OurValuesCardsResize'
 import MegaMenuDropdownClick from './modules/MegaMenuDropdownClick'
 import MegamenuPageGrid from './modules/MegamenuPageGrid'
 import Touch from './modules/Touch'
-import {getTouchScreen} from './modules/tool'
+// import {getTouchScreen} from './modules/tool'
+import ChangeLang from './modules/ChangeLang';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Hero Slider
@@ -253,5 +254,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // setup no hover
   const setTouch = new Touch();
+
+  // setup Menu Change Lang
+  const changeLang = new ChangeLang();
 });
 
