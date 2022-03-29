@@ -47,6 +47,15 @@ ul li a,
   height: auto;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 60%, rgba(var(--base-bg-color-rgb), 0.01) 60%, var(--base-bg-color) 100%);
+}
+
 // glassmorhism
 .glassmorph {
   background: rgba(var(--base-color-rgb), 0.35);

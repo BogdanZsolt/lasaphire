@@ -6,7 +6,7 @@
  */
 ?>
 
-<section class="products my-10">
+<section class="products-slider my-10">
 	<div class="container col-7">
 		<?php echo do_shortcode( '[products limit="-1" columns="4" orderby="date" class="tiny-slider"]' ); ?>
 		<div class="row">

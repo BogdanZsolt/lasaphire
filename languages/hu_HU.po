@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: La Saphire v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2022-03-18 16:59+0100\n"
+"POT-Creation-Date: 2022-03-28 14:51+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Your Team <translations@example.com>\n"
@@ -55,49 +55,49 @@ msgstr[1] "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgid "Comments are closed."
 msgstr "Hozzászólások lezárva."
 
-#: doc/functions.php:68 functions.php:75
+#: doc/functions.php:68 functions.php:73
 msgid "La Saphire Main Menu"
 msgstr "La Saphire főmenü"
 
-#: doc/functions.php:69 functions.php:76
+#: doc/functions.php:69 functions.php:74
 msgid "La Saphire Footer Menu"
 msgstr "La Saphire lábléc menü"
 
-#: doc/functions.php:70 functions.php:77
+#: doc/functions.php:70 functions.php:75
 msgid "La Saphire Social Menu"
 msgstr "La Saphire Szocial Media Menü"
 
-#: doc/functions.php:71 functions.php:78
+#: doc/functions.php:71 functions.php:76
 msgid "La Saphire Shop Category Menu"
 msgstr "La Saphire Shop Kategória menü"
 
-#: doc/functions.php:179 functions.php:185
+#: doc/functions.php:179 functions.php:183
 msgid "La Saphire Main Sidebar"
 msgstr "La Saphire fő oldalsáv"
 
 #: doc/functions.php:181 doc/functions.php:203 doc/functions.php:214
-#: doc/functions.php:225 functions.php:187 functions.php:209 functions.php:220
-#: functions.php:231
+#: doc/functions.php:225 functions.php:185 functions.php:207 functions.php:218
+#: functions.php:229
 msgid "Drag and drop your widgets here"
 msgstr "Húzza ide a widgeteket"
 
-#: doc/functions.php:190 functions.php:196
+#: doc/functions.php:190 functions.php:194
 msgid "La Saphire Sidebar Shop"
 msgstr "La Saphire bolt oldalsáv"
 
-#: doc/functions.php:192 functions.php:198
+#: doc/functions.php:192 functions.php:196
 msgid "Drag and drop your WooCommerce widgets here"
 msgstr "Húzza ide a WooCommerce modulokat"
 
-#: doc/functions.php:201 functions.php:207
+#: doc/functions.php:201 functions.php:205
 msgid "La Saphire Footer Sidebar 1"
 msgstr "La Saphire lábléc oldalsáv 1"
 
-#: doc/functions.php:212 functions.php:218
+#: doc/functions.php:212 functions.php:216
 msgid "La Saphire Footer Sidebar 2"
 msgstr "La Saphire lábléc oldalsáv 2"
 
-#: doc/functions.php:223 functions.php:229
+#: doc/functions.php:223 functions.php:227
 msgid "La Saphire Footer Sidebar 3"
 msgstr "La Saphire lábléc oldalsáv 3"
 
@@ -139,31 +139,31 @@ msgstr "Szerzői jog X - Minden jog fenntartva"
 msgid "Website by PegazusDesigns"
 msgstr "A PegazusDesigns webhelye"
 
-#: functions.php:49
+#: functions.php:47
 msgid "start typing what you are looking for"
 msgstr "kezdje el beírni, amit keres"
 
-#: functions.php:50
+#: functions.php:48
 msgid "products"
 msgstr "termékek"
 
-#: functions.php:51
+#: functions.php:49
 msgid "ingredients"
 msgstr "összetevők"
 
-#: functions.php:52
+#: functions.php:50
 msgid "posts"
 msgstr "bejegyzések"
 
-#: functions.php:53
+#: functions.php:51
 msgid "pages"
 msgstr "oldalak"
 
-#: functions.php:54
+#: functions.php:52
 msgid "faqs"
 msgstr "gyik-ok"
 
-#: functions.php:55
+#: functions.php:53
 msgid "unfortunately there are no results for your search."
 msgstr "sajnos nincs találat a keresésre."
 
@@ -175,101 +175,65 @@ msgstr "Váltás a navigáció között"
 msgid "My Account"
 msgstr "Fiókom"
 
-#: inc/add-cpt.php:15
-msgid "Hero Sliders"
-msgstr "Hero lapozó"
-
-#: inc/add-cpt.php:16
-msgid "Add New Hero Slider"
-msgstr "Új Hero Lapozó hozzáadása"
-
-#: inc/add-cpt.php:17
-msgid "Edit Hero Slider"
-msgstr "Hero lapozó szerkesztése"
-
-#: inc/add-cpt.php:18
-msgid "All Hero Sliders"
-msgstr "Összes Hero lapozó"
-
-#: inc/add-cpt.php:19
-msgid "Hero Slider"
-msgstr "Hero lapozó"
-
-#: inc/add-cpt.php:42 inc/add-cpt.php:43
+#: inc/add-cpt.php:14 inc/add-cpt.php:15
 msgid "FAQs"
 msgstr "GYIK-ok"
 
-#: inc/add-cpt.php:44
+#: inc/add-cpt.php:16
 msgid "Add New "
 msgstr "Új hozzáadása "
 
-#: inc/add-cpt.php:45
+#: inc/add-cpt.php:17
 msgid "Add New FAQ"
 msgstr "Új GYÍK hozzáadása"
 
-#: inc/add-cpt.php:46
+#: inc/add-cpt.php:18
 msgid "New FAQ"
 msgstr "Új GYIK"
 
-#: inc/add-cpt.php:47
+#: inc/add-cpt.php:19
 msgid "All FAQs"
 msgstr "Összes GYÍK"
 
-#: inc/add-cpt.php:48
+#: inc/add-cpt.php:20
 msgid "Edit FAQ"
 msgstr "GYIK szerkesztése"
 
-#: inc/add-cpt.php:49
+#: inc/add-cpt.php:21
 msgid "View FAQ"
 msgstr "GYIK nézet"
 
-#: inc/add-cpt.php:50
+#: inc/add-cpt.php:22
 msgid "Search FAQs"
 msgstr "Keresés a GYÍK-ok között"
 
-#: inc/add-cpt.php:51
+#: inc/add-cpt.php:23
 msgid "No FAQs Found"
 msgstr "Nincs találat a gyÍK-ok között"
 
-#: inc/add-cpt.php:91
+#: inc/add-cpt.php:62
 msgid "FAQ Category"
 msgstr "GYÍK Kategória"
 
-#: inc/add-cpt.php:92
+#: inc/add-cpt.php:63
 msgid "Add New FAQ Category"
 msgstr "Új GYÍK kategória hozzáadása"
 
-#: inc/add-cpt.php:93
+#: inc/add-cpt.php:64
 msgid "New FAQ Category"
 msgstr "Új GYÍK kategória"
 
-#: inc/add-cpt.php:152
-msgid "Hero Slider Name"
-msgstr "Hero lapozó név"
-
-#: inc/add-cpt.php:153
-msgid "Button Text"
-msgstr "Gomb szöveg"
-
-#: inc/add-cpt.php:154
-msgid "Button Url"
-msgstr "Gomb link"
-
-#: inc/add-cpt.php:155
-msgid "Featured Image"
-msgstr "Kiemelt Kép"
-
-#: inc/add-cpt.php:156 inc/add-cpt.php:191
-msgid "Date"
-msgstr "Dátum"
-
-#: inc/add-cpt.php:189
+#: inc/add-cpt.php:80
 msgid "Question"
 msgstr "Kérdés"
 
-#: inc/add-cpt.php:190
+#: inc/add-cpt.php:81
 msgid "Category"
 msgstr "Kategória"
+
+#: inc/add-cpt.php:82
+msgid "Date"
+msgstr "Dátum"
 
 #: inc/class-boo-settings-helper.php:188 inc/class-boo-settings-helper.php:225
 #: inc/class-boo-settings-helper.php:238
@@ -924,6 +888,12 @@ msgstr "Töltsd ki a rövid kvízt, tudj meg többet magadról."
 msgid "Get Started"
 msgstr "Kezdjük el"
 
+#: template-parts/home/home-message.php:5
+msgid ""
+"Kedves Látogatók! A shop működéséig egy kis türelmüket kérjük! Addig is a "
+"termékekről érdeklődni személyesen"
+msgstr ""
+
 #: template-parts/home/home-news.php:12
 msgid "News"
 msgstr "Hírek"
@@ -951,3 +921,30 @@ msgstr "Böngésszen az összes termék között"
 #: template-parts/home/home-promotion.php:24
 msgid "I&prime;ll check"
 msgstr "Megnézem"
+
+#~ msgid "Hero Sliders"
+#~ msgstr "Hero lapozó"
+
+#~ msgid "Add New Hero Slider"
+#~ msgstr "Új Hero Lapozó hozzáadása"
+
+#~ msgid "Edit Hero Slider"
+#~ msgstr "Hero lapozó szerkesztése"
+
+#~ msgid "All Hero Sliders"
+#~ msgstr "Összes Hero lapozó"
+
+#~ msgid "Hero Slider"
+#~ msgstr "Hero lapozó"
+
+#~ msgid "Hero Slider Name"
+#~ msgstr "Hero lapozó név"
+
+#~ msgid "Button Text"
+#~ msgstr "Gomb szöveg"
+
+#~ msgid "Button Url"
+#~ msgstr "Gomb link"
+
+#~ msgid "Featured Image"
+#~ msgstr "Kiemelt Kép"

@@ -58,7 +58,7 @@ let config = {
     admin: path.resolve(__dirname, "src/main-admin.js"),
   },
   output: {
-    filename: "[name][ext]",
+    filename: "[name].js",
     path: path.resolve(__dirname, "./assets"),
     clean: true,
   },

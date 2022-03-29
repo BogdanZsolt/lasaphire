@@ -1,6 +1,7 @@
 import './index.scss'
 
 // Our modules / classes
+import {tns} from 'tiny-slider'
 import Search from './modules/Search'
 import MobileMenu from './modules/MobileMenu'
 import ScrollToTop from './modules/ScrollToTop'
@@ -13,24 +14,6 @@ import Touch from './modules/Touch'
 import ChangeLang from './modules/ChangeLang';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Hero Slider
-  if (document.getElementById("hero-slider")) {
-    const slider = tns({
-      container: "#hero-slider",
-      mode: "gallery",
-      items: 1,
-      slideBy: "page",
-      controls: false,
-      nav: true,
-      navPosition: "bottom",
-      speed: 400,
-      autoplay: true,
-      autoplayButtonOutput: false,
-      autoplayPosition: "bottom",
-      autoplayTimeout: 7000,
-    });
-  }
-
   // Product slider
   if (document.querySelector(".tiny-slider")) {
     const tslider = document.querySelector(".tiny-slider");

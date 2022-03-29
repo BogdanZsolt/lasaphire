@@ -4,48 +4,48 @@ body.home {
 }
 
 .home {
-    & main .section-title {
-        color: var(--primary-color);
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  & main .section-title {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        & h2 {
-            position: relative;
-            display: inline-block;
-            background: var(--base-bg-color);
-            padding: 0 20px 0 0;
-            margin: 0;
-            font-size: 16px;
-            font-weight: 600;
-        }
+      & h2 {
+          position: relative;
+          display: inline-block;
+          background: var(--base-bg-color);
+          padding: 0 20px 0 0;
+          margin: 0;
+          font-size: 16px;
+          font-weight: 600;
+      }
+  }
+
+  & section.lab-blog {
+      padding: 40px 0;
+  }
+
+  & .woocommerce ul.products {
+      border-top: none;
+
+      & li.product .button {
+          margin-top: 0;
+      }
+  }
+
+  & .new-arrivals .woocommerce ul.products li.product .button {
+    display: none;
+    background-color: transparent;
+    color: #d83a65;
+    padding: 0;
+    margin: 0;
+    transition: 0.5s;
+
+    &:hover {
+      color: var(--primary-color);
     }
-
-    & section.lab-blog {
-        padding: 40px 0;
-    }
-
-    & .woocommerce ul.products {
-        border-top: none;
-
-        & li.product .button {
-            margin-top: 0;
-        }
-    }
-
-    & .new-arrivals .woocommerce ul.products li.product .button {
-        display: none;
-        background-color: transparent;
-        color: #d83a65;
-        padding: 0;
-        margin: 0;
-        transition: 0.5s;
-
-        &:hover {
-            color: var(--primary-color);
-        }
-    }
+  }
 }
 
 .buy-message {
@@ -58,13 +58,105 @@ body.home {
   }
 }
 
-li.product {
-  padding: 5px;
-  transition: box-shadow 0.3s ease-in-out;
-}
+/* Product Slider Setup */
+.products-slider {
 
-li:hover.product {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  .tns-nav {
+    text-align: center;
+    margin: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 15vh;
+
+    & [aria-controls] {
+      width: 1em;
+      height: 1em;
+      padding: 0;
+      margin: 0 5px;
+      border-radius: var(--border-radius-round);
+      outline: none;
+      background: #999;
+      border: 0;
+      }
+
+      & .tns-nav-active {
+      width: 1.75rem;
+      border-radius: var(--border-radius-xl);
+      background: #d86f6f;
+    }
+  }
+
+  .tiny-slider.woocommerce ul.products {
+    li.product {
+      float: none;
+      margin: 0;
+      min-height: 400px;
+      padding: 5px 10px;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    li:hover.product {
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  div#product-slider-mw {
+    padding: 10px 5px;
+  }
+
+  .tns-outer {
+    position: relative;
+  }
+
+  [data-controls] {
+    border: 0;
+    padding: 0;
+    font-size: 30px;
+    position: absolute;
+    outline: none;
+    top: 45%;
+    margin-top: -18px;
+    z-index: 1;
+    background: transparent;
+  }
+  [data-controls="prev"] {
+    left: -30px;
+  }
+  [data-controls="next"] {
+    right: -30px;
+  }
+
+  .prev-button {
+    background-repeat: no-repeat;
+    height: 22px;
+    width: 22px;
+    display: inline-block;
+    vertical-align: bottom;
+    background-color: var(--secondary-color);
+    -webkit-mask-image: url("../img/left-chevron.svg");
+    mask-image: url("../img/left-chevron.svg");
+  }
+
+  .next-button {
+    background-repeat: no-repeat;
+    height: 22px;
+    width: 22px;
+    display: inline-block;
+    vertical-align: bottom;
+    background-color: var(--secondary-color);
+    -webkit-mask-image: url("../img/right-chevron.svg");
+    mask-image: url("../img/right-chevron.svg");
+  }
+
+  button:hover {
+      & .prev-button {
+          transform: translateX(-2px);
+      }
+
+      & .next-button {
+          transform: translateX(2px);
+      }
+  }
 }
 
 /* Deal of the week */
