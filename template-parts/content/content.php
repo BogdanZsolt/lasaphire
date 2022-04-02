@@ -9,7 +9,7 @@
 
 ?>
 <div class="col-lg-4 col-md-4" <?php post_class(); ?>>
-	<h2>
+	<h2 class="title">
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 	</h2>
 	<div class="post-thumbnail">

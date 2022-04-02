@@ -1056,6 +1056,7 @@ function lasaphire_customize_css(){ ?>
 		.glassmorph::after,
 		#top-bar.scrollBgColor::after,
 		#top-bar::after,
+		#top-bar .brand.scroll a:after,
 		.mega-menu-parent.dropdown .dropdown-menu::after {
 			background-image: url('<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_forme_grunge_image' ), 'medium', false); ?>');
 		}

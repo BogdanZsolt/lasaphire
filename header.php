@@ -26,7 +26,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<!-- <div class="search-container"><php get_search_form(); ></div> -->
-					<div class="brand col-md-3 col-lg-2">
+					<div class="brand">
 						<a href="<?php echo home_url( '/' ) ?>">
 							<?php if( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 								the_custom_logo();
@@ -68,7 +68,7 @@
 									</li>
 									<?php endif; ?>
 									<li id="search" class="search">
-										<a id="search-button"></a>
+										<a class="nav-link" id="search-button"></a>
 									</li>
 									<?php if( class_exists( 'WooCommerce' ) ) : ?>
 									<li id="cart" class="cart">
@@ -76,6 +76,9 @@
 										<span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
 									</li>
 									<?php endif; ?>
+									<li id="change-lang-link" class="nav-link">
+										<a href="https://<?php esc_html_e( 'hu', 'lasaphire' ); ?>.lasaphire.hu"><?php esc_html_e( 'hu', 'lasaphire'); ?></a>
+									</li>
 								</ul>
 							</div>
 						</nav>

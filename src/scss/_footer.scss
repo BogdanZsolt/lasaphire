@@ -167,6 +167,16 @@ footer {
   font-weight: 500;
 }
 
+footer .brand {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer .brand a {
+  position: relative;
+  background: transparent;
+}
+
 .footer-brand-logo {
   font-family: "Marhaban";
   font-size: 3.5rem;

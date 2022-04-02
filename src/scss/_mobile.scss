@@ -174,10 +174,11 @@
     }
   }
 
-  #top-bar .brand {
-    position: absolute;
-    bottom: 1rem;
-  }
+  // #top-bar .brand {
+  //   position: absolute;
+  //   bottom: 1rem;
+  //   width: 100%;
+  // }
 
   #top-bar .mobile-cart {
     display: flex;
@@ -316,14 +317,14 @@
     text-align: center;
   }
 
-  #top-bar a .lasaphire-logo,
-  #top-bar a .lasaphire-logo.scroll {
-    margin: 0;
-    width: 2.75rem;
-    height: 3.75rem;
-    transform: none;
-    stroke: var(--secondary-darker-color);
-  }
+  // #top-bar a .lasaphire-logo,
+  // #top-bar a .lasaphire-logo.scroll {
+  //   margin: 0;
+  //   width: 2.75rem;
+  //   height: 3.75rem;
+  //   transform: none;
+  //   stroke: var(--secondary-darker-color);
+  // }
 
   .main-menu {
 

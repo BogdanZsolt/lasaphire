@@ -4,7 +4,8 @@ import { throttle } from "lodash";
 class NavbarOnScroll {
  constructor(){
   this.navBar = getElement("#top-bar");
-  this.logo = getElement('.lasaphire-logo')
+  // this.logo = getElement('.lasaphire-logo')
+  this.logo = getElement('#top-bar .brand')
   this.toTopBtn = getElement(".totop");
   this.events()
  }

@@ -1,4 +1,5 @@
 import { getElement } from "./tool";
+import ChangeLang from './ChangeLang';
 
 class MobileMenu {
  constructor(){
@@ -8,6 +9,7 @@ class MobileMenu {
      this.addMenu = getElement("#la-saphire-additional-menu");
      this.searchIcon = getElement('#search');
      this.cart = getElement("#cart");
+     this.ChangeLang = getElement('#change-lang-link');
      this.header = getElement("#top-bar .row");
      this.mediaQuery = window.matchMedia("(max-width: 767px)");
      this.init()
@@ -37,15 +39,17 @@ class MobileMenu {
  }
 
  moveNode(){
-  this.mainMenu.appendChild(this.myAccount);
-  this.header.appendChild(this.cart)
-  this.header.appendChild(this.searchIcon)
+   this.mainMenu.appendChild(this.myAccount);
+   this.header.appendChild(this.cart)
+   this.header.appendChild(this.searchIcon)
+   this.mainMenu.appendChild(this.ChangeLang);
  }
 
  moveBackNode(){
   this.addMenu.insertBefore(this.myAccount, this.addMenu.childNodes[0]);
   this.addMenu.appendChild(this.searchIcon)
   this.addMenu.appendChild(this.cart)
+  this.addMenu.appendChild(this.ChangeLang)
  };
 
 }
