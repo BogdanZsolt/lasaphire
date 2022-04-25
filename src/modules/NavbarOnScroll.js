@@ -8,6 +8,7 @@ class NavbarOnScroll {
   this.logo = getElement('#top-bar .brand')
   this.toTopBtn = getElement(".totop");
   this.events()
+  this.changeElements()
  }
 
  events(){

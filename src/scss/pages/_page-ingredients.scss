@@ -3,29 +3,84 @@
   position: relative;
   padding-bottom: 3rem;
   background-color: var(--base-color);
+}
 
-  & .slide {
-    position: absolute;
-    transition: opacity 0.5s ease-in-out;
+#ls-ingredient.lasaphire{
+  & .ingredient-filter {
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(var(--base-color-rgb), 0.35);
+    border: 1px solid rgba(var(--base-color-rgb), 0.18);
+    border-radius: 0.625rem;
+    box-shadow: 0 1rem 2rem -1rem var(--secondary-darker-color);
+    overflow: hidden;
 
-    & img {
-      position: fixed;
+    @include glassSupports {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
     }
 
-    &.hide {
-      opacity: 0;
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: .2;
+      z-index: -1;
+    }
+
+    & li a {
+      font-family: var(--tertiary-fonts);
+      font-size: 1rem;
+      color: var(--secondary-darker-color);
+
+      &::after {
+        background: var(--secondary-darker-color);
+      }
+      &.disabled{
+        color: var(--secondary-lighter-color) !important;
+        font-weight: 600;
+      }
     }
   }
 
-  & .content {
+  & .ingredient-wrapper {
     position: relative;
-    // position: static;
-    top: 8rem;
-    // left: 0;
-    // bottom: 0;
-    // right: 0;
-    display: grid;
-    place-items: start center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(var(--base-color-rgb), 0.35);
+    border: 1px solid rgba(var(--base-color-rgb), 0.18);
+    border-radius: 0.625rem;
+    box-shadow: 0 1rem 2rem -1rem var(--secondary-darker-color);
+    overflow: hidden;
+
+    @include glassSupports {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: .2;
+      z-index: -1;
+    }
+
+    .ingredient-wrapper--products {
+      padding-left: 1rem;
+    }
   }
 
   & h4,
@@ -35,11 +90,12 @@
   }
 
   & h4+p {
-    font-family: var(--tertiary-fonts);
     color: var(--secondary-lighter-color);
+    font-weight: 600;
   }
 
   & p {
+    display: inline-block;
     font-family: var(--primary-fonts);
     color: var(--secondary-color);
   }
@@ -62,11 +118,6 @@
       text-decoration: underline;
     }
   }
-}
-
-.clearfix.glassmorph::after,
-.item-wrapper.glassmorph::after {
-  z-index: -1;
 }
 
 nav.ingredient-pagination {

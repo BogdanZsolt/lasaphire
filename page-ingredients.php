@@ -25,9 +25,11 @@ get_header();
 				<h1><?php the_title(); ?></h1>
 			</div>
 		</div>
+		<div class="container">
 		<?php
-			echo do_shortcode("[lasaphire_ingredients_list]");
+			echo do_shortcode("[ls_ingredients_list]");
 			endwhile;
 		?>
+		</div>
 	</section>
 <?php get_footer(); ?>

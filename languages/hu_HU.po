@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: La Saphire v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2022-03-30 08:35+0200\n"
+"POT-Creation-Date: 2022-04-21 18:38+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Your Team <translations@example.com>\n"
@@ -55,49 +55,49 @@ msgstr[1] "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgid "Comments are closed."
 msgstr "Hozzászólások lezárva."
 
-#: doc/functions.php:68 functions.php:73
+#: doc/functions.php:68 functions.php:74
 msgid "La Saphire Main Menu"
 msgstr "La Saphire főmenü"
 
-#: doc/functions.php:69 functions.php:74
+#: doc/functions.php:69 functions.php:75
 msgid "La Saphire Footer Menu"
 msgstr "La Saphire lábléc menü"
 
-#: doc/functions.php:70 functions.php:75
+#: doc/functions.php:70 functions.php:76
 msgid "La Saphire Social Menu"
 msgstr "La Saphire Szocial Media Menü"
 
-#: doc/functions.php:71 functions.php:76
+#: doc/functions.php:71 functions.php:77
 msgid "La Saphire Shop Category Menu"
 msgstr "La Saphire Shop Kategória menü"
 
-#: doc/functions.php:179 functions.php:183
+#: doc/functions.php:179 functions.php:184
 msgid "La Saphire Main Sidebar"
 msgstr "La Saphire fő oldalsáv"
 
 #: doc/functions.php:181 doc/functions.php:203 doc/functions.php:214
-#: doc/functions.php:225 functions.php:185 functions.php:207 functions.php:218
-#: functions.php:229
+#: doc/functions.php:225 functions.php:186 functions.php:208 functions.php:219
+#: functions.php:230
 msgid "Drag and drop your widgets here"
 msgstr "Húzza ide a widgeteket"
 
-#: doc/functions.php:190 functions.php:194
+#: doc/functions.php:190 functions.php:195
 msgid "La Saphire Sidebar Shop"
 msgstr "La Saphire bolt oldalsáv"
 
-#: doc/functions.php:192 functions.php:196
+#: doc/functions.php:192 functions.php:197
 msgid "Drag and drop your WooCommerce widgets here"
 msgstr "Húzza ide a WooCommerce modulokat"
 
-#: doc/functions.php:201 functions.php:205
+#: doc/functions.php:201 functions.php:206
 msgid "La Saphire Footer Sidebar 1"
 msgstr "La Saphire lábléc oldalsáv 1"
 
-#: doc/functions.php:212 functions.php:216
+#: doc/functions.php:212 functions.php:217
 msgid "La Saphire Footer Sidebar 2"
 msgstr "La Saphire lábléc oldalsáv 2"
 
-#: doc/functions.php:223 functions.php:227
+#: doc/functions.php:223 functions.php:228
 msgid "La Saphire Footer Sidebar 3"
 msgstr "La Saphire lábléc oldalsáv 3"
 
@@ -139,31 +139,31 @@ msgstr "Szerzői jog X - Minden jog fenntartva"
 msgid "Website by PegazusDesigns"
 msgstr "A PegazusDesigns webhelye"
 
-#: functions.php:47
+#: functions.php:48
 msgid "start typing what you are looking for"
 msgstr "kezdje el beírni, amit keres"
 
-#: functions.php:48
+#: functions.php:49
 msgid "products"
 msgstr "termékek"
 
-#: functions.php:49
+#: functions.php:50
 msgid "ingredients"
 msgstr "összetevők"
 
-#: functions.php:50
+#: functions.php:51
 msgid "posts"
 msgstr "bejegyzések"
 
-#: functions.php:51
+#: functions.php:52
 msgid "pages"
 msgstr "oldalak"
 
-#: functions.php:52
+#: functions.php:53
 msgid "faqs"
 msgstr "gyik-ok"
 
-#: functions.php:53
+#: functions.php:54
 msgid "unfortunately there are no results for your search."
 msgstr "sajnos nincs találat a keresésre."
 
@@ -287,383 +287,551 @@ msgstr "Kezdőoldal Termékek és Blog beállítások"
 msgid "Home Page Section"
 msgstr "Kezdőoldal Szakasz"
 
-#: inc/customizer.php:57 inc/customizer.php:58
+#: inc/customizer.php:50
+msgid "Products"
+msgstr "Termékek"
+
+#: inc/customizer.php:57
+msgid "Products Section Title"
+msgstr "Termékek gomb szövege"
+
+#: inc/customizer.php:58
+msgid "La Saphire Products section title"
+msgstr "La Saphire Hírek Szekció (blog) címe"
+
+#: inc/customizer.php:68 inc/customizer.php:213
+msgid "Browse Products"
+msgstr "Böngésszen az összes termék között"
+
+#: inc/customizer.php:75 inc/customizer.php:76
 msgid "Products Button Text"
 msgstr "Termékek gomb szövege"
 
-#: inc/customizer.php:75
+#: inc/customizer.php:94 inc/customizer.php:238 inc/customizer.php:674
+msgid "Select page"
+msgstr "Válasszon képet"
+
+#: inc/customizer.php:95 inc/customizer.php:239 inc/customizer.php:675
+msgid "Which side the button takes you to."
+msgstr "Melyik oldalra vigyen a gomb."
+
+#: inc/customizer.php:112
 msgid "Show New Arrivals?"
 msgstr "Megjeleníti az újdonságokat?"
 
-#: inc/customizer.php:92 inc/customizer.php:93
+#: inc/customizer.php:129 inc/customizer.php:130
 msgid "New Arrivals Max Number"
 msgstr "Újdonságok maximális mennyisége"
 
-#: inc/customizer.php:110 inc/customizer.php:111
+#: inc/customizer.php:147 inc/customizer.php:148
 msgid "New Arrivals Max Columns"
 msgstr "Újdonságok max. oszlopa"
 
-#: inc/customizer.php:129
+#: inc/customizer.php:166
 msgid "Show Deal of the Week?"
 msgstr "Megjeleníti a hét ajánlatát?"
 
-#: inc/customizer.php:146
+#: inc/customizer.php:183
 msgid "Deal of the Week Product ID"
 msgstr "A hét ajánlatának termék azonosítója"
 
-#: inc/customizer.php:147
+#: inc/customizer.php:184
 msgid "Product ID to Display"
 msgstr "Termék azonosító a megjelenítésre"
 
-#: inc/customizer.php:166 inc/customizer.php:167
+#: inc/customizer.php:195
+msgid "Featured Stuff"
+msgstr "Kiemelt Cuccocska"
+
+#: inc/customizer.php:202
+msgid "Deal of the Week Section Title"
+msgstr "A hét ajánlatának szekció cím"
+
+#: inc/customizer.php:203
+msgid "La Saphire Deal of the Week section title"
+msgstr "La Saphire Hét ajánlata szekció cím"
+
+#: inc/customizer.php:220 inc/customizer.php:221
+msgid "Deal of the Week Button Text"
+msgstr "A hét ajánlata gomb felírta"
+
+#: inc/customizer.php:257 inc/customizer.php:258
 msgid "Deal of the Week Background Image Set."
 msgstr "A hét ajánlat Háttérkép beállítás."
 
-#: inc/customizer.php:174 inc/customizer.php:179 inc/customizer.php:206
-#: inc/customizer.php:211 inc/customizer.php:336 inc/customizer.php:341
-#: inc/customizer.php:368 inc/customizer.php:373 inc/customizer.php:400
-#: inc/customizer.php:405 inc/customizer.php:432 inc/customizer.php:437
-#: inc/customizer.php:464 inc/customizer.php:469 inc/customizer.php:496
-#: inc/customizer.php:501 inc/customizer.php:528 inc/customizer.php:533
-#: inc/customizer.php:560 inc/customizer.php:565 inc/customizer.php:890
-#: inc/customizer.php:895 inc/customizer.php:932 inc/customizer.php:937
+#: inc/customizer.php:265 inc/customizer.php:270 inc/customizer.php:314
+#: inc/customizer.php:319 inc/customizer.php:524 inc/customizer.php:529
+#: inc/customizer.php:710 inc/customizer.php:715 inc/customizer.php:742
+#: inc/customizer.php:747 inc/customizer.php:774 inc/customizer.php:779
+#: inc/customizer.php:806 inc/customizer.php:811 inc/customizer.php:838
+#: inc/customizer.php:843 inc/customizer.php:870 inc/customizer.php:875
+#: inc/customizer.php:902 inc/customizer.php:907 inc/customizer.php:934
+#: inc/customizer.php:939 inc/customizer.php:1264 inc/customizer.php:1269
+#: inc/customizer.php:1306 inc/customizer.php:1311
 msgid "Select Image"
 msgstr "Válasszon képet"
 
-#: inc/customizer.php:175 inc/customizer.php:207 inc/customizer.php:337
-#: inc/customizer.php:369 inc/customizer.php:401 inc/customizer.php:433
-#: inc/customizer.php:465 inc/customizer.php:497 inc/customizer.php:529
-#: inc/customizer.php:561 inc/customizer.php:891 inc/customizer.php:933
+#: inc/customizer.php:266 inc/customizer.php:315 inc/customizer.php:525
+#: inc/customizer.php:711 inc/customizer.php:743 inc/customizer.php:775
+#: inc/customizer.php:807 inc/customizer.php:839 inc/customizer.php:871
+#: inc/customizer.php:903 inc/customizer.php:935 inc/customizer.php:1265
+#: inc/customizer.php:1307
 msgid "Change Image"
 msgstr "Kép cseréje"
 
-#: inc/customizer.php:176 inc/customizer.php:208 inc/customizer.php:338
-#: inc/customizer.php:370 inc/customizer.php:402 inc/customizer.php:434
-#: inc/customizer.php:466 inc/customizer.php:498 inc/customizer.php:530
-#: inc/customizer.php:562 inc/customizer.php:892 inc/customizer.php:934
-#: inc/customizer.php:974
+#: inc/customizer.php:267 inc/customizer.php:316 inc/customizer.php:526
+#: inc/customizer.php:712 inc/customizer.php:744 inc/customizer.php:776
+#: inc/customizer.php:808 inc/customizer.php:840 inc/customizer.php:872
+#: inc/customizer.php:904 inc/customizer.php:936 inc/customizer.php:1266
+#: inc/customizer.php:1308 inc/customizer.php:1348
 msgid "Remove"
 msgstr "Eltávolít"
 
-#: inc/customizer.php:177 inc/customizer.php:209 inc/customizer.php:339
-#: inc/customizer.php:371 inc/customizer.php:403 inc/customizer.php:435
-#: inc/customizer.php:467 inc/customizer.php:499 inc/customizer.php:531
-#: inc/customizer.php:563 inc/customizer.php:893 inc/customizer.php:935
-#: inc/customizer.php:975
+#: inc/customizer.php:268 inc/customizer.php:317 inc/customizer.php:527
+#: inc/customizer.php:713 inc/customizer.php:745 inc/customizer.php:777
+#: inc/customizer.php:809 inc/customizer.php:841 inc/customizer.php:873
+#: inc/customizer.php:905 inc/customizer.php:937 inc/customizer.php:1267
+#: inc/customizer.php:1309 inc/customizer.php:1349
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: inc/customizer.php:178 inc/customizer.php:210 inc/customizer.php:340
-#: inc/customizer.php:372 inc/customizer.php:404 inc/customizer.php:436
-#: inc/customizer.php:468 inc/customizer.php:500 inc/customizer.php:532
-#: inc/customizer.php:564 inc/customizer.php:894 inc/customizer.php:936
+#: inc/customizer.php:269 inc/customizer.php:318 inc/customizer.php:528
+#: inc/customizer.php:714 inc/customizer.php:746 inc/customizer.php:778
+#: inc/customizer.php:810 inc/customizer.php:842 inc/customizer.php:874
+#: inc/customizer.php:906 inc/customizer.php:938 inc/customizer.php:1268
+#: inc/customizer.php:1310
 msgid "No image selected"
 msgstr "Nincs kiválasztott kép"
 
-#: inc/customizer.php:180 inc/customizer.php:212 inc/customizer.php:342
-#: inc/customizer.php:374 inc/customizer.php:406 inc/customizer.php:438
-#: inc/customizer.php:470 inc/customizer.php:502 inc/customizer.php:534
-#: inc/customizer.php:566 inc/customizer.php:896 inc/customizer.php:938
+#: inc/customizer.php:271 inc/customizer.php:320 inc/customizer.php:530
+#: inc/customizer.php:716 inc/customizer.php:748 inc/customizer.php:780
+#: inc/customizer.php:812 inc/customizer.php:844 inc/customizer.php:876
+#: inc/customizer.php:908 inc/customizer.php:940 inc/customizer.php:1270
+#: inc/customizer.php:1312
 msgid "Choose Image"
 msgstr "Válasszon képet"
 
-#: inc/customizer.php:198 inc/customizer.php:199
+#: inc/customizer.php:288
+msgid "Show For me promotion?"
+msgstr "Nekem promóció megjelenítés?"
+
+#: inc/customizer.php:306 inc/customizer.php:307
 msgid "For me promotion Background Image Set."
 msgstr "\"Nekem\" promóció Háttérkép beállítása."
 
-#: inc/customizer.php:229 inc/customizer.php:230
+#: inc/customizer.php:338
+msgid "Show About Us?"
+msgstr "About Us szekció megjelenítés?"
+
+#: inc/customizer.php:348
+msgid "Our mission and story"
+msgstr "Küldetésünk és történetünk"
+
+#: inc/customizer.php:355
+msgid "About Us Title"
+msgstr "Rólunk cím"
+
+#: inc/customizer.php:356
+msgid "La Saphire About Us title"
+msgstr "La Saphire Rólunk Szekció címe"
+
+#: inc/customizer.php:366
+msgid "Who we are?"
+msgstr "Kik is vagyunk?"
+
+#: inc/customizer.php:373
+msgid "About Us Subtitle"
+msgstr "Rólunk alcíme"
+
+#: inc/customizer.php:374
+msgid "La Saphire About Us subtitle"
+msgstr "La Saphire Rólunk alcíme"
+
+#: inc/customizer.php:384
+msgid "I am Petra Csetneki,"
+msgstr "Csetneki Petra vagyok,"
+
+#: inc/customizer.php:391
+msgid "About Us Description"
+msgstr "Rólunk leírás rész"
+
+#: inc/customizer.php:392
+msgid "La Saphire About Us description"
+msgstr "La Saphire Rólunk leíró rész"
+
+#: inc/customizer.php:402
+msgid "Our Story"
+msgstr "Történetünk"
+
+#: inc/customizer.php:409
+msgid "About Us Text of Link 1"
+msgstr "Rólunk Link 1 szövege"
+
+#: inc/customizer.php:410
+msgid "La Saphire About Us Text of Link 1"
+msgstr "La Saphire Rólunk Link 1 szövege"
+
+#: inc/customizer.php:427
+msgid "About Us Link 1"
+msgstr "Rólunk Link 1"
+
+#: inc/customizer.php:428
+msgid "La Saphire About Us Link 1"
+msgstr "La Saphire Rólunk Link 1"
+
+#: inc/customizer.php:438
+msgid "About Me"
+msgstr "Rólunk"
+
+#: inc/customizer.php:445
+msgid "About Us Text of Link 2"
+msgstr "Rólunk Link 2 szövege"
+
+#: inc/customizer.php:446
+msgid "La Saphire About Us Text of Link 2"
+msgstr "La Saphire Rólunk Link 2"
+
+#: inc/customizer.php:463
+msgid "About Us Link 2"
+msgstr "Rólunk Link 2"
+
+#: inc/customizer.php:464
+msgid "La Saphire About Us Link 2"
+msgstr "La Saphire Rólunk Link 2"
+
+#: inc/customizer.php:474
+msgid "Ars Poetics"
+msgstr "Ars Poetika"
+
+#: inc/customizer.php:481
+msgid "About Us Text of Link 3"
+msgstr "Rólunk Link 3 szövege"
+
+#: inc/customizer.php:482
+msgid "La Saphire About Us Text of Link 3"
+msgstr "La Saphire Rólunk Link 3 szövege"
+
+#: inc/customizer.php:499
+msgid "About Us Link 3"
+msgstr "Rólunk Link 3"
+
+#: inc/customizer.php:500
+msgid "La Saphire About Us Link 3"
+msgstr "La Saphire Rólunk Link 3"
+
+#: inc/customizer.php:518 inc/customizer.php:519
+msgid "About Us Section Image Set."
+msgstr "Rólunk Szekció kép beállítása."
+
+#: inc/customizer.php:548
+msgid "Show Ars Poetics Cards?"
+msgstr "Ars Poétika kártyák megjelenítése?"
+
+#: inc/customizer.php:565 inc/customizer.php:566
 msgid "Ars Poetics Card-1 Title"
 msgstr "Ars Poetika kártya-1 Címe"
 
-#: inc/customizer.php:247 inc/customizer.php:248
+#: inc/customizer.php:583 inc/customizer.php:584
 msgid "Ars Poetics Card-2 Title"
 msgstr "Ars Poetika kártya-2 Címe"
 
-#: inc/customizer.php:265 inc/customizer.php:266
+#: inc/customizer.php:601 inc/customizer.php:602
 msgid "Ars Poetics Card-3 Title"
 msgstr "Ars Poetika kártya-3 Címe"
 
-#: inc/customizer.php:283 inc/customizer.php:284
+#: inc/customizer.php:619 inc/customizer.php:620
 msgid "Ars Poetics Card-4 Title"
 msgstr "Ars Poetika kártya-4 Címe"
 
-#: inc/customizer.php:294
+#: inc/customizer.php:630
 msgid "News from @lasaphire"
 msgstr "Hírek @lasaphire-tól"
 
-#: inc/customizer.php:301
+#: inc/customizer.php:637
 msgid "News Title"
 msgstr "Hírek Címe"
 
-#: inc/customizer.php:302
+#: inc/customizer.php:638
 msgid "La Saphire News Section title"
 msgstr "La Saphire Hírek Szekció (blog) címe"
 
-#: inc/customizer.php:311
+#: inc/customizer.php:649
+msgid "Check the posts"
+msgstr "Nézd meg a többi bejegyzést"
+
+#: inc/customizer.php:656
+msgid "News Button Text"
+msgstr "Hírek (Blog) Gomb szöveg"
+
+#: inc/customizer.php:657
+msgid "La Saphire News (Blog) Button Text"
+msgstr "La Saphire Hírek Szekció (blog) címe"
+
+#: inc/customizer.php:685
 msgid "Home Page Gallery Images Settings"
 msgstr "Kezdő oldal Galéria képek beállításai"
 
-#: inc/customizer.php:312
+#: inc/customizer.php:686
 msgid "Home Page Gallery Section"
 msgstr "Kezdő oldal Galéria rész"
 
-#: inc/customizer.php:328
+#: inc/customizer.php:702
 msgid "Home Gallery Image 1 Setting"
 msgstr "Kezdő oldal Galéria 1. kép beállítása"
 
-#: inc/customizer.php:329
+#: inc/customizer.php:703
 msgid "Home Gallery Image 1 Setting (size max 1500 x auto px)"
 msgstr "Kezdő oldal Galéria 1. kép beállítása (méret max 1500 x auto px)"
 
-#: inc/customizer.php:360
+#: inc/customizer.php:734
 msgid "Home Gallery Image 2 Setting"
 msgstr "Kezdő oldal Galéria 2. kép beállítása"
 
-#: inc/customizer.php:361
+#: inc/customizer.php:735
 msgid "Home Gallery Image 2 Setting (size max 1500 x auto px)"
 msgstr "Kezdő oldal Galéria 2. kép beállítása (méret max 1500 x auto px)"
 
-#: inc/customizer.php:392
+#: inc/customizer.php:766
 msgid "Home Gallery Image 3 Setting"
 msgstr "Kezdő oldal Galéria 3. kép beállítása"
 
-#: inc/customizer.php:393
+#: inc/customizer.php:767
 msgid "Home Gallery Image 3 Setting (size max 1500 x auto px)"
 msgstr "Kezdő oldal Galéria 3. kép beállítása (méret max 1500 x auto px)"
 
-#: inc/customizer.php:424
+#: inc/customizer.php:798
 msgid "Home Gallery Image 4 Setting"
 msgstr "Kezdő oldal Galéria 4. kép beállítása"
 
-#: inc/customizer.php:425
+#: inc/customizer.php:799
 msgid "Home Gallery Image 4 Setting (size max 1500 x auto px)"
 msgstr "Kezdő oldal Galéria 4. kép beállítása (méret max 1500 x auto px)"
 
-#: inc/customizer.php:456
+#: inc/customizer.php:830
 msgid "Home Gallery Image 5 Setting"
 msgstr "Kezdő oldal Galéria 5. kép beállítása"
 
-#: inc/customizer.php:457
+#: inc/customizer.php:831
 msgid "Home Gallery Image 5 Setting (size max 1500 x auto px)"
 msgstr "Kezdő oldal Galéria 5. kép beállítása (méret max 1500 x auto px)"
 
-#: inc/customizer.php:488
+#: inc/customizer.php:862
 msgid "Home Gallery Image 6 Setting"
 msgstr "Kezdő oldal Galéria 6. kép beállítása"
 
-#: inc/customizer.php:489
+#: inc/customizer.php:863
 msgid "Home Gallery Image 6 Setting (size max 1500 x auto px)"
 msgstr "Kezdő oldal Galéria 6. kép beállítása (méret max 1500 x auto px)"
 
-#: inc/customizer.php:520
+#: inc/customizer.php:894
 msgid "Home Gallery Image 7 Setting"
 msgstr "Kezdő oldal Galéria 7. kép beállítása"
 
-#: inc/customizer.php:521
+#: inc/customizer.php:895
 msgid "Home Gallery Image 7 Setting (size max 1500 x auto px)"
 msgstr "Kezdő oldal Galéria 7. kép beállítása (méret max 1500 x auto px)"
 
-#: inc/customizer.php:552
+#: inc/customizer.php:926
 msgid "Home Gallery Image 8 Setting"
 msgstr "Kezdő oldal Galéria 8. kép beállítása"
 
-#: inc/customizer.php:553
+#: inc/customizer.php:927
 msgid "Home Gallery Image 8 Setting (size max 1500 x auto px)"
 msgstr "Kezdő oldal Galéria 8. kép beállítása (méret max 1500 x auto px)"
 
-#: inc/customizer.php:577
+#: inc/customizer.php:951
 msgid "Standard Color"
 msgstr "Standard Szín"
 
-#: inc/customizer.php:578
+#: inc/customizer.php:952
 msgid "Standard Color Section"
 msgstr "Standard Színek Szakasz"
 
-#: inc/customizer.php:593
+#: inc/customizer.php:967
 msgid "Background Color"
 msgstr "Háttérszín"
 
-#: inc/customizer.php:594
+#: inc/customizer.php:968
 msgid "Setup Background Color"
 msgstr "Háttérszín beállítás"
 
-#: inc/customizer.php:611
+#: inc/customizer.php:985
 msgid "Base Color"
 msgstr "Alapszín"
 
-#: inc/customizer.php:612
+#: inc/customizer.php:986
 msgid "Setup Base Color"
 msgstr "Alapszín beállítása"
 
-#: inc/customizer.php:629
+#: inc/customizer.php:1003
 msgid "Call To Action Darker Color"
 msgstr "Cselekvésre ösztönző sötét szín"
 
-#: inc/customizer.php:630
+#: inc/customizer.php:1004
 msgid "Setup Call To Action Darker Color"
 msgstr "Cselekvésre ösztönző sötét szín beállítása"
 
-#: inc/customizer.php:646
+#: inc/customizer.php:1020
 msgid "Call To Action Color"
 msgstr "Cselekvésre ösztönző szín"
 
-#: inc/customizer.php:647
+#: inc/customizer.php:1021
 msgid "Setup Call To Action Color"
 msgstr "Cselekvésre ösztönző szín beállítása"
 
-#: inc/customizer.php:664
+#: inc/customizer.php:1038
 msgid "Primary Darker Color"
 msgstr "Elsődleges sötétebb szín"
 
-#: inc/customizer.php:665
+#: inc/customizer.php:1039
 msgid "Setup Primary Darker Color"
 msgstr "Elsődleges sötétebb szín beállítása"
 
-#: inc/customizer.php:681
+#: inc/customizer.php:1055
 msgid "Primary Color"
 msgstr "Elsődleges szín"
 
-#: inc/customizer.php:682
+#: inc/customizer.php:1056
 msgid "Setup Primary Color"
 msgstr "Elsődleges szín beállítása"
 
-#: inc/customizer.php:698
+#: inc/customizer.php:1072
 msgid "Primary Color Lighter"
 msgstr "Elsődleges világosabb szín"
 
-#: inc/customizer.php:699
+#: inc/customizer.php:1073
 msgid "Setup Primary Color Lighter"
 msgstr "Elsődleges világosabb szín beállítása"
 
-#: inc/customizer.php:715
+#: inc/customizer.php:1089
 msgid "Primary Color Lightest"
 msgstr "Elsődleges legvilágosabb szin"
 
-#: inc/customizer.php:716
+#: inc/customizer.php:1090
 msgid "Setup Primary Color Lightest"
 msgstr "Elsődleges legvilágosabb szin beállítása"
 
-#: inc/customizer.php:734
+#: inc/customizer.php:1108
 msgid "Secondary Darker Color"
 msgstr "Másodlagos sötétebb szín"
 
-#: inc/customizer.php:735
+#: inc/customizer.php:1109
 msgid "Setup Secondary Darker Color"
 msgstr "Másodlagos sötétebb szín beállítása"
 
-#: inc/customizer.php:750
+#: inc/customizer.php:1124
 msgid "Secondary Color"
 msgstr "Másodlagos szín"
 
-#: inc/customizer.php:751
+#: inc/customizer.php:1125
 msgid "Setup Secondary Color"
 msgstr "Másodlagos szín beállítása"
 
-#: inc/customizer.php:767
+#: inc/customizer.php:1141
 msgid "Secondary Color Lighter"
 msgstr "Másodlagos világosabb szín"
 
-#: inc/customizer.php:768
+#: inc/customizer.php:1142
 msgid "Setup Secondary Color Lighter"
 msgstr "Másodlagos világosabb szín beállítása"
 
-#: inc/customizer.php:784
+#: inc/customizer.php:1158
 msgid "Secondary Color Lightest"
 msgstr "Másodlagos legvilágosabb szín"
 
-#: inc/customizer.php:785
+#: inc/customizer.php:1159
 msgid "Setup Secondary Color Lightest"
 msgstr "Másodlagos legvilágosabb szín beállítása"
 
-#: inc/customizer.php:802
+#: inc/customizer.php:1176
 msgid "Tertiary Darker Color"
 msgstr "Harmadlagos sötétebb szín"
 
-#: inc/customizer.php:803
+#: inc/customizer.php:1177
 msgid "Setup Tertiary Darker Color"
 msgstr "Harmadlagos sötétebb szín beállítása"
 
-#: inc/customizer.php:819
+#: inc/customizer.php:1193
 msgid "Tertiary Color"
 msgstr "Harmadlagos szín"
 
-#: inc/customizer.php:820
+#: inc/customizer.php:1194
 msgid "Setup Tertiary Color"
 msgstr "Harmadlagos szín beállítása"
 
-#: inc/customizer.php:836
+#: inc/customizer.php:1210
 msgid "Tertiary Color Lighter"
 msgstr "Harmadlagos világosabb szín"
 
-#: inc/customizer.php:837
+#: inc/customizer.php:1211
 msgid "Setup Tertiary Color Lighter"
 msgstr "Harmadlagos világosabb szín beállítása"
 
-#: inc/customizer.php:853
+#: inc/customizer.php:1227
 msgid "Tertiary Color Lightest"
 msgstr "Harmadlagos legvilágosabb szín"
 
-#: inc/customizer.php:854
+#: inc/customizer.php:1228
 msgid "Setup Tertiary Color Lightest"
 msgstr "Harmadlagos legvilágosabb szín beállítása"
 
-#: inc/customizer.php:865
+#: inc/customizer.php:1239
 msgid "Site Footer"
 msgstr "Oldal lábléc"
 
-#: inc/customizer.php:866
+#: inc/customizer.php:1240
 msgid "Site Footer elements setup."
 msgstr "Webhely lábléc elemeinek beállítása."
 
-#: inc/customizer.php:882 inc/customizer.php:883
+#: inc/customizer.php:1256 inc/customizer.php:1257
 msgid "Site Footer Background Image Set."
 msgstr "Webhely lábléc háttérkép beállítása."
 
-#: inc/customizer.php:907
+#: inc/customizer.php:1281
 msgid "For Me page"
 msgstr "Nekem oldal"
 
-#: inc/customizer.php:908
+#: inc/customizer.php:1282
 msgid "For Me elements setup."
 msgstr "\"Nekem\" oldal elemek beállítása."
 
-#: inc/customizer.php:924
+#: inc/customizer.php:1298
 msgid "For Me Grunge Image Set."
 msgstr "\"Nekem\" oldal grunge kép beállítása."
 
-#: inc/customizer.php:925
+#: inc/customizer.php:1299
 msgid "For Me Page Grunge Image Set."
 msgstr "Kezdő oldal Galéria képek beállításai."
 
-#: inc/customizer.php:950
+#: inc/customizer.php:1324
 msgid "About menu"
 msgstr "Névjegy menü"
 
-#: inc/customizer.php:951
+#: inc/customizer.php:1325
 msgid "Settings for the submenus for the \"About\" menu"
 msgstr "A \"Névjegy\" menü almenüinek beállításai"
 
-#: inc/customizer.php:968
+#: inc/customizer.php:1342
 msgid "Video banner set."
 msgstr "Banner videó beállítás."
 
-#: inc/customizer.php:969
+#: inc/customizer.php:1343
 msgid "\"Ars Poetics\" page banner video setting"
 msgstr "\"Ars Poetika\" oldal banner video beállítása"
 
-#: inc/customizer.php:972 inc/customizer.php:977
+#: inc/customizer.php:1346 inc/customizer.php:1351
 msgid "Select video"
 msgstr "Válasszon videót"
 
-#: inc/customizer.php:973
+#: inc/customizer.php:1347
 msgid "Change video"
 msgstr "Videó cseréje"
 
-#: inc/customizer.php:976
+#: inc/customizer.php:1350
 msgid "No video selected"
 msgstr "Nincs kiválasztott videó"
 
-#: inc/customizer.php:978
+#: inc/customizer.php:1352
 msgid "Choose video"
 msgstr "Válasszon videót"
 
@@ -735,7 +903,7 @@ msgstr "SMTP Port"
 msgid "SMTP Secure"
 msgstr "SMTP biztonság (jelszó)"
 
-#: index.php:51 page-faqs.php:97 template-parts/home/home-news.php:44
+#: index.php:51 page-faqs.php:97 template-parts/home/home-news.php:45
 msgid "Nothing to display."
 msgstr "Nincs mit megjeleníteni."
 
@@ -878,51 +1046,49 @@ msgstr ""
 "Legyen Ön az első, aki értesül a La Sapphire új termékeiről, eseményeiről és "
 "híreiről"
 
-#: template-parts/home/home-forme.php:13
+#: template-parts/home/home-forme.php:17
 msgid "Find the right products to nourish your skin"
 msgstr "Találd meg a hozzád legjobban illő termékeket"
 
-#: template-parts/home/home-forme.php:14
+#: template-parts/home/home-forme.php:18
 msgid ""
 "Complete our skin or hair care quiz to find out which products are ideal for "
 "you."
 msgstr "Töltsd ki a rövid kvízt, tudj meg többet magadról."
 
-#: template-parts/home/home-forme.php:15
+#: template-parts/home/home-forme.php:19
 msgid "Get Started"
 msgstr "Kezdjük el"
 
 #: template-parts/home/home-message.php:5
 msgid ""
+"Dear Visitors! Please be patient while the shop is running! In the meantime, "
+"inquire about the products in person"
+msgstr ""
 "Kedves Látogatók! A shop működéséig egy kis türelmüket kérjük! Addig is a "
 "termékekről érdeklődni személyesen"
-msgstr ""
 
 #: template-parts/home/home-news.php:12
 msgid "News"
 msgstr "Hírek"
 
-#: template-parts/home/home-ourvalues.php:20
+#: template-parts/home/home-ourvalues.php:25
 msgid "All natural skin care"
 msgstr "Teljesen természetes bőrápoló"
 
-#: template-parts/home/home-ourvalues.php:33
+#: template-parts/home/home-ourvalues.php:38
 msgid "Manufacture of small batches"
 msgstr "Kis tételek gyártása"
 
-#: template-parts/home/home-ourvalues.php:46
+#: template-parts/home/home-ourvalues.php:51
 msgid "Beauty with intent"
 msgstr "Szépség szándékosan"
 
-#: template-parts/home/home-ourvalues.php:58
+#: template-parts/home/home-ourvalues.php:63
 msgid "Reliability"
 msgstr "Megbízhatóság"
 
-#: template-parts/home/home-products.php:14
-msgid "Browse All Products"
-msgstr "Böngésszen az összes termék között"
-
-#: template-parts/home/home-promotion.php:24
+#: template-parts/home/home-promotion.php:28
 msgid "I&prime;ll check"
 msgstr "Megnézem"
 
@@ -944,11 +1110,5 @@ msgstr "Megnézem"
 #~ msgid "Hero Slider Name"
 #~ msgstr "Hero lapozó név"
 
-#~ msgid "Button Text"
-#~ msgstr "Gomb szöveg"
-
 #~ msgid "Button Url"
 #~ msgstr "Gomb link"
-
-#~ msgid "Featured Image"
-#~ msgstr "Kiemelt Kép"

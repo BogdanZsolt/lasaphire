@@ -10,7 +10,7 @@ add_action( 'rest_api_init', 'lasaphireRegisterSearch' );
 
 function lasaphireSearchResults($data){
 	$mainQuery = new WP_Query( array(
-		'post_type'						=> array('post', 'page', 'ingredient', 'product', 'ls_faq'),
+		'post_type'						=> array('post', 'page', 'ls-ingredient', 'product', 'ls_faq'),
 		'posts_per_page' => -1,
 		's'														=> sanitize_text_field( $data['term'] ),
 	));
@@ -56,7 +56,7 @@ function lasaphireSearchResults($data){
 			));
 		}
 
-		if(get_post_type() === 'ingredient'){
+		if(get_post_type() === 'ls-ingredient'){
 			$description = null;
 			if(has_excerpt()){
 				$description = sanitize_text_field(get_the_excerpt());

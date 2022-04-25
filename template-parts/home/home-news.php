@@ -8,8 +8,9 @@
 
 <section id="news" class="blog my-10">
 	<div class="container">
-		<div class="section-title">
-			<h2><?php echo get_theme_mod( 'set_blog_title', esc_html__( 'News', 'lasaphire' ) ); ?></h2>
+		<div class="division__header row">
+			<h5 class="division__title col-12 col-md-6"><?php echo esc_html( get_theme_mod( 'set_blog_title', esc_html__( 'News', 'lasaphire' ) ) ); ?></h5>
+			<a href="<?php echo esc_url( get_permalink( get_theme_mod( 'set_blog_link', 0 ) ) ); ?>" class="division__link btn-txt col-12 col-md-6"><?php echo esc_html( get_theme_mod( 'set_blog_button_text', 0 ) ); ?></a>
 		</div>
 		<div class="row">
 			<?php

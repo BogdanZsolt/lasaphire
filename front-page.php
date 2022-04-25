@@ -16,7 +16,9 @@ get_header();
 					get_template_part('template-parts/home/home', 'promotion');
 				}
 					get_template_part('template-parts/home/home', 'forme');
+					get_template_part('template-parts/home/home', 'about');
 					get_template_part('template-parts/home/home', 'ourvalues');
+					get_template_part('template-parts/home/home', 'subscribe');
 					get_template_part('template-parts/home/home', 'news');
 					get_template_part('template-parts/home/home', 'gallery');
 					?>

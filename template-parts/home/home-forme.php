@@ -6,6 +6,10 @@
  */
 ?>
 
+<?php
+	$showvalues = get_theme_mod( 'set_forme_show', 0 );
+	if( $showvalues == 1 ) :
+?>
 <section id="for-me" class="mb-10 col">
 	<div class="container border-rounded">
 		<div class="row">
@@ -17,3 +21,4 @@
 		</div>
 	</div>
 </section>
+<?php endif; ?>

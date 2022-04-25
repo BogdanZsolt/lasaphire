@@ -44,33 +44,42 @@
 
 #top-bar.scrollBgColor::after,
 .mega-menu-parent.dropdown .dropdown-menu::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  opacity: 0.2;
-  z-index: -1;
+
+  @include atSmallMedium {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+  }
 }
 
 @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
   #top-bar.scrollBgColor::before, .mega-menu-parent.dropdown .dropdown-menu {
-    background: rgba(var(--base-color-rgb), 0.35);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(var(--base-color-rgb), 0.18);
-    box-shadow: 0 0.5rem 1rem -0.5rem var(--secondary-darker-color);
+
+    @include atSmallMedium {
+      background: rgba(var(--base-color-rgb), 0.35);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(var(--base-color-rgb), 0.18);
+      box-shadow: 0 0.5rem 1rem -0.5rem var(--secondary-darker-color);
+    }
   }
 }
 
 @supports not ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
   #top-bar.scrollBgColor::before, .mega-menu-parent.dropdown .dropdown-menu {
-    background: linear-gradient(to bottom, rgba(var(--base-color-rgb), 0.85), rgba(var(--base-color-rgb), 0.65)) ;
-    border: 1px solid rgba(var(--base-color-rgb), 0.18);
-    box-shadow: 0 0.5rem 1rem -0.5rem var(--secondary-darker-color);
+
+    @include atSmallMedium {
+      background: linear-gradient(to bottom, rgba(var(--base-color-rgb), 0.85), rgba(var(--base-color-rgb), 0.65)) ;
+      border: 1px solid rgba(var(--base-color-rgb), 0.18);
+      box-shadow: 0 0.5rem 1rem -0.5rem var(--secondary-darker-color);
+    }
   }
 }
 
@@ -235,12 +244,22 @@ ul.menu {
   }
 }
 
+.scrollBgColor {
+  .shop-mega-menu {
+    & a span {
+      color: var(--secondary-darker-color);
+    }
+  }
+}
+
 /* Mega Menu - Shop */
 .shop-mega-menu {
   max-width: 80%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  // justify-content: space-evenly;
+  // align-items: center;
   align-items: stretch;
 
   & .column {
@@ -250,17 +269,24 @@ ul.menu {
     margin: 0.625rem 1rem;
   }
 
-  & .mega-link h5,
-  & .mega-link p {
+  & a span {
     display: inline-block;
     padding: 2px 5px;
     color: var(--secondary-darker-color);
-    font-weight: 800;
+    font-weight: 500;
+
+    @include atSmallMedium {
+      color: var(--primary-lightest-color);
+      font-weight: 800;
+    }
+
+    &.submenu {
+      font-family: var(--tertiary-fonts);
+    }
   }
 
-  & .mega-link:hover p,
-  & .mega-link:hover h5 {
-    color: var(--base-color);
+  & a:hover span {
+    color: var(--primary-lightest-color);
     background-color: var(--secondary-lighter-color);
     border-radius: var(--border-radius-sm);
   }

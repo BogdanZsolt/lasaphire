@@ -147,6 +147,33 @@
     }
   }
 
+  &-light {
+    background: var(--primary-color);
+    background: linear-gradient(
+      to bottom,
+      var(--primary-lighter-color),
+      var(--primary-color)
+    );
+    color: var(--tertiary-color);
+
+    &::after {
+      background: var(--primary-color);
+      background: linear-gradient(
+        to bottom,
+        var(--primary-lighter-color),
+        var(--primary-color)
+      );
+    }
+
+    &:disabled {
+      background: linear-gradient(
+        to bottom,
+        lightgrey,
+        var(--primary-color)
+      );
+    }
+  }
+
   &-txt {
     text-decoration: none;
     text-transform: uppercase;

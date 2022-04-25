@@ -1,7 +1,7 @@
-@font-face {
-  font-family: "Marhaban";
-  src: url("../fonts/Marhaban-Regular.otf");
-}
+// @font-face {
+//   font-family: "Marhaban";
+//   src: url("../fonts/Marhaban-Regular.otf");
+// }
 
 @font-face {
   font-family: "Wizard";
@@ -9,10 +9,10 @@
   // src: url(("../fonts/"));
 }
 
-@font-face {
-  font-family: "Witchcraft";
-  src: url("../fonts/Witchcraft.ttf");
-}
+// @font-face {
+//   font-family: "Witchcraft";
+//   src: url("../fonts/Witchcraft.ttf");
+// }
 
 /*
 @function derive-rgb-values-from-hex($hex) {
@@ -22,7 +22,8 @@
 :root {
   --primary-fonts: 'Poppins', sans-serif;
   --secondary-fonts: 'Wizard';
-  --tertiary-fonts: 'Witchcraft';
+  // --tertiary-fonts: 'Witchcraft';
+  --tertiary-fonts: 'Fondamento', cursive;
   // --primary-color-light-2: #f1bbc5;
   // --beauty-darker-color: #571e29;
   // --saphire-color: #f8dde2;
@@ -44,6 +45,7 @@
   --border-radius-xl: 3.125rem;
   --border-radius-round: 50%;
   --box-shadow-btn: 0 0.3125rem 0.5rem var(--secondary-darker-color);
+  --box-shadow: 0 1rem 2rem -1rem var(--secondary-darker-color);
 }
 
 .mt-10 {

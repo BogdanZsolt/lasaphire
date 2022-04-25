@@ -9,6 +9,7 @@ section#faqs {
 
   & .list-group-item {
       font-family: var(--tertiary-fonts);
+      font-size: 1.5rem;
 
       &.active {
           color: var(--secondary-darker-color) !important;
@@ -50,6 +51,7 @@ section#faqs {
 
     & .list-category-title {
         margin-bottom: 1rem;
+        color: var(--secondary-darker-color);
 
         &:not(:first-child) {
             margin-top: 1.5rem;
@@ -62,6 +64,6 @@ section#faqs {
     }
 
     & .btn-link {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 }

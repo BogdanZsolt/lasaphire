@@ -4,8 +4,13 @@
  *
  * @package La Saphire
  */
+
 ?>
 
+<?php
+    $showvalues = get_theme_mod( 'set_values_show', 0 );
+    if( $showvalues == 1 ) :
+?>
 <section id="our-values" class="my-10">
     <div class="container">
         <div class="row justify-content-center">
@@ -64,3 +69,4 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
