@@ -3,24 +3,74 @@
   top: 32px;
 }
 
-.scrollBgColor .main-menu ul li a {
-  color: var(--secondary-darker-color) !important;
+.scrollBgColor {
+
+  .main-menu {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: var(--secondary-darker-color);
+          transition: color 0.3s ease-in-out;
+
+          &:hover {
+            background-color: var(--secondary-darker-color);
+            color: var(--primary-lighter-color);
+          }
+        }
+      }
+
+      .cart-icon {
+        color: var(--secondary-darker-color);
+        transition: color 0.3s ease-in-out;
+
+        a:hover {
+          background-color: var(--secondary-darker-color);
+          color: var(--primary-lightest-color);
+        }
+      }
+    }
+  }
+
+  .dropdown-menu {
+    .menu {
+      .menu-item {
+        a {
+          color: var(--secondary-darker-color);
+        }
+      }
+    }
+  }
 }
 
 .main-menu {
-  & ul {
+  // .navbar-collapse.show {
+  //   overflow: hidden;
+  //   overflow-y: ;
+  // }
+
+  & .navbar-nav {
     padding: 0;
     margin: 0;
 
-    & li {
+    .cart-icon {
+      color: var(--primary-lightest-color);
+    }
+
+    & .nav-item {
       display: inline;
       margin: 0 5px 0 0;
 
-      & a {
-        font-size: 1.125rem;
+      & .nav-link {
+        // font-size: 1.125rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
         font-family: Wizard;
-        font-weight: 500;
-        color: var(--primary-lightest-color) !important;
+        font-weight: 700;
+        color: var(--secondary-darker-color);
+
+        @include atSmallMedium {
+          color: var(--primary-lightest-color);
+        }
 
       }
 
@@ -112,9 +162,76 @@
   display: none;
 }
 
+.menu-shop-mega-menu-container {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .dropdown-menu {
   background-color: var(--base-color);
   opacity: 0.95;
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include atSmallMedium {
+      // width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .sub-menu {
+      display: none;
+
+      .menu-item {
+        a {
+          font-family: var(--tertiary-fonts);
+          padding: 0.25rem 0.5rem;
+          border-radius: 5px;
+        }
+      }
+
+      @include atSmallMedium {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+    }
+
+    .menu-item {
+      display: block;
+      // margin-right: 2rem;
+      margin-bottom: 0.5rem;
+
+      @include atSmallMedium {
+       margin: 0.625rem 2.5rem 0 0;
+      }
+
+      a {
+        color: var(--secondary-darker-color);
+        font-family: var(--secondary-fonts);
+        padding: 0.25rem 0.5rem;
+        font-weight: 700;
+
+        @include atSmallMedium {
+          color: var(--primary-lightest-color);
+          padding: 0 0.5rem;
+          border-radius: 5px;
+        }
+
+        &:hover {
+          color: var(--primary-lightest-color);
+          background-color: var(--secondary-darker-color);
+        }
+      }
+    }
+  }
 }
 
 .menu-item-has-children {
@@ -190,10 +307,10 @@
 }
 
 /* Mega Menu - About */
-ul.menu {
-  display: flex;
-  justify-content: center;
-}
+// ul.menu {
+//   display: flex;
+//   justify-content: center;
+// }
 
 .mega-column {
 
@@ -201,25 +318,30 @@ ul.menu {
     display: flex;
     flex-direction: column-reverse;
     margin: 0 1rem;
+
+    & h5 {
+      display: inline-block;
+      padding: 5px 0;
+      font-size: 1rem;
+      font-weight: 800;
+      text-align: center;
+      color: var(--secondary-darker-color);
+      border-radius: var(--border-radius-sm);
+      transition: background 0.5s ease, color 0.5s ease;
+
+      @include atSmallMedium {
+        min-height: 3rem;
+        margin-top: 5px;
+        color: var(--primary-lightest-color);
+      }
+    }
+
+    &:hover h5 {
+      color: var(--base-color) !important;
+      background-color: var(--secondary-lighter-color);
+    }
   }
 
-  & a h5 {
-    display: inline-block;
-    min-height: 3rem;
-    margin-top: 5px;
-    padding: 5px 0;
-    font-size: 1rem;
-    font-weight: 800;
-    text-align: center;
-    color: var(--secondary-darker-color);
-    border-radius: var(--border-radius-sm);
-    transition: background 0.5s ease, color 0.5s ease;
-  }
-
-  & a:hover h5 {
-    color: var(--base-color) !important;
-    background-color: var(--secondary-lighter-color);
-  }
 
   & .mega-img {
     position: relative;
@@ -245,28 +367,86 @@ ul.menu {
 }
 
 .scrollBgColor {
-  .shop-mega-menu {
-    & a span {
-      color: var(--secondary-darker-color);
+  .mega-column {
+    a {
+      h5 {
+        @include atSmallMedium {
+          color: var(--secondary-darker-color);
+        }
+      }
     }
   }
 }
 
+// .scrollBgColor {
+//   .shop-mega-menu {
+//     & a span {
+//       color: var(--secondary-darker-color);
+//     }
+//   }
+// }
+
+.noscroll {
+  overflow: hidden;
+
+  @include atSmallMedium {
+    overflow: inherit;
+  }
+}
+
+.onscroll {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
 /* Mega Menu - Shop */
 .shop-mega-menu {
-  max-width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  // justify-content: space-evenly;
-  // align-items: center;
-  align-items: stretch;
+  // display: flex;
+  // position: relative;
+  // flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+
+
+  @include atSmallMedium {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 80%;
+    margin: 0 auto;
+    // justify-content: space-evenly;
+    // align-items: center;
+  }
+
+  .decor-cat {
+    position: absolute;
+    bottom: -1rem;
+    left: 5%;
+    transform: translateX(-50%);
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .decor-cobweb {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 10rem;
+    height: 10rem;
+    fill: rgba(var(--secondary-darker-color-rgb), 0.8);
+  }
+
 
   & .column {
-    max-width: max-content;
-    display: flex;
-    flex-direction: column;
-    margin: 0.625rem 1rem;
+
+    @include atSmallMedium {
+      max-width: max-content;
+      display: flex;
+      flex-direction: column;
+      margin: 0.625rem 1rem;
+    }
   }
 
   & a span {
@@ -281,7 +461,12 @@ ul.menu {
     }
 
     &.submenu {
-      font-family: var(--tertiary-fonts);
+      display: none;
+
+      @include atSmallMedium {
+        display: inline-block;
+        font-family: var(--tertiary-fonts);
+      }
     }
   }
 

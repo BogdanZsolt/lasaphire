@@ -87,6 +87,13 @@
   & h6 {
     color: var(--secondary-darker-color);
     font-family: var(--secondary-fonts);
+    margin-top: 1rem;
+    font-size: 1rem;
+
+    @include atSmallMedium {
+      margin-top: 0;
+      font-size: 1.125rem;
+    }
   }
 
   & h4+p {

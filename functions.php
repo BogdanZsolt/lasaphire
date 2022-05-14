@@ -78,20 +78,6 @@ function la_saphire_config(){
 		)
 	);
 
-	/**
-		* Gutenberg block editor disabled
-	*/
-	// add_filter( 'use_block_editor_for_post', '__return_false' );
-
-	/* specified post type */
-	// add_filter( 'use_block_editor_for_post_type', function( $enabled, $post_type ) {
-	//     return 'ls_quiz' === $post_type ? false : $enabled;
-	// }, 10, 2 );
-
-	$textdomain = 'lasaphire';
-	load_theme_textdomain( $textdomain, get_stylesheet_directory() . '/languages/' );
-	load_theme_textdomain( $textdomain, get_template_directory() . '/languages/' );
-
 	$location = 'la_saphire_main_menu';
 	$css_class = 'mega-menu-parent';
 	$locations = get_nav_menu_locations();
@@ -111,6 +97,20 @@ function la_saphire_config(){
 			}
 		}
 	}
+
+	/**
+		* Gutenberg block editor disabled
+	*/
+	// add_filter( 'use_block_editor_for_post', '__return_false' );
+
+	/* specified post type */
+	// add_filter( 'use_block_editor_for_post_type', function( $enabled, $post_type ) {
+	//     return 'ls_quiz' === $post_type ? false : $enabled;
+	// }, 10, 2 );
+
+	$textdomain = 'lasaphire';
+	load_theme_textdomain( $textdomain, get_stylesheet_directory() . '/languages/' );
+	load_theme_textdomain( $textdomain, get_template_directory() . '/languages/' );
 
 	// WooCommerce Support Setup
 	add_theme_support( 'woocommerce', array(
@@ -424,4 +424,24 @@ function newsletter_subscribe(){
 	wp_send_json($return);
 	wp_die();
 }
+
+
+// add_action('pre_get_posts', 'exclude_product_category');
+// function exclude_product_category( $query ) {
+
+//     if ($query->is_search()) {
+//         $tax_query = (array) $query->get('tax_query');
+
+//         $tax_query[] = array(
+//                'taxonomy' => 'product_cat',
+//                'field' => 'slug',
+//                'terms' => array('excluded-category'),
+//                'operator' => 'NOT IN'
+//         );
+
+//         $query->set('tax_query', $tax_query);
+
+//     }
+//     return $query;
+// }
 

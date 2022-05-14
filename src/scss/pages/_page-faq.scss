@@ -52,9 +52,12 @@ section#faqs {
     & .list-category-title {
         margin-bottom: 1rem;
         color: var(--secondary-darker-color);
+        margin-top: 1.5rem;
 
-        &:not(:first-child) {
-            margin-top: 1.5rem;
+        @include atSmallMedium {
+            &:first-child {
+                margin-top: 0;
+            }
         }
     }
 

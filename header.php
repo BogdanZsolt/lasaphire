@@ -63,11 +63,11 @@
 							<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
 								<ul id="la-saphire-additional-menu" class="nav navbar-nav ml-auto mr-5">
 									<?php if( class_exists( 'WooCommerce' ) ) : ?>
-									<li id="myaccount-link">
+									<li id="myaccount-link" class="nav-item">
 										<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link"><?php esc_html_e( 'My Account', 'lasaphire' ); ?></a>
 									</li>
 									<?php endif; ?>
-									<li id="search" class="search">
+									<li id="search" class="search nav-item">
 										<a class="nav-link" id="search-button"></a>
 									</li>
 									<?php if( class_exists( 'WooCommerce' ) ) : ?>
@@ -76,8 +76,8 @@
 										<span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
 									</li>
 									<?php endif; ?>
-									<li id="change-lang-link" class="nav-link">
-										<a href="https://<?php esc_html_e( 'hu', 'lasaphire' ); ?>.lasaphire.hu"><?php esc_html_e( 'hu', 'lasaphire'); ?></a>
+									<li id="change-lang-link" class="nav-item">
+										<a class="nav-link" href="https://<?php esc_html_e( 'hu', 'lasaphire' ); ?>.lasaphire.hu"><?php esc_html_e( 'hu', 'lasaphire'); ?></a>
 									</li>
 								</ul>
 							</div>

@@ -20,6 +20,10 @@
         border-radius: var(--border-radius-md);
     }
 
+    &-LostPassword a {
+        color: var(--secondary-darker-color);
+    }
+
     & .woocommerce-breadcrumb {
         color: var(--primary-color);
 
@@ -358,7 +362,7 @@
     color: var(--secondary-color);
     font-family: var(--tertiary-fonts);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.35rem;
     padding: 2px 5px;
     border-radius: var(--border-radius-sm);
     transition: background-color 0.5s ease;

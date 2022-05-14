@@ -12,6 +12,8 @@ import MegamenuPageGrid from './modules/MegamenuPageGrid'
 import Touch from './modules/Touch'
 // import {getTouchScreen} from './modules/tool'
 import ChangeLang from './modules/ChangeLang';
+import ShopMegaMenuUrl from './modules/ShopMegaMenuUrl';
+import InsertDecorIntoMegaMenu from './modules/InsertDecorIntoMegaMenu'
 
 document.addEventListener('DOMContentLoaded', () => {
   // Product slider
@@ -45,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
+
+  document.querySelector('.navbar-toggler-btn').addEventListener('click', ()=>{
+    document.body.classList.toggle('noscroll');
+  })
 
   // Gallery lightbox
   if (document.querySelector("#gallery")) {
@@ -240,5 +246,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // setup Menu Change Lang
   const changeLang = new ChangeLang();
+
+  // Shop Mega menu set mega-link URLs
+  const shopMegaMenuUrl = new ShopMegaMenuUrl()
+
+  // Insert Decor svg element into Mega menu
+  // const insertDecorIntoMegaMenu = new InsertDecorIntoMegaMenu()
 });
 

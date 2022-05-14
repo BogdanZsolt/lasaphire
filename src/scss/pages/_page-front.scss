@@ -76,6 +76,131 @@ body.home {
 .products-slider {
   position: relative;
 
+  .decor-triangle {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    width: 4rem;
+    height: 4rem;
+    transform: translate(-50%, -50%) rotate(15deg);
+    stroke: rgba(var(--primary-darker-color-rgb), 0.2);
+    stroke-width: 4;
+  }
+
+  .decor-rectangle {
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    width: 4.5rem;
+    height: 4.5rem;
+    stroke: rgba(var(--tertiary-color-rgb), 0.3);
+    stroke-width: 15;
+  }
+
+  .decor-elegant-cat {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 10rem;
+    height: auto;
+    fill: rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%) rotateY(180deg);
+  }
+
+  .decor-elegant-cat-2 {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    width: 10rem;
+    height: auto;
+    // fill: rgba(var(--secondary-darker-color-rgb), 0.4);
+    stroke-width: 10;
+    stroke: rgba(var(--secondary-darker-color-rgb), 0.6);
+    fill: transparent;
+    transform: translate(-50%, -50%);
+  }
+
+  .decor-dot-grid {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 4rem;
+    fill: var(--primary-lighter-color);
+  }
+
+  .decor-spiral {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .decor-rose {
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    transform: translateX(-50%);
+    fill: transparent;
+    stroke-width: 4;
+    stroke: red;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .decor-cat-paw {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    fill: rgba(var(--secondary-darker-color-rgb), 0.4);
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .decor-cat-paw-2 {
+    position: absolute;
+    top: 45%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+    fill: rgba(var(--secondary-darker-color-rgb), 0.4);
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .decor-circle {
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: magenta;
+    stroke-width: 1;
+  }
+
+  .decor-cobweb {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .decor-cat {
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    transform: translateX(-50%);
+    width: 8rem;
+    height: 8rem;
+  }
+
   .tns-nav {
     text-align: center;
     margin: 10px 0;
@@ -103,6 +228,7 @@ body.home {
 
   .tiny-slider.woocommerce ul.products {
     li.product {
+      display: table-cell;
       float: none;
       margin: 0;
       min-height: 400px;
@@ -277,12 +403,15 @@ body.home {
   color: var(--primary-lightest-color);
 }
 
-#promotion .row {
+#promotion .row.no-gutters {
   box-shadow: var(--box-shadow);
 }
 
 #promotion .img-fluid {
   border-radius: 10px 0 0 10px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* Section - About */
@@ -327,6 +456,7 @@ body.home {
   &__links {
     a {
       font-weight: 600;
+      font-family: var(--tertiary-fonts);
     }
   }
 
@@ -840,8 +970,8 @@ a:hover {
 
 .news-post {
   position: relative;
-  flex: 0 0 31%;
-  margin: 0 0.625rem;
+  flex: 0 0 29%;
+  margin: 0 1.25rem;
 
   // &:before {
   //   content: '';
