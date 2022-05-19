@@ -1,7 +1,12 @@
 /* button  */
 
 .btn {
+  color: var(--secondary-darker-color);
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out,box-shadow .15s ease-in-out, transform 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--secondary-color);
+  }
 
   &-link {
     color: var(--secondary-color);
@@ -9,26 +14,26 @@
     transition: letter-spacing 0.3s;
 
     &:hover {
-      color: inherit;
+      color: var(--secondary-color);
       text-decoration: none;
       letter-spacing: 0.5px;
     }
   }
-
-
 
   &-alt {
 
     &,
     &:link,
     &:visited {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
       text-transform: uppercase;
       text-decoration: none;
       padding: 0.625rem 2.5rem;
-      display: inline-block;
       border-radius: var(--border-radius-md);
       cursor: pointer;
-      position: relative;
       transition: all 0.2s;
       font-family: var(--tertiary-fonts);
       border: 0;
@@ -48,8 +53,8 @@
     }
 
     &-sm {
-      padding: 0.625rem;
-      font-size: 0.875rem;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
     }
 
     &::after {

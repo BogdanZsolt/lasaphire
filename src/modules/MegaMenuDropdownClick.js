@@ -2,7 +2,7 @@ import { getTouchScreen } from "./tool";
 
 class MagaMenuDropdownClick {
  constructor(){
-  this.dropdownToggles = document.querySelectorAll(".mega-menu-parent .dropdown-toggle");
+  this.dropdownToggles = document.querySelectorAll(".mega-menu-parent.onOpen .dropdown-toggle");
   this.dropdownMenus = document.querySelectorAll(".mega-menu-parent .dropdown-menu");
   this.init()
  }

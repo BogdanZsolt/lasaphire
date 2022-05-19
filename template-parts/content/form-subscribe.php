@@ -4,11 +4,11 @@
  <div class="form-row align-items-center justify-content-center">
   <div class="form-group col-md-4 mb-2 mb-md-0">
    <input type="text" class="form-control text-beauty" name="name" id="name"
-    placeholder="<?php esc_html_e( 'How to call...', 'lasaphire' ); ?>" required>
+    placeholder="<?php esc_html_e( get_theme_mod( 'set_name_placeholder' ) ); ?>" required>
   </div>
   <div class="form-group col-md-4 mb-2 mb-md-0">
    <input type="email" class="form-control text-beauty" name="email" id="email"
-    placeholder="<?php esc_html_e( 'Email...', 'lasaphire' ); ?>" required>
+    placeholder="<?php esc_html_e( get_theme_mod( 'set_email_placeholder') ); ?>" required>
   </div>
   <div class="col-md-2">
    <button type="submit" class="btn-alt btn-alt-sm btn-normal"><?php esc_html_e( 'subscribe', 'lasaphire' ); ?></button>
@@ -19,7 +19,7 @@
 </form>
 <div class="row justify-content-center mt-2 mb-4">
  <p class="subscribe-text">
-  <?php esc_html_e( 'Be the first to find out about new products, events and news at La Saphire', 'lasaphire' ); ?></p>
+  <?php esc_html_e( get_theme_mod( 'set_subscription_text' ) ); ?></p>
 </div>
 
 <script>

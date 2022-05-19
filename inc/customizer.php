@@ -627,56 +627,11 @@ function la_saphire_customizer( $wp_customize ){
 			)
 		);
 
-		//Subscribe checkbox
-		$wp_customize->add_setting(
-			'set_subscribe_show', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_subscribe_show', array(
-				'label'			=> esc_html__( 'Show Subscribe Section?', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'checkbox'
-			)
-		);
-
-		// subscribe background Image
-		$wp_customize->add_setting(
-			'set_subscribe_bg_image', array(
-				'default'			=> '',
-				'transport' => 'refresh',
-				'sanitize_callback'	=> 'esc_url_raw',
-			)
-		);
-
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control( $wp_customize, 'set_subscribe_bg_image',
-				array(
-					'label'			=> esc_html__( 'Subscribe Background Image Set.', 'lasaphire' ),
-					'description'	=> esc_html__( 'Subscribe Background Image Set.', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
-					),
-				)
-			)
-		);
-
 		// News (Blog) Title
 		$wp_customize->add_setting(
 			'set_blog_title', array(
 				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'News from @lasaphire' ),
+				'default'			=> esc_html__( 'News from @lasaphire', 'lasaphire' ),
 				'sanitize_callback'	=> 'sanitize_text_field'
 			)
 		);
@@ -725,6 +680,114 @@ function la_saphire_customizer( $wp_customize ){
 				'section'		=> 'sec_home_page',
 				'type'			=> 'dropdown-pages',
 				'allow_addition' => true,
+			)
+		);
+
+		// Newsletter Subscription Form
+		$wp_customize->add_section(
+			'sec_subscription', array(
+				'title'	=> esc_html__( 'Newsletter Subscription Form', 'lasaphire' ),
+				'description'	=> esc_html__( 'Newsletter subscription form settings', 'lasaphire' ),
+			)
+		);
+
+		//Subscribe checkbox
+		$wp_customize->add_setting(
+			'set_subscribe_show', array(
+				'type'				=> 'theme_mod',
+				'default'			=> '',
+				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_subscribe_show', array(
+				'label'			=> esc_html__( 'Show Subscribe Section?', 'lasaphire' ),
+				'section'		=> 'sec_subscription',
+				'type'			=> 'checkbox'
+			)
+		);
+
+		// Subscription Text
+		$wp_customize->add_setting(
+			'set_subscription_text', array(
+				'type'				=> 'theme_mod',
+				'default'			=> esc_html__( 'Sign up to get to know the latest products, stories and nicest offers and tips!', 'lasaphire' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_subscription_text', array(
+				'label'			=> esc_html__( 'Newsletter Subscription description', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Newsletter subscription description', 'lasaphire' ),
+				'section'		=> 'sec_subscription',
+				'type'			=> 'text'
+			)
+		);
+
+		// Name placeholder
+		$wp_customize->add_setting(
+			'set_name_placeholder', array(
+				'type'				=> 'theme_mod',
+				'default'			=> esc_html__( 'I am called...', 'lasaphire' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_name_placeholder', array(
+				'label'			=> esc_html__( 'Name placehoder text', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Newsletter subscription name placeholder text', 'lasaphire' ),
+				'section'		=> 'sec_subscription',
+				'type'			=> 'text'
+			)
+		);
+
+		// Email placeholder
+		$wp_customize->add_setting(
+			'set_email_placeholder', array(
+				'type'				=> 'theme_mod',
+				'default'			=> esc_html__( 'Email', 'lasaphire' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_email_placeholder', array(
+				'label'			=> esc_html__( 'Email placehoder text', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Newsletter subscription email placeholder text', 'lasaphire' ),
+				'section'		=> 'sec_subscription',
+				'type'			=> 'text'
+			)
+		);
+
+
+		// subscribe background Image
+		$wp_customize->add_setting(
+			'set_subscribe_bg_image', array(
+				'default'			=> '',
+				'transport' => 'refresh',
+				'sanitize_callback'	=> 'esc_url_raw',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control( $wp_customize, 'set_subscribe_bg_image',
+				array(
+					'label'			=> esc_html__( 'Subscribe Background Image Set.', 'lasaphire' ),
+					'description'	=> esc_html__( 'Subscribe Background Image Set.', 'lasaphire' ),
+					'section'		=> 'sec_subscription',
+					'button_labels' => array( // Optional.
+						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+					),
+				)
 			)
 		);
 
@@ -1432,70 +1495,119 @@ function hex2rgb($color) {
 // Output Costumize CSS
 function lasaphire_customize_css(){ ?>
 
-	<style>
-		:root {
-			--base-bg-color: <?php echo get_theme_mod( 'set_bg_color' ); ?>; /* #ffffff */
-			--base-bg-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_bg_color' ) ); ?>;
-			--base-color: <?php echo get_theme_mod( 'set_base_color' ); ?>; /* #ffffff */
-			--base-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_base_color' ) ); ?>;
+<style>
+:root {
+ --base-bg-color: <?php echo get_theme_mod('set_bg_color');
+ ?>;
+ /* #ffffff */
+ --base-bg-color-rgb: <?php echo hex2rgb(get_theme_mod('set_bg_color'));
+ ?>;
+ --base-color: <?php echo get_theme_mod('set_base_color');
+ ?>;
+ /* #ffffff */
+ --base-color-rgb: <?php echo hex2rgb(get_theme_mod('set_base_color'));
+ ?>;
 
-			--cta-darker-color: <?php echo get_theme_mod( 'set_cta_darker_color' ); ?>; /* #b74005 */
-			--cta-color: <?php echo get_theme_mod( 'set_cta_color' ); ?>; /* #f45404 */
+ --cta-darker-color: <?php echo get_theme_mod('set_cta_darker_color');
+ ?>;
+ /* #b74005 */
+ --cta-color: <?php echo get_theme_mod('set_cta_color');
+ ?>;
+ /* #f45404 */
 
-			--primary-darker-color: <?php echo get_theme_mod( 'set_primary_darker_color' ); ?>; /* #ECC355 */
-			--primary-darker-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_primary_darker_color' ) ); ?>;
-			--primary-color: <?php echo get_theme_mod( 'set_primary_color' ); ?>; /* #F2D98C */
-			--primary-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_primary_color' ) ); ?>;
-			--primary-lighter-color: <?php echo get_theme_mod( 'set_primary_lighter_color' ); ?>; /* #F6E5B1 */
-			--primary-lighter-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_primary_lighter_color' ) ); ?>;
-			--primary-lightest-color: <?php echo get_theme_mod( 'set_primary_lightest_color' ); ?>; /* #FAF0D1 */
-			--primary-lightest-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_primary_lightest_color' ) ); ?>;
+ --primary-darker-color: <?php echo get_theme_mod('set_primary_darker_color');
+ ?>;
+ /* #ECC355 */
+ --primary-darker-color-rgb: <?php echo hex2rgb(get_theme_mod('set_primary_darker_color'));
+ ?>;
+ --primary-color: <?php echo get_theme_mod('set_primary_color');
+ ?>;
+ /* #F2D98C */
+ --primary-color-rgb: <?php echo hex2rgb(get_theme_mod('set_primary_color'));
+ ?>;
+ --primary-lighter-color: <?php echo get_theme_mod('set_primary_lighter_color');
+ ?>;
+ /* #F6E5B1 */
+ --primary-lighter-color-rgb: <?php echo hex2rgb(get_theme_mod('set_primary_lighter_color'));
+ ?>;
+ --primary-lightest-color: <?php echo get_theme_mod('set_primary_lightest_color');
+ ?>;
+ /* #FAF0D1 */
+ --primary-lightest-color-rgb: <?php echo hex2rgb(get_theme_mod('set_primary_lightest_color'));
+ ?>;
 
-			--secondary-darker-color: <?php echo get_theme_mod( 'set_secondary_darker_color' ); ?>; /* #5C3D2E */
-			--secondary-darker-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_secondary_darker_color' ) ); ?>;
-			--secondary-color: <?php echo get_theme_mod( 'set_secondary_color' ); ?>; /* #A37E33 */
-			--secondary-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_secondary_color' ) ); ?>;
-			--secondary-lighter-color: <?php echo get_theme_mod( 'set_secondary_lighter_color' ); ?>; /* #C49A45 */
-			--secondary-lighter-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_secondary_lighter_color' ) ); ?>;
-			--secondary-lightest-color: <?php echo get_theme_mod( 'set_secondary_lightest_color' ); ?>; /* #D1AF6C */
-			--secondary-lightest-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_secondary_lightest_color' ) ); ?>;
+ --secondary-darker-color: <?php echo get_theme_mod('set_secondary_darker_color');
+ ?>;
+ /* #5C3D2E */
+ --secondary-darker-color-rgb: <?php echo hex2rgb(get_theme_mod('set_secondary_darker_color'));
+ ?>;
+ --secondary-color: <?php echo get_theme_mod('set_secondary_color');
+ ?>;
+ /* #A37E33 */
+ --secondary-color-rgb: <?php echo hex2rgb(get_theme_mod('set_secondary_color'));
+ ?>;
+ --secondary-lighter-color: <?php echo get_theme_mod('set_secondary_lighter_color');
+ ?>;
+ /* #C49A45 */
+ --secondary-lighter-color-rgb: <?php echo hex2rgb(get_theme_mod('set_secondary_lighter_color'));
+ ?>;
+ --secondary-lightest-color: <?php echo get_theme_mod('set_secondary_lightest_color');
+ ?>;
+ /* #D1AF6C */
+ --secondary-lightest-color-rgb: <?php echo hex2rgb(get_theme_mod('set_secondary_lightest_color'));
+ ?>;
 
-			--tertiary-darker-color: <?php echo get_theme_mod( 'set_tertiary_darker_color' ); ?>; /* #5D8233 */
-			--tertiary-darker-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_tertiary_darker_color' ) ); ?>;
-			--tertiary-color: <?php echo get_theme_mod( 'set_tertiary_color' ); ?>; /* #79A842 #518B2B*/
-			--tertiary-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_tertiary_color' ) ); ?>;
-			--tertiary-lighter-color: <?php echo get_theme_mod( 'set_tertiary_lighter_color' ); ?>; /* #8FBE5A */
-			--tertiary-lighter-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_tertiary_lighter_color' ) ); ?>;
-			--tertiary-lightest-color: <?php echo get_theme_mod( 'set_tertiary_lightest_color' ); ?>; /* #A8CD7F */
-			--tertiary-lightest-color-rgb: <?php echo hex2rgb( get_theme_mod( 'set_tertiary_lightest_color' ) ); ?>;
-		}
+ --tertiary-darker-color: <?php echo get_theme_mod('set_tertiary_darker_color');
+ ?>;
+ /* #5D8233 */
+ --tertiary-darker-color-rgb: <?php echo hex2rgb(get_theme_mod('set_tertiary_darker_color'));
+ ?>;
+ --tertiary-color: <?php echo get_theme_mod('set_tertiary_color');
+ ?>;
+ /* #79A842 #518B2B*/
+ --tertiary-color-rgb: <?php echo hex2rgb(get_theme_mod('set_tertiary_color'));
+ ?>;
+ --tertiary-lighter-color: <?php echo get_theme_mod('set_tertiary_lighter_color');
+ ?>;
+ /* #8FBE5A */
+ --tertiary-lighter-color-rgb: <?php echo hex2rgb(get_theme_mod('set_tertiary_lighter_color'));
+ ?>;
+ --tertiary-lightest-color: <?php echo get_theme_mod('set_tertiary_lightest_color');
+ ?>;
+ /* #A8CD7F */
+ --tertiary-lightest-color-rgb: <?php echo hex2rgb(get_theme_mod('set_tertiary_lightest_color'));
+ ?>;
+}
 
-		footer {
-				background-image: linear-gradient(to top, transparent, rgba(255,255,255,0.01) 30%, var(--base-color) 100%), url(<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_footer_image' ), 'full', false); ?>);
-		}
+footer {
+ background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-color) 100%), url(<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_footer_image' ), 'full', false);
+ ?>);
+}
 
-		.home footer {
-				background-image: linear-gradient(to top, transparent, rgba(255,255,255,0.01) 30%, var(--base-bg-color) 100%), url(<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_footer_image' ), 'full', false); ?>);
-		}
+.home footer {
+ background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-bg-color) 100%), url(<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_footer_image' ), 'full', false);
+ ?>);
+}
 
-		.home-subscribe .container {
-			background-image: url('<?php echo esc_url( get_theme_mod( 'set_subscribe_bg_image', 0 ) ); ?>');
-		}
+.home-subscribe .container {
+ background-image: url('<?php echo esc_url( get_theme_mod( 'set_subscribe_bg_image', 0 ) ); ?>');
+}
 
-		.glassmorph::after,
-		#top-bar.scrollBgColor::after,
-		#top-bar::after,
-		#top-bar .brand.scroll a:after,
-		.mega-menu-parent.dropdown .dropdown-menu::after,
-		#ls-ingredient.lasaphire .ingredient-filter::after,
-		#ls-ingredient.lasaphire .ingredient-wrapper::after {
-			background-image: url('<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_forme_grunge_image' ), 'medium', false); ?>');
-		}
+.glassmorph::after,
+#top-bar.scrollBgColor::after,
+#top-bar::after,
+#top-bar .brand.scroll a:after,
+.mega-menu-parent.dropdown .dropdown-menu::after,
+#ls-ingredient.lasaphire .ingredient-filter::after,
+#ls-ingredient.lasaphire .ingredient-wrapper::after {
+ background-image: url('<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_forme_grunge_image' ), 'medium', false); ?>');
+}
 
-		#for-me .container {
-			background-image: url(<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_forme_bg_image' ), 'la-saphire-page-banner', false ); ?>);
-		}
-	</style>
-	<?php
+#for-me .container {
+ background-image: url(<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_forme_bg_image' ), 'la-saphire-page-banner', false);
+ ?>);
+}
+</style>
+<?php
 }
 add_action( 'wp_head', 'lasaphire_customize_css' );

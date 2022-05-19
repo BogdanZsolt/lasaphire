@@ -4,19 +4,29 @@ section#faqs {
 }
 
 #faq-category-list {
-  position: sticky;
-  top: 150px;
+    &.list-group {
+        position: sticky;
+        top: 150px;
+    }
 
-  & .list-group-item {
-      font-family: var(--tertiary-fonts);
-      font-size: 1.5rem;
+    & .list-group-item {
+        font-family: var(--tertiary-fonts);
+        font-size: 1.5rem;
 
-      &.active {
-          color: var(--secondary-darker-color) !important;
-          background-color: var(--base-color);
-          border-color: var(--primary-color);
+        &.active {
+            color: var(--secondary-darker-color) !important;
+            background-color: var(--base-color);
+            border-color: var(--primary-color);
         }
     }
+
+    .list-group-item-action {
+        &:hover {
+            color: var(--secondary-darker-color);
+            background-color: transparent;
+        }
+    }
+
 }
 
 #faq-accordion {
@@ -68,5 +78,9 @@ section#faqs {
 
     & .btn-link {
         font-size: 1rem;
+    }
+
+    .card-header {
+        background-color: rgba(var(--primary-lightest-color-rgb), 0.1);
     }
 }

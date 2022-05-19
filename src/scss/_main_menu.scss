@@ -33,6 +33,14 @@
 
   .dropdown-menu {
     .menu {
+      .sub-menu {
+        .menu-item {
+          a {
+            color: var(--secondary-darker-color);
+          }
+        }
+      }
+
       .menu-item {
         a {
           color: var(--secondary-darker-color);
@@ -172,6 +180,16 @@
   background-color: var(--base-color);
   opacity: 0.95;
 
+  #menu-about-mega-menu {
+    &.menu {
+      .menu-item {
+        a:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
   .menu {
     display: flex;
     flex-direction: column;
@@ -191,6 +209,7 @@
       .menu-item {
         a {
           font-family: var(--tertiary-fonts);
+          color: var(--primary-lightest-color);
           padding: 0.25rem 0.5rem;
           border-radius: 5px;
         }
@@ -220,7 +239,7 @@
         font-weight: 700;
 
         @include atSmallMedium {
-          color: var(--primary-lightest-color);
+          // color: var(--primary-lightest-color);
           padding: 0 0.5rem;
           border-radius: 5px;
         }

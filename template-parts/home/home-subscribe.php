@@ -13,18 +13,18 @@
  <div class="container">
   <div class="home-subscribe__message">
    <p class="home-subscribe__text">
-    <?php esc_html_e( 'Be the first to find out about new products, events and news at La Saphire', 'lasaphire' ); ?>
+    <?php esc_html_e( get_theme_mod( 'set_subscription_text' ) ); ?>
    </p>
   </div>
   <form id="home-subscribe">
    <div class="home-form__row">
     <div class="home-form__group">
      <input type="text" class="form-control" name="name" id="name"
-      placeholder="<?php esc_html_e( 'How to call...', 'lasaphire' ); ?>" required>
+      placeholder="<?php esc_html_e( get_theme_mod( 'set_name_placeholder' ) ); ?>" required>
     </div>
     <div class="home-form__group">
      <input type="email" class="form-control" name="email" id="email"
-      placeholder="<?php esc_html_e( 'Email...', 'lasaphire' ); ?>" required>
+      placeholder="<?php esc_html_e( get_theme_mod( 'set_email_placeholder' ) ); ?>" required>
     </div>
     <div class="col-md-2">
      <button type="submit"
