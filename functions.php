@@ -127,8 +127,8 @@ function la_saphire_config(){
 	) );
 
 	// add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
 
 	add_theme_support( 'custom-logo', array(
 		'height' 		=> 85,

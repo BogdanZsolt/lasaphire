@@ -112,6 +112,30 @@ function la_saphire_wc_modify(){
     	echo '<div data-koa="zoom">';
 	}
 
+	add_action( 'woocommerce_before_shop_loop_item_title', 'add_product_image_wrapper', 8 );
+
+	function add_product_image_wrapper(){
+		global $product;
+
+		if( $product->get_gallery_image_ids()){
+			echo '<div class="woocommerce-img-wrapper">';
+		}
+	}
+
+	add_action ( 'woocommerce_before_shop_loop_item_title', 'add_product_second_thumbnail', 15 );
+
+	function add_product_second_thumbnail(){
+		global $product;
+
+		$img_ids = $product->get_gallery_image_ids();
+		if( $img_ids ){
+			echo '<div class="woocommerce-product-secondary-img">';
+				echo wp_get_attachment_image( $img_ids[0], 'woocommerce_thumbnail' );
+				echo '</div>
+			</div>';
+		}
+	}
+
 	add_action ( "woocommerce_after_shop_loop_item", "before_li_start", 10 );
 
 	function before_li_start () {

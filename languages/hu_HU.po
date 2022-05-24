@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: La Saphire v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2022-05-19 10:03+0200\n"
+"POT-Creation-Date: 2022-05-21 07:07+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Your Team <translations@example.com>\n"
@@ -22,6 +22,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Generator: Poedit 3.0.1\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: src\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
 #: 404.php:18
@@ -130,10 +131,6 @@ msgstr "többet tanulni."
 #: footer.php:29
 msgid "I understand"
 msgstr "Megértettem"
-
-#: footer.php:65
-msgid "Copyright X - All Rights Reserved"
-msgstr "Szerzői jog X - Minden jog fenntartva"
 
 #: functions.php:48
 msgid "start typing what you are looking for"
@@ -577,7 +574,9 @@ msgid "Show Subscribe Section?"
 msgstr "Feliratkozás szakasz megjelenítése?"
 
 #: inc/customizer.php:715
-msgid "Sign up to get to know the latest products, stories and nicest offers!"
+msgid ""
+"Sign up to get to know the latest products, stories and nicest offers and "
+"tips!"
 msgstr ""
 "Íratkozz fel, hogy értesülj az újdonságokról, történetekről, legjobb "
 "ajánlatokról, tippekről!"
@@ -1125,6 +1124,9 @@ msgstr "Megbízhatóság"
 #: template-parts/home/home-promotion.php:28
 msgid "I&prime;ll check"
 msgstr "Megnézem"
+
+#~ msgid "Copyright X - All Rights Reserved"
+#~ msgstr "Szerzői jog X - Minden jog fenntartva"
 
 #~ msgid "Website by PegazusDesigns"
 #~ msgstr "A PegazusDesigns webhelye"
