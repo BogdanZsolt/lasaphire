@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: La Saphire v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2022-05-21 07:07+0200\n"
+"POT-Creation-Date: 2022-05-26 10:14+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Your Team <translations@example.com>\n"
@@ -56,49 +56,49 @@ msgstr[1] "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgid "Comments are closed."
 msgstr "Hozzászólások lezárva."
 
-#: doc/functions.php:68 functions.php:74
+#: doc/functions.php:68 functions.php:75
 msgid "La Saphire Main Menu"
 msgstr "La Saphire főmenü"
 
-#: doc/functions.php:69 functions.php:75
+#: doc/functions.php:69 functions.php:76
 msgid "La Saphire Footer Menu"
 msgstr "La Saphire lábléc menü"
 
-#: doc/functions.php:70 functions.php:76
+#: doc/functions.php:70 functions.php:77
 msgid "La Saphire Social Menu"
 msgstr "La Saphire Szocial Media Menü"
 
-#: doc/functions.php:71 functions.php:77
+#: doc/functions.php:71 functions.php:78
 msgid "La Saphire Shop Category Menu"
 msgstr "La Saphire Shop Kategória menü"
 
-#: doc/functions.php:179 functions.php:184
+#: doc/functions.php:179 functions.php:185
 msgid "La Saphire Main Sidebar"
 msgstr "La Saphire fő oldalsáv"
 
 #: doc/functions.php:181 doc/functions.php:203 doc/functions.php:214
-#: doc/functions.php:225 functions.php:186 functions.php:208 functions.php:219
-#: functions.php:230
+#: doc/functions.php:225 functions.php:187 functions.php:209 functions.php:220
+#: functions.php:231
 msgid "Drag and drop your widgets here"
 msgstr "Húzza ide a widgeteket"
 
-#: doc/functions.php:190 functions.php:195
+#: doc/functions.php:190 functions.php:196
 msgid "La Saphire Sidebar Shop"
 msgstr "La Saphire bolt oldalsáv"
 
-#: doc/functions.php:192 functions.php:197
+#: doc/functions.php:192 functions.php:198
 msgid "Drag and drop your WooCommerce widgets here"
 msgstr "Húzza ide a WooCommerce modulokat"
 
-#: doc/functions.php:201 functions.php:206
+#: doc/functions.php:201 functions.php:207
 msgid "La Saphire Footer Sidebar 1"
 msgstr "La Saphire lábléc oldalsáv 1"
 
-#: doc/functions.php:212 functions.php:217
+#: doc/functions.php:212 functions.php:218
 msgid "La Saphire Footer Sidebar 2"
 msgstr "La Saphire lábléc oldalsáv 2"
 
-#: doc/functions.php:223 functions.php:228
+#: doc/functions.php:223 functions.php:229
 msgid "La Saphire Footer Sidebar 3"
 msgstr "La Saphire lábléc oldalsáv 3"
 
@@ -132,31 +132,31 @@ msgstr "többet tanulni."
 msgid "I understand"
 msgstr "Megértettem"
 
-#: functions.php:48
+#: functions.php:49
 msgid "start typing what you are looking for"
 msgstr "kezdje el beírni, amit keres"
 
-#: functions.php:49
+#: functions.php:50
 msgid "products"
 msgstr "termékek"
 
-#: functions.php:50
+#: functions.php:51
 msgid "ingredients"
 msgstr "összetevők"
 
-#: functions.php:51
+#: functions.php:52
 msgid "posts"
 msgstr "bejegyzések"
 
-#: functions.php:52
+#: functions.php:53
 msgid "pages"
 msgstr "oldalak"
 
-#: functions.php:53
+#: functions.php:54
 msgid "faqs"
 msgstr "gyik-ok"
 
-#: functions.php:54
+#: functions.php:55
 msgid "unfortunately there are no results for your search."
 msgstr "sajnos nincs találat a keresésre."
 
@@ -959,7 +959,7 @@ msgstr "Nincs mit megjeleníteni."
 
 #: page-contact.php:27
 msgid "Bravely Reach Out in Person!"
-msgstr "Érdeklődjön bátran személyesen!"
+msgstr "Érdeklődj bátran személyesen!"
 
 #: page-contact.php:28
 msgid "Address"
@@ -982,8 +982,8 @@ msgid "email La Saphire"
 msgstr "email La Saphire"
 
 #: page-contact.php:57
-msgid "Enquiries"
-msgstr "Megkeresések"
+msgid "Waiting for your message!"
+msgstr "Várjuk a leveledet!"
 
 #: page-contact.php:58
 msgid "Send a message!"
@@ -1070,12 +1070,12 @@ msgid "There was a problem with the Contact Form, please try again!"
 msgstr "Probléma merült fel az űrlap elküldése során. Kérem próbálja meg újra!"
 
 #: template-parts/content/form-subscribe.php:1
-#: template-parts/home/home-subscribe.php:38
+#: template-parts/home/home-subscribe.php:39
 msgid "Email address successfully added"
 msgstr "Email cím sikeresen hozzáadva"
 
 #: template-parts/content/form-subscribe.php:14
-#: template-parts/home/home-subscribe.php:31
+#: template-parts/home/home-subscribe.php:32
 msgid "subscribe"
 msgstr "felíratkozás"
 
@@ -1124,6 +1124,9 @@ msgstr "Megbízhatóság"
 #: template-parts/home/home-promotion.php:28
 msgid "I&prime;ll check"
 msgstr "Megnézem"
+
+#~ msgid "Inquiries"
+#~ msgstr "Várjuk a leveledet!"
 
 #~ msgid "Copyright X - All Rights Reserved"
 #~ msgstr "Szerzői jog X - Minden jog fenntartva"

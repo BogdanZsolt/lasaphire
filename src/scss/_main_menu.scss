@@ -15,6 +15,7 @@
           &:hover {
             background-color: var(--secondary-darker-color);
             color: var(--primary-lighter-color);
+            border-radius: var(--border-radius-sm);
           }
         }
       }
