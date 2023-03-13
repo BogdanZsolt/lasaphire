@@ -1,4 +1,5 @@
 /* Media Queries (mobile, tablet and other screens) settings) */
+@use './mixins' as *;
 
 // @media all and (max-width: 1200px) {
 //   #forme #search-helper {

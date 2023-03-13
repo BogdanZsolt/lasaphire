@@ -1360,20 +1360,16 @@ function la_saphire_customizer( $wp_customize ){
 			'set_footer_image', array(
 				'default'			=> '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
+				'sanitize_callback'	=> 'esc_url_raw'
 			)
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_footer_image',
+			new WP_Customize_Image_Control( $wp_customize, 'set_footer_image',
 				array(
 					'label'			=> esc_html__( 'Site Footer Background Image Set.', 'lasaphire' ),
 					'description'	=> esc_html__( 'Site Footer Background Image Set.', 'lasaphire' ),
 					'section'		=> 'sec_footer',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
 						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
 						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
@@ -1580,12 +1576,12 @@ function lasaphire_customize_css(){ ?>
 }
 
 footer {
- background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-color) 100%), url(<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_footer_image' ), 'full', false);
+ background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-color) 100%), url(<?php echo esc_url(get_theme_mod( 'set_footer_image' ), 'full', false);
  ?>);
 }
 
 .home footer {
- background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-bg-color) 100%), url(<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_footer_image' ), 'full', false);
+ background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-bg-color) 100%), url(<?php echo esc_url(get_theme_mod( 'set_footer_image' ), 'full', false);
  ?>);
 }
 

@@ -1,4 +1,6 @@
 /* Ingredients page */
+@use '../mixins' as *;
+
 #ingredients-section {
   position: relative;
   padding-bottom: 3rem;

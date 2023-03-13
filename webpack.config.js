@@ -1,102 +1,19 @@
-const currentTask = process.env.npm_lifecycle_event;
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// Import the original config from the @wordpress/scripts package
+const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 
-let imagesConfig = {
-  test: /\.(jpg|png|jpeg)$/,
-  type: "asset/resource",
-  generator: {
-    filename: "images/[name][ext]",
-  },
-};
-
-let fontsConfig = {
-  test: /\.(woff|woff2|eot|ttf|otf)$/,
-  type: "asset/resource",
-  generator: {
-    filename: "fonts/[name][ext]",
-  },
-};
-
-let svgConfig = {
-  test: /\.svg$/,
-  type: "asset/resource",
-  generator: {
-    filename: "icons/[name][ext]",
-  },
-};
-
-let cssConfig = {
-  test: /\.css$/,
-  use: [
-    MiniCssExtractPlugin.loader,
-    "css-loader",
-    {
-      loader: "postcss-loader",
-      options: {
-        postcssOptions: {
-          plugins: [require("postcss-preset-env")],
-        },
-      },
-    },
-  ],
-};
-
-let sassConfig = {
-  test: /\.(s[ac]|c)ss$/,
-  use: [
-    MiniCssExtractPlugin.loader,
-    "css-loader",
-    "sass-loader",
-    "postcss-loader",
-  ],
-};
-
-let config = {
-  entry: {
-    index: path.resolve(__dirname, "src/index.js"),
-    admin: path.resolve(__dirname, "src/main-admin.js"),
-  },
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "./assets"),
-    clean: true,
-  },
+module.exports = {
+  ...defaultConfig,
   module: {
-    rules: [cssConfig, sassConfig, imagesConfig, fontsConfig, svgConfig],
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-    }),
-  ],
-};
-
-if (currentTask === "dev") {
-  (config.mode = "development"),
-    (config.devtool = "source-map"),
-    (config.watch = true),
-    (config.watchOptions = {
-      ignored: /node_modules/,
-    });
-}
-
-if (currentTask === "build") {
-  (config.mode = "production"),
-    config.module.rules.push({
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: "babel-loader",
-        options: {
-          presets: ["@babel/preset-env"],
-          plugins: [
-            "@babel/plugin-proposal-class-properties",
-            "@babel/transform-runtime",
-          ],
-        },
+    ...defaultConfig.module,
+    rules: [
+      ...defaultConfig.module.rules,
+      {
+        test: /\.svg$/,
+        type: "asset/resource",
+        generator: {
+          filename: "icons/[name].[ext]",
+        }
       },
-    });
-}
-
-module.exports = config;
+    ],
+  },
+};

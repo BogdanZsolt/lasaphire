@@ -1,27 +1,27 @@
-@import "./scss/base";
-@import "./scss/mixins";
-@import "./scss//animations";
-@import "./scss/scroll_animation";
-@import "../node_modules/tiny-slider/src/tiny-slider.scss";
-@import "./scss/pages/page";
-@import "./scss/button";
-@import "./scss/main_menu";
-@import "./scss/slider";
-@import "./scss/search";
-@import "./scss/cookie";
-@import "./scss/footer";
-@import "./scss/_woocommerce";
-@import "./scss/general";
-@import "./scss/mobile";
+@forward "./scss/base";
+@forward './scss/mixins';
+@forward "./scss//animations";
+@forward "./scss/scroll_animation";
+@forward "../node_modules/tiny-slider/src/tiny-slider.scss";
+@forward "./scss/pages/page";
+@forward "./scss/button";
+@forward "./scss/main_menu";
+@forward "./scss/slider";
+@forward "./scss/search";
+@forward "./scss/cookie";
+@forward "./scss/footer";
+@forward "./scss/_woocommerce";
+@forward "./scss/general";
+@forward "./scss/mobile";
 
 /* Home Page Template */
-@import "./scss/pages/page-front";
-@import "./scss/pages/page-for-me";
-@import "./scss/pages/page-our-values";
-@import "./scss/pages/page-ingredients";
-@import "./scss/pages/page-faq";
-@import "./scss/pages/page-contact";
-@import "./scss/pages/page-blogandarchive";
-@import "./scss/pages/page-about";
+@forward "./scss/pages/page-front";
+@forward "./scss/pages/page-for-me";
+@forward "./scss/pages/page-our-values";
+@forward "./scss/pages/page-ingredients";
+@forward "./scss/pages/page-faq";
+@forward "./scss/pages/page-contact";
+@forward "./scss/pages/page-blogandarchive";
+@forward "./scss/pages/page-about";
 
 /* Make dropdown visible on hover */

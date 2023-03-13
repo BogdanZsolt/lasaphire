@@ -31,7 +31,7 @@ require get_theme_file_path( '/inc/search-route.php' );
 function la_saphire_scripts(){
 	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', null, '3.6.0', true );
 	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), '4.6.1', true );
-	wp_enqueue_script( 'main-lasaphire-js', get_template_directory_uri() . '/assets/index.js', array(), '1.0', true );
+	wp_enqueue_script( 'main-lasaphire-js', get_template_directory_uri() . '/build/index.js', array(), '1.0', true );
 	wp_enqueue_style( 'google-poppins', 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap' );
 	wp_enqueue_style( 'google-fondamento', 'https://fonts.googleapis.com/css2?family=Fondamento&display=swap' );
 	// wp_enqueue_style( 'google-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap' );
@@ -39,7 +39,7 @@ function la_saphire_scripts(){
 	wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', array(), '5.15.3', 'all' );
 
 	wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css', array(), '4.6.1', 'all' );
-	wp_enqueue_style( 'la-saphire-style', get_template_directory_uri() . '/assets/index.css', array(), '1.0', 'all' );
+	wp_enqueue_style( 'la-saphire-style', get_template_directory_uri() . '/build/index.css', array(), '1.0', 'all' );
 
 	wp_localize_script('main-lasaphire-js', 'lasaphireData', array(
 		'root_url'	=> get_site_url(),
@@ -57,7 +57,7 @@ function la_saphire_scripts(){
 add_action('wp_enqueue_scripts', 'la_saphire_scripts');
 
 function la_saphire__admin_scripts( $hook ) {
-	wp_enqueue_script ( 'main-admin-js', get_template_directory_uri() . '/assets/admin.js' );
+	wp_enqueue_script ( 'main-admin-js', get_template_directory_uri() . '/build/admin.js' );
 }
 add_action('admin_enqueue_scripts', 'la_saphire__admin_scripts');
 

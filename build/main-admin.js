@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(()=>{if(document.querySelector("select#product-type")){const e=document.querySelector("input#_ingredients"),t=document.querySelectorAll(".show_if_ingredients");let n=e.checked;t&&t.forEach((e=>{e.style.display=n?"":"none"})),e.addEventListener("click",(()=>{n=e.checked,t&&t.forEach((e=>{e.style.display=n?"":"none"}))}))}}));

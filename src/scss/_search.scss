@@ -1,3 +1,5 @@
+@use './mixins' as *;
+
 #search-button::before {
   display: inline-block;
   font-style: normal;

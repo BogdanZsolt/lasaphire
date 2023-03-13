@@ -1,4 +1,5 @@
 /* button  */
+@use './mixins' as *;
 
 .btn {
   color: var(--secondary-darker-color);

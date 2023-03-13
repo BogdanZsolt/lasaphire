@@ -1,4 +1,6 @@
 /* FAQs Page */
+@use '../mixins' as *;
+
 section#faqs {
   position: relative;
 }

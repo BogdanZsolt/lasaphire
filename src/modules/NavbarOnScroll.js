@@ -1,5 +1,4 @@
 import { getElement } from "./tool";
-import { throttle } from "lodash";
 
 class NavbarOnScroll {
  constructor(){
@@ -12,8 +11,10 @@ class NavbarOnScroll {
  }
 
  events(){
-  window.addEventListener('scroll', throttle(()=>this.changeElements(), 200))
- }
+   window.addEventListener('scroll', () => setTimeout(() => {
+    this.changeElements();
+   },200));
+}
 
  changeElements(){
   if(window.scrollY > 60){

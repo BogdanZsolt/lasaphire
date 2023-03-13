@@ -1,4 +1,5 @@
 /* Slider */
+@use './mixins' as *;
 
 .zsb-slider.lasaphire {
 
@@ -82,7 +83,7 @@
   }
 
   .slider-details-container {
-    color: var(--base-color);
+    color: var(--primary-lightest-color);
     top: 50%;
     left: 10%;
     transform: translateY(-50%);
@@ -119,7 +120,7 @@
     }
 
     & .slider-title {
-      color: var(--base-color);
+      color: var(--primary-lightest-color);
       font-weight: 700;
     }
 

@@ -1,4 +1,6 @@
 /* Frontend Product Lists */
+@use '../mixins' as *;
+
 body.home {
   background-color: var(--base-bg-color);
 }

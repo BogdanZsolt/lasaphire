@@ -1,4 +1,6 @@
 /* Footer - Footer menu */
+@use './mixins' as *;
+
 footer {
   background-color: var(--primary-lightest-color);
   // border-top: 1px solid var(--primary-color);

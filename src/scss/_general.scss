@@ -1,4 +1,6 @@
 /* General */
+@use './mixins' as *;
+
 #page {
   overflow: hidden;
 }
