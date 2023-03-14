@@ -1,9 +1,3 @@
 node_modules
-woocommerce
 package-lock.json
-doc
-_mentes.php
-temp
-inc/settings.bkp.php
-template-parts/home/home-slider_bkp.php
 src/scss/*-bkp.scss

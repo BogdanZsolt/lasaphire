@@ -1,23 +1,23 @@
 class OurValuesCardsResize {
- constructor(){
-  this.cards = document.querySelectorAll('#our-values .card')
-  this.init()
-  this.events()
- }
+	constructor() {
+		this.cards = document.querySelectorAll("#our-values .card");
+		this.init();
+		this.events();
+	}
 
- events(){
-  window.addEventListener('resize', this.widthHeightEqual.bind(this))
- }
+	events() {
+		window.addEventListener("resize", this.widthHeightEqual.bind(this));
+	}
 
- init(){
-  this.widthHeightEqual();
- }
+	init() {
+		this.widthHeightEqual();
+	}
 
- widthHeightEqual(){
-  this.cards.forEach(item => {
-   item.style.height = getComputedStyle(item).width;
-  })
- }
+	widthHeightEqual() {
+		this.cards.forEach((item) => {
+			item.style.height = getComputedStyle(item).width;
+		});
+	}
 }
 
-export default OurValuesCardsResize
+export default OurValuesCardsResize;
