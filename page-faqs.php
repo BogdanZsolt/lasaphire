@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Contact Page
+Template Name: FAQs Page
 */
 
 get_header();
@@ -8,24 +8,24 @@ get_header();
 		$src = get_the_post_thumbnail_url( null, 'la-saphire-page-banner' );
 		$src_mobile = get_the_post_thumbnail_url( null, 'woocommerce_thumbnail' );
 	?>
-	<section id="faqs" class="mb-5" data-spy="scroll" data-target="#faq-category-list" data-offset="0">
-		<div class="banner mb-5">
-			<img src="<?php echo esc_url($src) ?>" class="img-fluid" alt="banner photo">
-			<img src="<?php echo esc_url($src_mobile) ?>" class="img-mobile" alt="banner photo">
-			<div class="banner-content overlay">
-				<h1><?php the_title(); ?></h1>
-				<?php
+<section id="faqs" class="mb-5" data-spy="scroll" data-target="#faq-category-list" data-offset="0">
+  <div class="banner mb-5">
+    <img src="<?php echo esc_url($src) ?>" class="img-fluid" alt="banner photo">
+    <img src="<?php echo esc_url($src_mobile) ?>" class="img-mobile" alt="banner photo">
+    <div class="banner-content overlay">
+      <h1><?php the_title(); ?></h1>
+      <?php
 					// Load posts loop
 					endwhile;
 				?>
-			</div>
-		</div>
+    </div>
+  </div>
 
-		<div class="container mt-5">
-			<div class="row">
-				<div class="col-12 col-md-3">
-					<div id="faq-category-list" class="list-group">
-					<?php
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div id="faq-category-list" class="list-group">
+          <?php
 						$terms = get_terms(
     						array(
         						'taxonomy'		=> 'faq_categories',
@@ -47,12 +47,12 @@ get_header();
 							}
 						}
 	 					?>
-					</div>
-				</div>
+        </div>
+      </div>
 
-				<div class="col-12 col-md-9">
-					<div class="accordion faq-scrollspy" id="faq-accordion">
-						<?php
+      <div class="col-12 col-md-9">
+        <div class="accordion faq-scrollspy" id="faq-accordion">
+          <?php
 						$i = 1;
 						$j = 1;
 						foreach($terms as $term){
@@ -74,22 +74,25 @@ get_header();
 								$faqs->the_post();
 								// $faqansw = get_post_meta( get_the_ID(), '_faq_question_answer', true);
 						?>
-						<div class="card">
-							<div class="card-header" id="heading-<?php echo $j; ?>">
-								<h4 class="mb-0">
-									<button class="btn btn-link btn-block text-left text-beauty" type="button" data-toggle="collapse" data-target="#collapse-<?php echo $j; ?>" aria-expanded="false" aria-controls="collapse-<?php echo $j; ?>">
-									<?php the_title(); ?>
-									</button>
-								</h4>
-							</div>
+          <div class="card">
+            <div class="card-header" id="heading-<?php echo $j; ?>">
+              <h4 class="mb-0">
+                <button class="btn btn-link btn-block text-left text-beauty" type="button" data-toggle="collapse"
+                  data-target="#collapse-<?php echo $j; ?>" aria-expanded="false"
+                  aria-controls="collapse-<?php echo $j; ?>">
+                  <?php the_title(); ?>
+                </button>
+              </h4>
+            </div>
 
-							<div id="collapse-<?php echo $j; ?>" class="faq-collapse collapse" aria-labelledby="heading-<?php echo $j; ?>" data-parent="#faq-accordion">
-								<div class="card-body text-beauty">
-									<p><?php the_content(); ?></p>
-								</div>
-							</div>
-						</div>
-						<?php
+            <div id="collapse-<?php echo $j; ?>" class="faq-collapse collapse"
+              aria-labelledby="heading-<?php echo $j; ?>" data-parent="#faq-accordion">
+              <div class="card-body text-beauty">
+                <p><?php the_content(); ?></p>
+              </div>
+            </div>
+          </div>
+          <?php
 							$j++;
 							wp_reset_postdata();
 							}
@@ -99,9 +102,9 @@ get_header();
 							$i++;
 						}
 						?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <?php get_footer(); ?>

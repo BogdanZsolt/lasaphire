@@ -11,16 +11,16 @@ function la_saphire_customizer( $wp_customize ){
 	// Copyright Section
 	$wp_customize->add_section(
 		'sec_copyright', array(
-			'title'			=> esc_html__( 'Copyright Settings', 'lasaphire' ),
-			'description'	=> esc_html__( 'Copyright Section', 'lasaphire' )
+			'title' => esc_html__( 'Copyright Settings', 'lasaphire' ),
+			'description' => esc_html__( 'Copyright Section', 'lasaphire' )
 		)
 	);
 
 		// Copyright Text Box
 		$wp_customize->add_setting(
 			'set_copyright', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
+				'type' => 'theme_mod',
+				'default' => esc_html__('© 2022-2023 - La\'saphire', 'lasaphire'),
 				'sanitize_callback'	=> 'sanitize_text_field'
 			)
 		);
@@ -38,299 +38,297 @@ function la_saphire_customizer( $wp_customize ){
 	//Home Page Settings
 	$wp_customize->add_section(
 		'sec_home_page', array(
-			'title'			=> esc_html__( 'Home Page Products and Blog Settings', 'lasaphire' ),
-			'description'	=> esc_html__( 'Home Page Section', 'lasaphire' )
+			'title' => esc_html__( 'Home Page Products and Blog Settings', 'lasaphire' ),
+			'description' => esc_html__( 'Home Page Section', 'lasaphire' )
 		)
 	);
 
-		// Products Section Title
-		$wp_customize->add_setting(
-			'set_products_title', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Products' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_products_title', array(
-				'label'			=> esc_html__( 'Products Section Title', 'lasaphire' ),
-				'description'	=> esc_html__( 'La Saphire Products section title', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
-			)
-		);
-
-		// Products Button Text
-		$wp_customize->add_setting(
-			'set_products_button_text', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Browse Products', 'lasaphire' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_products_button_text', array(
-				'label'			=> esc_html__( 'Products Button Text', 'lasaphire' ),
-				'description'	=> esc_html__( 'Products Button Text', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
-			)
-		);
-
-
-		// Products Button Url 1
-		$wp_customize->add_setting(
-			'set_products_link', array(
-				'type'				=> 'theme_mod',
-				'default'			=>  '',
-				'sanitize_callback'	=> 'sanitize_text_field',
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_products_link', array(
-				'label'			=> esc_html__( 'Select page', 'lasaphire' ),
-				'description'	=> esc_html__( 'Which side the button takes you to.', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'dropdown-pages',
-				'allow_addition' => true,
-			)
-		);
-
-		// New Arrivals Checkbox
-		$wp_customize->add_setting(
-			'set_new_arrivals_show', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_new_arrivals_show', array(
-				'label'			=> esc_html__( 'Show New Arrivals?', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'checkbox'
-			)
-		);
-
-		// New Arrivals Products Limit
-		$wp_customize->add_setting(
-			'set_new_arrivals_max_num', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'absint'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_new_arrivals_max_num', array(
-				'label'			=> esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
-				'description'	=> esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'number'
-			)
-		);
-
-		// New Arrivals Product Columns
-		$wp_customize->add_setting(
-			'set_new_arrivals_max_col', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'absint'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_new_arrivals_max_col', array(
-				'label'			=> esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
-				'description'	=> esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'number'
-			)
-		);
-
-
-		// Deal of the Week Checkbox
-		$wp_customize->add_setting(
-			'set_deal_show', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_deal_show', array(
-				'label'			=> esc_html__( 'Show Deal of the Week?', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'checkbox'
-			)
-		);
-
-		// Deal of the Week Product ID
-		$wp_customize->add_setting(
-			'set_deal', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'absint'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_deal', array(
-				'label'			=> esc_html__( 'Deal of the Week Product ID', 'lasaphire' ),
-				'description'	=> esc_html__( 'Product ID to Display', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'number'
-			)
-		);
-
-
-		// Deal of the week Section Title
-		$wp_customize->add_setting(
-			'set_deal_title', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Featured Stuff' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_deal_title', array(
-				'label'			=> esc_html__( 'Deal of the Week Section Title', 'lasaphire' ),
-				'description'	=> esc_html__( 'La Saphire Deal of the Week section title', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
-			)
-		);
-
-		// Deal of the week Button Text
-		$wp_customize->add_setting(
-			'set_deal_button_text', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Browse Products', 'lasaphire' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_deal_button_text', array(
-				'label'			=> esc_html__( 'Deal of the Week Button Text', 'lasaphire' ),
-				'description'	=> esc_html__( 'Deal of the Week Button Text', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
-			)
-		);
-
-		// Deal of the week Button Url 1
-		$wp_customize->add_setting(
-			'set_deal_link', array(
-				'type'				=> 'theme_mod',
-				'default'			=>  '',
-				'sanitize_callback'	=> 'sanitize_text_field',
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_deal_link', array(
-				'label'			=> esc_html__( 'Select page', 'lasaphire' ),
-				'description'	=> esc_html__( 'Which side the button takes you to.', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'dropdown-pages',
-				'allow_addition' => true,
-			)
-		);
-
-		// Deal of the Wook background Image
-		$wp_customize->add_setting(
-			'set_deal_bg_image', array(
-				'default'			=> '',
-				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
-			)
-		);
-
-		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_deal_bg_image',
-				array(
-					'label'			=> esc_html__( 'Deal of the Week Background Image Set.', 'lasaphire' ),
-					'description'	=> esc_html__( 'Deal of the Week Background Image Set.', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
-					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
-					),
+		if( class_exists( 'WooCommerce' )){
+			// Products Section Title
+			$wp_customize->add_setting(
+				'set_products_title', array(
+					'type' => 'theme_mod',
+					'default' => esc_html__( 'Products', 'lasaphire' ),
+					'sanitize_callback' => 'sanitize_text_field'
 				)
-			)
-		);
+			);
 
-		// Deal of the Week Checkbox
-		$wp_customize->add_setting(
-			'set_forme_show', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
-			)
-		);
-
-		$wp_customize->add_control(
-			'set_forme_show', array(
-				'label'			=> esc_html__( 'Show For me promotion?', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'checkbox'
-			)
-		);
-
-		// For me bg image
-		$wp_customize->add_setting(
-			'set_forme_bg_image', array(
-				'default'			=> '',
-				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
-			)
-		);
-
-		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_forme_bg_image',
-				array(
-					'label'			=> esc_html__( 'For me promotion Background Image Set.', 'lasaphire' ),
-					'description'	=> esc_html__( 'For me promotion Background Image Set.', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
-					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
-					),
+			$wp_customize->add_control(
+				'set_products_title', array(
+					'label' => esc_html__( 'Products Section Title', 'lasaphire' ),
+					'description' => esc_html__( 'La Saphire Products section title', 'lasaphire' ),
+					'section' => 'sec_home_page',
+					'type' => 'text'
 				)
-			)
-		);
+			);
+			// Products Button Text
+			$wp_customize->add_setting(
+			'set_products_button_text', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Browse Products', 'lasaphire' ),
+				'sanitize_callback' => 'sanitize_text_field'
+				)
+			);
 
+			$wp_customize->add_control(
+			'set_products_button_text', array(
+				'label' => esc_html__( 'Products Button Text', 'lasaphire' ),
+				'description' => esc_html__( 'Products Button Text', 'lasaphire' ),
+				'section' => 'sec_home_page',
+				'type' => 'text'
+				)
+			);
+
+
+			// Products Button Url 1
+			$wp_customize->add_setting(
+				'set_products_link', array(
+					'type'				=> 'theme_mod',
+					'default'			=>  '',
+					'sanitize_callback'	=> 'sanitize_text_field',
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_products_link', array(
+					'label'			=> esc_html__( 'Select page', 'lasaphire' ),
+					'description'	=> esc_html__( 'Which side the button takes you to.', 'lasaphire' ),
+					'section'		=> 'sec_home_page',
+					'type'			=> 'dropdown-pages',
+					'allow_addition' => true,
+				)
+			);
+
+			// New Arrivals Checkbox
+			$wp_customize->add_setting(
+				'set_new_arrivals_show', array(
+					'type'				=> 'theme_mod',
+					'default'			=> false,
+					'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_new_arrivals_show', array(
+					'label'			=> esc_html__( 'Show New Arrivals?', 'lasaphire' ),
+					'section'		=> 'sec_home_page',
+					'type'			=> 'checkbox'
+				)
+			);
+
+			// New Arrivals Products Limit
+			$wp_customize->add_setting(
+				'set_new_arrivals_max_num', array(
+					'type'				=> 'theme_mod',
+					'default'			=> 4,
+					'sanitize_callback'	=> 'absint'
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_new_arrivals_max_num', array(
+					'label'			=> esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
+					'description'	=> esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
+					'section'		=> 'sec_home_page',
+					'type'			=> 'number'
+				)
+			);
+
+			// New Arrivals Product Columns
+			$wp_customize->add_setting(
+				'set_new_arrivals_max_col', array(
+					'type'				=> 'theme_mod',
+					'default'			=> 4,
+					'sanitize_callback'	=> 'absint'
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_new_arrivals_max_col', array(
+					'label'			=> esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
+					'description'	=> esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
+					'section'		=> 'sec_home_page',
+					'type'			=> 'number'
+				)
+			);
+
+			// Deal of the Week Checkbox
+			$wp_customize->add_setting(
+				'set_deal_show', array(
+					'type'				=> 'theme_mod',
+					'default'			=> false,
+					'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_deal_show', array(
+					'label'			=> esc_html__( 'Show Deal of the Week?', 'lasaphire' ),
+					'section'		=> 'sec_home_page',
+					'type'			=> 'checkbox'
+				)
+			);
+
+			// Deal of the Week Product ID
+			$wp_customize->add_setting(
+				'set_deal', array(
+					'type'				=> 'theme_mod',
+					'default'			=> '',
+					'sanitize_callback'	=> 'absint'
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_deal', array(
+					'label' => esc_html__( 'Deal of the Week Product ID', 'lasaphire' ),
+					'description' => esc_html__( 'Product ID to Display', 'lasaphire' ),
+					'section' => 'sec_home_page',
+					'type' => 'number'
+				)
+			);
+
+			// Deal of the week Section Title
+			$wp_customize->add_setting(
+				'set_deal_title', array(
+					'type' => 'theme_mod',
+					'default' => esc_html__( 'Featured Stuff', 'lasaphire' ),
+					'sanitize_callback' => 'sanitize_text_field'
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_deal_title', array(
+					'label'			=> esc_html__( 'Deal of the Week Section Title', 'lasaphire' ),
+					'description'	=> esc_html__( 'La Saphire Deal of the Week section title', 'lasaphire' ),
+					'section'		=> 'sec_home_page',
+					'type'			=> 'text'
+				)
+			);
+
+			// Deal of the week Button Text
+			$wp_customize->add_setting(
+				'set_deal_button_text', array(
+					'type'				=> 'theme_mod',
+					'default'			=> esc_html__( 'Browse Products', 'lasaphire' ),
+					'sanitize_callback'	=> 'sanitize_text_field'
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_deal_button_text', array(
+					'label'			=> esc_html__( 'Deal of the Week Button Text', 'lasaphire' ),
+					'description'	=> esc_html__( 'Deal of the Week Button Text', 'lasaphire' ),
+					'section'		=> 'sec_home_page',
+					'type'			=> 'text'
+				)
+			);
+
+			// Deal of the week Button Url 1
+			$wp_customize->add_setting(
+				'set_deal_link', array(
+					'type'				=> 'theme_mod',
+					'default'			=>  '',
+					'sanitize_callback'	=> 'sanitize_text_field',
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_deal_link', array(
+					'label'			=> esc_html__( 'Select page', 'lasaphire' ),
+					'description'	=> esc_html__( 'Which side the button takes you to.', 'lasaphire' ),
+					'section'		=> 'sec_home_page',
+					'type'			=> 'dropdown-pages',
+					'allow_addition' => true,
+				)
+			);
+
+			// Deal of the Wook background Image
+			$wp_customize->add_setting(
+				'set_deal_bg_image', array(
+					'default'			=> '',
+					'transport' => 'refresh',
+					'sanitize_callback'	=> 'absint'
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_deal_bg_image',
+					array(
+						'label'			=> esc_html__( 'Deal of the Week Background Image Set.', 'lasaphire' ),
+						'description'	=> esc_html__( 'Deal of the Week Background Image Set.', 'lasaphire' ),
+						'section'		=> 'sec_home_page',
+						'flex_width'	=> 'false',
+						'flex_height'	=> 'true',
+						'width' 		=> 1500,
+						'height'		=> 'auto',
+						'button_labels' => array( // Optional.
+							'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+							'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+							'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+							'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+							'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+							'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+							'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						),
+					)
+				)
+			);
+		}
+
+		// // For me section Checkbox
+		// $wp_customize->add_setting(
+		// 	'set_forme_show', array(
+		// 		'type'				=> 'theme_mod',
+		// 		'default'			=> '',
+		// 		'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
+		// 	)
+		// );
+
+		// $wp_customize->add_control(
+		// 	'set_forme_show', array(
+		// 		'label'			=> esc_html__( 'Show For me promotion?', 'lasaphire' ),
+		// 		'section'		=> 'sec_home_page',
+		// 		'type'			=> 'checkbox'
+		// 	)
+		// );
+
+		// // For me bg image
+		// $wp_customize->add_setting(
+		// 	'set_forme_bg_image', array(
+		// 		'default'			=> '',
+		// 		'transport' => 'refresh',
+		// 		'sanitize_callback'	=> 'absint'
+		// 	)
+		// );
+
+		// $wp_customize->add_control(
+		// 	new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_forme_bg_image',
+		// 		array(
+		// 			'label'			=> esc_html__( 'For me promotion Background Image Set.', 'lasaphire' ),
+		// 			'description'	=> esc_html__( 'For me promotion Background Image Set.', 'lasaphire' ),
+		// 			'section'		=> 'sec_home_page',
+		// 			'flex_width'	=> 'false',
+		// 			'flex_height'	=> 'true',
+		// 			'width' 		=> 1500,
+		// 			'height'		=> 'auto',
+		// 			'button_labels' => array( // Optional.
+		// 				'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+		// 				'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+		// 				'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+		// 				'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+		// 				'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+		// 				'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+		// 				'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+		// 			),
+		// 		)
+		// 	)
+		// );
 
 		// Show About Section Checkbox
 		$wp_customize->add_setting(
 			'set_about_show', array(
 				'type'				=> 'theme_mod',
-				'default'			=> '',
+				'default'			=> true,
 				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
 			)
 		);
@@ -542,7 +540,7 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_setting(
 			'set_values_show', array(
 				'type'				=> 'theme_mod',
-				'default'			=> '',
+				'default'			=> false,
 				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
 			)
 		);
@@ -559,7 +557,7 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_setting(
 			'set_values_card1_title', array(
 				'type'				=> 'theme_mod',
-				'default'			=> '',
+				'default'			=> esc_html__( 'All natural skin care', 'lasaphire' ),
 				'sanitize_callback'	=> 'sanitize_text_field'
 			)
 		);
@@ -577,7 +575,7 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_setting(
 			'set_values_card2_title', array(
 				'type'				=> 'theme_mod',
-				'default'			=> '',
+				'default'			=> esc_html__( 'Manufacture of small batches', 'lasaphire' ),
 				'sanitize_callback'	=> 'sanitize_text_field'
 			)
 		);
@@ -595,7 +593,7 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_setting(
 			'set_values_card3_title', array(
 				'type'				=> 'theme_mod',
-				'default'			=> '',
+				'default'			=> esc_html__( 'Beauty with intent', 'lasaphire' ),
 				'sanitize_callback'	=> 'sanitize_text_field'
 			)
 		);
@@ -613,7 +611,7 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_setting(
 			'set_values_card4_title', array(
 				'type'				=> 'theme_mod',
-				'default'			=> '',
+				'default'			=> esc_html__( 'Reliability', 'lasaphire' ),
 				'sanitize_callback'	=> 'sanitize_text_field'
 			)
 		);
@@ -631,7 +629,7 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_setting(
 			'set_blog_title', array(
 				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'News from @lasaphire', 'lasaphire' ),
+				'default'			=> esc_html__( 'La\'Saphire Blog', 'lasaphire' ),
 				'sanitize_callback'	=> 'sanitize_text_field'
 			)
 		);
@@ -695,7 +693,7 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_setting(
 			'set_subscribe_show', array(
 				'type'				=> 'theme_mod',
-				'default'			=> '',
+				'default'			=> true,
 				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
 			)
 		);
@@ -761,7 +759,6 @@ function la_saphire_customizer( $wp_customize ){
 				'type'			=> 'text'
 			)
 		);
-
 
 		// subscribe background Image
 		$wp_customize->add_setting(
@@ -1084,7 +1081,6 @@ function la_saphire_customizer( $wp_customize ){
 			)
 		);
 
-		//
 		$wp_customize->add_setting(
 			'set_base_color', array(
 				'default'			=> '#ffffff',
@@ -1224,6 +1220,7 @@ function la_saphire_customizer( $wp_customize ){
 				),
 			)
 		);
+
 		$wp_customize->add_setting(
 			'set_secondary_color', array(
 				'default'			=> '#A37E33',
@@ -1384,12 +1381,12 @@ function la_saphire_customizer( $wp_customize ){
 		);
 
 	/**
-	 * For Me Settings
+	 * For Me Page Settings
 	*/
 	$wp_customize->add_section(
 		'sec_forme', array(
-			'title'			=> esc_html__( 'For Me page', 'lasaphire' ),
-			'description'	=> esc_html__( 'For Me elements setup.', 'lasaphire' )
+			'title' => esc_html__( 'For Me page', 'lasaphire' ),
+			'description'	=> esc_html__( 'For Me page elements setup.', 'lasaphire' )
 		)
 	);
 
@@ -1424,6 +1421,216 @@ function la_saphire_customizer( $wp_customize ){
 				)
 			)
 		);
+
+		/**
+		 * Contact Page Settings
+		*/
+		$wp_customize->add_section(
+			'sec_contact', array(
+				'title' => esc_html__( 'Contact Page', 'lasaphire' ),
+				'description' => esc_html__( 'Contact Page elements setup.', 'lasaphire')
+			)
+		);
+
+		// Contact Address line 1
+		$wp_customize->add_setting(
+			'set_address_1', array(
+				'type'				=> 'theme_mod',
+				'default'			=> esc_html__( '1122 Budapest Határőr út 40.', 'lasaphire' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_address_1', array(
+				'label' => esc_html__( 'Address line 1', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Address line 1.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact Address line 2
+		$wp_customize->add_setting(
+			'set_address_2', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Hungary' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_address_2', array(
+				'label' => esc_html__( 'Contact Address line 2', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Address line 2.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact hours
+		$wp_customize->add_setting(
+			'set_contact_hours', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Monday - Friday 9:00am - 6:00pm' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_contact_hours', array(
+				'label' => esc_html__( 'Set Contact Hours', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Hours setup.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact Telephone
+		$wp_customize->add_setting(
+			'set_contact_phone', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( '+36 (30) 422-5096' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_contact_phone', array(
+				'label' => esc_html__( 'Set Contact Telephone', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Telephone setup.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact Email
+		$wp_customize->add_setting(
+			'set_contact_email', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'cspetra8@gmail.com' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_contact_email', array(
+				'label' => esc_html__( 'Set Contact Email', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Email setup.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact form Name placeholder
+		$wp_customize->add_setting(
+			'set_contactform_name_place', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Name...' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_contactform_name_place', array(
+				'label' => esc_html__( 'Set Contact Form Name Placeholder', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Form Name Placeholder setup.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact form Email placeholder
+		$wp_customize->add_setting(
+			'set_contactform_email_place', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Email...' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_contactform_email_place', array(
+				'label' => esc_html__( 'Set Contact Form Email Placeholder', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Form Email Placeholder setup.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact form Email Note
+		$wp_customize->add_setting(
+			'set_contactform_email_note', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'We′ll never share your email with anyone else.' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_contactform_email_note', array(
+				'label' => esc_html__( 'Set Contact Form Email Note', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Form Email Note setup.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact form Phone Placeholder
+		$wp_customize->add_setting(
+			'set_contactform_phone_place', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Phone number...' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_contactform_phone_place', array(
+				'label' => esc_html__( 'Set Contact Form Phone Number Placeholder', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Form Phone Number Placeholder setup.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact form Message Placeholder
+		$wp_customize->add_setting(
+			'set_contactform_message_place', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Tell me what\'s up...' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_contactform_message_place', array(
+				'label' => esc_html__( 'Set Contact Form Message Placeholder', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Form Message Placeholder setup.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+		// Contact form button text
+		$wp_customize->add_setting(
+			'set_contactform_button_text', array(
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Send' ),
+				'sanitize_callback'	=> 'sanitize_text_field'
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_contactform_button_text', array(
+				'label' => esc_html__( 'Set Contact Form Button Text', 'lasaphire' ),
+				'description'	=> esc_html__( 'La Saphire Contact Form Button Text setup.', 'lasaphire' ),
+				'section'	=> 'sec_contact',
+				'type' => 'text'
+			)
+		);
+
+
 
 		/**
 			* About Settings
@@ -1493,100 +1700,112 @@ function lasaphire_customize_css(){ ?>
 
 <style>
 :root {
- --base-bg-color: <?php echo get_theme_mod('set_bg_color');
- ?>;
- /* #ffffff */
- --base-bg-color-rgb: <?php echo hex2rgb(get_theme_mod('set_bg_color'));
- ?>;
- --base-color: <?php echo get_theme_mod('set_base_color');
- ?>;
- /* #ffffff */
- --base-color-rgb: <?php echo hex2rgb(get_theme_mod('set_base_color'));
- ?>;
-
- --cta-darker-color: <?php echo get_theme_mod('set_cta_darker_color');
- ?>;
- /* #b74005 */
- --cta-color: <?php echo get_theme_mod('set_cta_color');
- ?>;
- /* #f45404 */
-
- --primary-darker-color: <?php echo get_theme_mod('set_primary_darker_color');
- ?>;
- /* #ECC355 */
- --primary-darker-color-rgb: <?php echo hex2rgb(get_theme_mod('set_primary_darker_color'));
- ?>;
- --primary-color: <?php echo get_theme_mod('set_primary_color');
- ?>;
- /* #F2D98C */
- --primary-color-rgb: <?php echo hex2rgb(get_theme_mod('set_primary_color'));
- ?>;
- --primary-lighter-color: <?php echo get_theme_mod('set_primary_lighter_color');
- ?>;
- /* #F6E5B1 */
- --primary-lighter-color-rgb: <?php echo hex2rgb(get_theme_mod('set_primary_lighter_color'));
- ?>;
- --primary-lightest-color: <?php echo get_theme_mod('set_primary_lightest_color');
- ?>;
- /* #FAF0D1 */
- --primary-lightest-color-rgb: <?php echo hex2rgb(get_theme_mod('set_primary_lightest_color'));
- ?>;
-
- --secondary-darker-color: <?php echo get_theme_mod('set_secondary_darker_color');
- ?>;
- /* #5C3D2E */
- --secondary-darker-color-rgb: <?php echo hex2rgb(get_theme_mod('set_secondary_darker_color'));
- ?>;
- --secondary-color: <?php echo get_theme_mod('set_secondary_color');
- ?>;
- /* #A37E33 */
- --secondary-color-rgb: <?php echo hex2rgb(get_theme_mod('set_secondary_color'));
- ?>;
- --secondary-lighter-color: <?php echo get_theme_mod('set_secondary_lighter_color');
- ?>;
- /* #C49A45 */
- --secondary-lighter-color-rgb: <?php echo hex2rgb(get_theme_mod('set_secondary_lighter_color'));
- ?>;
- --secondary-lightest-color: <?php echo get_theme_mod('set_secondary_lightest_color');
- ?>;
- /* #D1AF6C */
- --secondary-lightest-color-rgb: <?php echo hex2rgb(get_theme_mod('set_secondary_lightest_color'));
- ?>;
-
- --tertiary-darker-color: <?php echo get_theme_mod('set_tertiary_darker_color');
- ?>;
- /* #5D8233 */
- --tertiary-darker-color-rgb: <?php echo hex2rgb(get_theme_mod('set_tertiary_darker_color'));
- ?>;
- --tertiary-color: <?php echo get_theme_mod('set_tertiary_color');
- ?>;
- /* #79A842 #518B2B*/
- --tertiary-color-rgb: <?php echo hex2rgb(get_theme_mod('set_tertiary_color'));
- ?>;
- --tertiary-lighter-color: <?php echo get_theme_mod('set_tertiary_lighter_color');
- ?>;
- /* #8FBE5A */
- --tertiary-lighter-color-rgb: <?php echo hex2rgb(get_theme_mod('set_tertiary_lighter_color'));
- ?>;
- --tertiary-lightest-color: <?php echo get_theme_mod('set_tertiary_lightest_color');
- ?>;
- /* #A8CD7F */
- --tertiary-lightest-color-rgb: <?php echo hex2rgb(get_theme_mod('set_tertiary_lightest_color'));
- ?>;
+  <?php $color=get_theme_mod('set_bg_color', '#FFFFFF');
+  ?>--base-bg-color: <?php echo $color;
+  ?>;
+  /* #ffffff */
+  --base-bg-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_base_color', '#FFFFFF');
+  ?>--base-color: <?php echo $color;
+  ?>;
+  /* #ffffff */
+  --base-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_base_color', '#B74005');
+  ?>--cta-darker-color: <?php echo $color;
+  ?>;
+  /* #b74005 */
+  <?php $color=get_theme_mod('set_cta_color', '#F45404');
+  ?>--cta-color: <?php echo $color;
+  ?>;
+  /* #f45404 */
+  <?php $color=get_theme_mod('set_primary_darker_color', '#ECC355');
+  ?>--primary-darker-color: <?php echo $color;
+  ?>;
+  /* #ECC355 */
+  --primary-darker-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_primary_color', '#F2D98C');
+  ?>--primary-color: <?php echo $color;
+  ?>;
+  /* #F2D98C */
+  --primary-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_primary_lighter_color', '#F6E5B1');
+  ?>--primary-lighter-color: <?php echo $color;
+  ?>;
+  /* #F6E5B1 */
+  --primary-lighter-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_primary_lightest_color', '#FAF0D1');
+  ?>--primary-lightest-color: <?php echo $color;
+  ?>;
+  /* #FAF0D1 */
+  --primary-lightest-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_secondary_darker_color', '#5C3D2E');
+  ?>--secondary-darker-color: <?php echo $color;
+  ?>;
+  /* #5C3D2E */
+  --secondary-darker-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_secondary_color', '#A37E33');
+  ?>--secondary-color: <?php echo $color;
+  ?>;
+  /* #A37E33 */
+  --secondary-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_secondary_lighter_color', '#C49A45');
+  ?>--secondary-lighter-color: <?php echo $color;
+  ?>;
+  /* #C49A45 */
+  --secondary-lighter-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_secondary_lightest_color', '#D1AF6C');
+  ?>--secondary-lightest-color: <?php echo $color;
+  ?>;
+  /* #D1AF6C */
+  --secondary-lightest-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_tertiary_darker_color', '#5D8233');
+  ?>--tertiary-darker-color: <?php echo $color;
+  ?>;
+  /* #5D8233 */
+  --tertiary-darker-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_tertiary_color', '#79a842');
+  ?>--tertiary-color: <?php echo $color;
+  ?>;
+  /* #79A842 #518B2B*/
+  --tertiary-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_tertiary_lighter_color', '#8FBE5A');
+  ?>--tertiary-lighter-color: <?php echo $color;
+  ?>;
+  /* #8FBE5A */
+  --tertiary-lighter-color-rgb: <?php echo hex2rgb($color);
+  ?>;
+  <?php $color=get_theme_mod('set_tertiary_lightest_color', '#A8CD7F');
+  ?>--tertiary-lightest-color: <?php echo $color;
+  ?>;
+  /* #A8CD7F */
+  --tertiary-lightest-color-rgb: <?php echo hex2rgb($color);
+  ?>;
 }
 
 footer {
- background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-color) 100%), url(<?php echo esc_url(get_theme_mod( 'set_footer_image' ), 'full', false);
- ?>);
+  background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-color) 100%), url(<?php echo esc_url(get_theme_mod( 'set_footer_image' ), 'full', false);
+  ?>);
 }
 
 .home footer {
- background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-bg-color) 100%), url(<?php echo esc_url(get_theme_mod( 'set_footer_image' ), 'full', false);
- ?>);
+  background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.01) 30%, var(--base-bg-color) 100%), url(<?php echo esc_url(get_theme_mod( 'set_footer_image' ), 'full', false);
+  ?>);
 }
 
 .home-subscribe .container {
- background-image: url('<?php echo esc_url( get_theme_mod( 'set_subscribe_bg_image', 0 ) ); ?>');
+  background-image: url('<?php echo esc_url( get_theme_mod( 'set_subscribe_bg_image', '' ) ); ?>');
 }
 
 .glassmorph::after,
@@ -1596,13 +1815,13 @@ footer {
 .mega-menu-parent.dropdown .dropdown-menu::after,
 #ls-ingredient.lasaphire .ingredient-filter::after,
 #ls-ingredient.lasaphire .ingredient-wrapper::after {
- background-image: url('<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_forme_grunge_image' ), 'medium', false); ?>');
+  background-image: url('<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_forme_grunge_image' ), 'medium', false); ?>');
 }
 
-#for-me .container {
- background-image: url(<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_forme_bg_image' ), 'la-saphire-page-banner', false);
- ?>);
-}
+/* #for-me .container {
+  background-image: url(<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_forme_bg_image', '' ), 'la-saphire-page-banner', false);
+  ?>);
+} */
 </style>
 <?php
 }

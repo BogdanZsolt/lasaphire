@@ -9,28 +9,28 @@
 
 get_header();
 	while( have_posts() ): the_post();
-		$video = get_theme_mod( 'set_ourvalues_video' );
+		$video = get_theme_mod( 'set_ourvalues_video', '' );
 		$video = esc_url( wp_get_attachment_url( $video ));
 		$src = get_the_post_thumbnail_url( null, 'la-saphire-page-banner' );
 		$src_mobile = get_the_post_thumbnail_url( null, 'woocommerce_thumbnail' );
 	?>
-	<section>
-		<div class="banner mb-5">
-			<?php if( $video ) { ?>
-				<video id="bg-video" src="<?php echo $video ?>" muted loop autoplay></video>
-			<?php } else { ?>
-				<img src="<?php echo esc_url($src) ?>" class="img-fluid" alt="banner photo">
-				<img src="<?php echo esc_url($src_mobile) ?>" class="img-mobile" alt="banner photo">
-			<?php }; ?>
-			<div class="banner-content overlay">
-					<h1><?php the_title(); ?></h1>
-				</div>
-			</div>
+<section>
+  <div class="banner mb-5">
+    <?php if( $video ) { ?>
+    <video id="bg-video" src="<?php echo $video ?>" muted loop autoplay></video>
+    <?php } else { ?>
+    <img src="<?php echo esc_url($src) ?>" class="img-fluid" alt="banner photo">
+    <img src="<?php echo esc_url($src_mobile) ?>" class="img-mobile" alt="banner photo">
+    <?php }; ?>
+    <div class="banner-content overlay">
+      <h1><?php the_title(); ?></h1>
+    </div>
+  </div>
 
-		</div>
-		<div class="container my-5">
-			<div class="row">
-				<?php
+  </div>
+  <div class="container my-5">
+    <div class="row">
+      <?php
 					// Load posts loop
 					get_template_part( 'template-parts/content/content', 'page' );
 					if( comments_open() || get_comments_number() ):
@@ -38,10 +38,10 @@ get_header();
 					endif;
 					endwhile;
 				?>
-				</div>
-			</div>
-		</main>
-	</section>
+    </div>
+  </div>
+  </main>
+</section>
 <?php get_footer(); ?>
 
 

@@ -43,8 +43,8 @@ function la_saphire_scripts(){
 
 	wp_localize_script('main-lasaphire-js', 'lasaphireData', array(
 		'root_url'	=> get_site_url(),
-		'currencySymbol'	=> get_woocommerce_currency_symbol(),
-		'currencyPos'	=> get_option( 'woocommerce_currency_pos' ),
+		'currencySymbol'	=> class_exists( 'WooCommerce' ) ? get_woocommerce_currency_symbol() : '',
+		'currencyPos'	=> get_option( 'woocommerce_currency_pos', '' ),
 		'inputPlaceholder'	=> esc_html__( 'start typing what you are looking for', 'lasaphire'),
 		'productsName' => esc_html__( 'products', 'lasaphire' ),
 		'ingredientsName' => esc_html__( 'ingredients', 'lasaphire' ),
@@ -57,7 +57,7 @@ function la_saphire_scripts(){
 add_action('wp_enqueue_scripts', 'la_saphire_scripts');
 
 function la_saphire__admin_scripts( $hook ) {
-	wp_enqueue_script ( 'main-admin-js', get_template_directory_uri() . '/build/admin.js' );
+	wp_enqueue_script ( 'main-admin-js', get_template_directory_uri() . '/build/main-admin.js' );
 }
 add_action('admin_enqueue_scripts', 'la_saphire__admin_scripts');
 
@@ -97,6 +97,30 @@ function la_saphire_config(){
 			}
 		}
 	}
+
+function wpdocs_nav_menu_add_dropdown_arrow( $title, $menu_item ) {
+
+	$menu_item_classes = $menu_item->classes;
+
+
+	// If menu item doesn't have any classes or children, return unchanged title.
+	if ( empty( $menu_item_classes ) || ! in_array( 'mega-column', $menu_item_classes ) ) {
+		return $title;
+	}
+
+	$image = has_post_thumbnail($menu_item->object_id) ? esc_url(get_the_post_thumbnail_url($menu_item->object_id, 'thumbnail')) : '';
+
+	// Add div around original text to separate it from down arrow
+	// (if you need a way to select only the text with CSS)
+	$output_title = '<h5>' . $title . '</h5>';
+	$output_title .= '<div class="mega-img">';
+	$output_title .= '<img src="' . $image . '">';
+	$output_title .= '</div>';
+
+	return $output_title;
+}
+
+add_filter( 'nav_menu_item_title', 'wpdocs_nav_menu_add_dropdown_arrow', 10, 2 );
 
 	/**
 		* Gutenberg block editor disabled
@@ -138,11 +162,12 @@ function la_saphire_config(){
 	) );
 
 	//add featured image
-	add_theme_support( 'post_thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// Register new image size
 	add_image_size( 'la-saphire-slider', 1920, 1080, array( 'center', 'center' ) );
-	add_image_size( 'la-saphire-page-banner', 1280, 180, array( 'center', 'center' ) );
+	add_image_size( 'la-saphire-page-banner', 1920, 540, array( 'center', 'top') );
+	// add_image_size( 'la-saphire-page-banner', 1280, 180, array( 'center', 'center' ) );
 	add_image_size( 'la-saphire-blog', 960, 640, array( 'center', 'center' ) );
 
 	if ( ! isset( $content_width ) ) {
