@@ -36,10 +36,19 @@ function la_saphire_customizer( $wp_customize ){
 
 	/*-----------------------------------------------------------------------------------------*/
 	//Home Page Settings
+	$wp_customize->add_panel(
+		'pa_home_page', array(
+			'title' => esc_html__('Home Page', 'lasaphire'),
+			'priority' => 160,
+		)
+	);
+
+	// Home Page Product Slider Settings
 	$wp_customize->add_section(
-		'sec_home_page', array(
-			'title' => esc_html__( 'Home Page Products and Blog Settings', 'lasaphire' ),
-			'description' => esc_html__( 'Home Page Section', 'lasaphire' )
+		'sec_home_prod_slider', array(
+			'title' => esc_html__( 'Home Page Products slider settings', 'lasaphire' ),
+			'description' => esc_html__( 'Home Page Product slider settings Section', 'lasaphire' ),
+			'panel' => 'pa_home_page',
 		)
 	);
 
@@ -57,7 +66,7 @@ function la_saphire_customizer( $wp_customize ){
 				'set_products_title', array(
 					'label' => esc_html__( 'Products Section Title', 'lasaphire' ),
 					'description' => esc_html__( 'La Saphire Products section title', 'lasaphire' ),
-					'section' => 'sec_home_page',
+					'section' => 'sec_home_prod_slider',
 					'type' => 'text'
 				)
 			);
@@ -74,98 +83,134 @@ function la_saphire_customizer( $wp_customize ){
 			'set_products_button_text', array(
 				'label' => esc_html__( 'Products Button Text', 'lasaphire' ),
 				'description' => esc_html__( 'Products Button Text', 'lasaphire' ),
-				'section' => 'sec_home_page',
+				'section' => 'sec_home_prod_slider',
 				'type' => 'text'
 				)
 			);
 
-
 			// Products Button Url 1
 			$wp_customize->add_setting(
 				'set_products_link', array(
-					'type'				=> 'theme_mod',
-					'default'			=>  '',
-					'sanitize_callback'	=> 'sanitize_text_field',
+					'type' => 'theme_mod',
+					'default' =>  '',
+					'sanitize_callback' => 'sanitize_text_field',
 				)
 			);
 
 			$wp_customize->add_control(
 				'set_products_link', array(
-					'label'			=> esc_html__( 'Select page', 'lasaphire' ),
-					'description'	=> esc_html__( 'Which side the button takes you to.', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'type'			=> 'dropdown-pages',
+					'label' => esc_html__( 'Select page', 'lasaphire' ),
+					'description' => esc_html__( 'Which side the button takes you to.', 'lasaphire' ),
+					'section' => 'sec_home_prod_slider',
+					'type' => 'dropdown-pages',
 					'allow_addition' => true,
 				)
 			);
 
+			// Products teszt 1
+			$wp_customize->add_setting(
+				'set_products_test', array(
+					'type' => 'theme_mod',
+					'default' =>  '',
+					'sanitize_callback' => 'sanitize_text_field',
+				)
+			);
+
+			$wp_customize->add_control(
+				'set_products_link', array(
+					'label' => esc_html__( 'Select test', 'lasaphire' ),
+					'description' => esc_html__( 'Test dropdown selection.', 'lasaphire' ),
+					'section' => 'sec_home_prod_slider',
+					'type' => 'dropdown-cats',
+					'allow_addition' => true,
+				)
+			);
+
+		// Home Page New Arrivals Settings
+		$wp_customize->add_section(
+			'sec_home_new_arrivals', array(
+				'title' => esc_html__( 'Home Page New Arrivals settings', 'lasaphire' ),
+				'description' => esc_html__( 'Home Page New Arrivals settings Section', 'lasaphire' ),
+				'panel' => 'pa_home_page',
+			)
+		);
+
 			// New Arrivals Checkbox
 			$wp_customize->add_setting(
 				'set_new_arrivals_show', array(
-					'type'				=> 'theme_mod',
-					'default'			=> false,
-					'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
+					'type' => 'theme_mod',
+					'default' => false,
+					'sanitize_callback' => 'la_saphire_sanitize_checkbox'
 				)
 			);
 
 			$wp_customize->add_control(
 				'set_new_arrivals_show', array(
-					'label'			=> esc_html__( 'Show New Arrivals?', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'type'			=> 'checkbox'
+					'label' => esc_html__( 'Show New Arrivals?', 'lasaphire' ),
+					'section' => 'sec_home_new_arrivals',
+					'type' => 'checkbox'
 				)
 			);
 
 			// New Arrivals Products Limit
 			$wp_customize->add_setting(
 				'set_new_arrivals_max_num', array(
-					'type'				=> 'theme_mod',
-					'default'			=> 4,
-					'sanitize_callback'	=> 'absint'
+					'type' => 'theme_mod',
+					'default' => 4,
+					'sanitize_callback' => 'absint'
 				)
 			);
 
 			$wp_customize->add_control(
 				'set_new_arrivals_max_num', array(
-					'label'			=> esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
-					'description'	=> esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'type'			=> 'number'
+					'label' => esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
+					'description' => esc_html__( 'New Arrivals Max Number', 'lasaphire' ),
+					'section' => 'sec_home_new_arrivals',
+					'type' => 'number'
 				)
 			);
 
 			// New Arrivals Product Columns
 			$wp_customize->add_setting(
 				'set_new_arrivals_max_col', array(
-					'type'				=> 'theme_mod',
-					'default'			=> 4,
-					'sanitize_callback'	=> 'absint'
+					'type' => 'theme_mod',
+					'default' => 4,
+					'sanitize_callback' => 'absint'
 				)
 			);
 
 			$wp_customize->add_control(
 				'set_new_arrivals_max_col', array(
-					'label'			=> esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
-					'description'	=> esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'type'			=> 'number'
+					'label' => esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
+					'description' => esc_html__( 'New Arrivals Max Columns', 'lasaphire' ),
+					'section' => 'sec_home_new_arrivals',
+					'type' => 'number'
 				)
 			);
+
+		// Home Page Deal of the Week Settings
+		$wp_customize->add_section(
+			'sec_home_deal', array(
+				'title' => esc_html__( 'Home Page Deal of the Week settings', 'lasaphire' ),
+				'description' => esc_html__( 'Home Page Deal of the Week settings Section', 'lasaphire' ),
+				'panel' => 'pa_home_page',
+			)
+		);
 
 			// Deal of the Week Checkbox
 			$wp_customize->add_setting(
 				'set_deal_show', array(
-					'type'				=> 'theme_mod',
-					'default'			=> false,
-					'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
+					'type' => 'theme_mod',
+					'default' => false,
+					'sanitize_callback' => 'la_saphire_sanitize_checkbox'
 				)
 			);
 
 			$wp_customize->add_control(
 				'set_deal_show', array(
-					'label'			=> esc_html__( 'Show Deal of the Week?', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'type'			=> 'checkbox'
+					'label' => esc_html__( 'Show Deal of the Week?', 'lasaphire' ),
+					'section' => 'sec_home_deal',
+					'type' => 'checkbox'
 				)
 			);
 
@@ -182,7 +227,7 @@ function la_saphire_customizer( $wp_customize ){
 				'set_deal', array(
 					'label' => esc_html__( 'Deal of the Week Product ID', 'lasaphire' ),
 					'description' => esc_html__( 'Product ID to Display', 'lasaphire' ),
-					'section' => 'sec_home_page',
+					'section' => 'sec_home_deal',
 					'type' => 'number'
 				)
 			);
@@ -200,7 +245,7 @@ function la_saphire_customizer( $wp_customize ){
 				'set_deal_title', array(
 					'label'			=> esc_html__( 'Deal of the Week Section Title', 'lasaphire' ),
 					'description'	=> esc_html__( 'La Saphire Deal of the Week section title', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
+					'section'		=> 'sec_home_deal',
 					'type'			=> 'text'
 				)
 			);
@@ -218,7 +263,7 @@ function la_saphire_customizer( $wp_customize ){
 				'set_deal_button_text', array(
 					'label'			=> esc_html__( 'Deal of the Week Button Text', 'lasaphire' ),
 					'description'	=> esc_html__( 'Deal of the Week Button Text', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
+					'section'		=> 'sec_home_deal',
 					'type'			=> 'text'
 				)
 			);
@@ -226,28 +271,28 @@ function la_saphire_customizer( $wp_customize ){
 			// Deal of the week Button Url 1
 			$wp_customize->add_setting(
 				'set_deal_link', array(
-					'type'				=> 'theme_mod',
-					'default'			=>  '',
-					'sanitize_callback'	=> 'sanitize_text_field',
+					'type' => 'theme_mod',
+					'default' =>  '',
+					'sanitize_callback' => 'sanitize_text_field',
 				)
 			);
 
 			$wp_customize->add_control(
 				'set_deal_link', array(
-					'label'			=> esc_html__( 'Select page', 'lasaphire' ),
-					'description'	=> esc_html__( 'Which side the button takes you to.', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'type'			=> 'dropdown-pages',
+					'label' => esc_html__( 'Select page', 'lasaphire' ),
+					'description' => esc_html__( 'Which side the button takes you to.', 'lasaphire' ),
+					'section' => 'sec_home_deal',
+					'type' => 'dropdown-pages',
 					'allow_addition' => true,
 				)
 			);
 
-			// Deal of the Wook background Image
+			// Deal of the Week background Image
 			$wp_customize->add_setting(
 				'set_deal_bg_image', array(
-					'default'			=> '',
+					'default' => '',
 					'transport' => 'refresh',
-					'sanitize_callback'	=> 'absint'
+					'sanitize_callback' => 'absint'
 				)
 			);
 
@@ -256,7 +301,7 @@ function la_saphire_customizer( $wp_customize ){
 					array(
 						'label'			=> esc_html__( 'Deal of the Week Background Image Set.', 'lasaphire' ),
 						'description'	=> esc_html__( 'Deal of the Week Background Image Set.', 'lasaphire' ),
-						'section'		=> 'sec_home_page',
+						'section'		=> 'sec_home_deal',
 						'flex_width'	=> 'false',
 						'flex_height'	=> 'true',
 						'width' 		=> 1500,
@@ -324,6 +369,15 @@ function la_saphire_customizer( $wp_customize ){
 		// 	)
 		// );
 
+		// Home Page Show About Section Settings
+		$wp_customize->add_section(
+			'sec_home_about', array(
+				'title' => esc_html__( 'Home Page Show About settings', 'lasaphire' ),
+				'description' => esc_html__( 'Home Page Show About settings Section', 'lasaphire' ),
+				'panel' => 'pa_home_page',
+			)
+		);
+
 		// Show About Section Checkbox
 		$wp_customize->add_setting(
 			'set_about_show', array(
@@ -336,7 +390,7 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_control(
 			'set_about_show', array(
 				'label'			=> esc_html__( 'Show About Us?', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
+				'section'		=> 'sec_home_about',
 				'type'			=> 'checkbox'
 			)
 		);
@@ -354,7 +408,7 @@ function la_saphire_customizer( $wp_customize ){
 			'set_about_title', array(
 				'label'			=> esc_html__( 'About Us Title', 'lasaphire' ),
 				'description'	=> esc_html__( 'La Saphire About Us title', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
+				'section'		=> 'sec_home_about',
 				'type'			=> 'text'
 			)
 		);
@@ -372,7 +426,7 @@ function la_saphire_customizer( $wp_customize ){
 			'set_about_subtitle', array(
 				'label'			=> esc_html__( 'About Us Subtitle', 'lasaphire' ),
 				'description'	=> esc_html__( 'La Saphire About Us subtitle', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
+				'section'		=> 'sec_home_about',
 				'type'			=> 'text'
 			)
 		);
@@ -390,7 +444,7 @@ function la_saphire_customizer( $wp_customize ){
 			'set_about_desc', array(
 				'label'			=> esc_html__( 'About Us Description', 'lasaphire' ),
 				'description'	=> esc_html__( 'La Saphire About Us description', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
+				'section'		=> 'sec_home_about',
 				'type'			=> 'textarea'
 			)
 		);
@@ -408,7 +462,7 @@ function la_saphire_customizer( $wp_customize ){
 			'set_about_textlink1', array(
 				'label'			=> esc_html__( 'About Us Text of Link 1', 'lasaphire' ),
 				'description'	=> esc_html__( 'La Saphire About Us Text of Link 1', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
+				'section'		=> 'sec_home_about',
 				'type'			=> 'text'
 			)
 		);
@@ -424,10 +478,10 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_control(
 			'set_about_link1', array(
-				'label'			=> esc_html__( 'About Us Link 1', 'lasaphire' ),
+				'label' => esc_html__( 'About Us Link 1', 'lasaphire' ),
 				'description'	=> esc_html__( 'La Saphire About Us Link 1', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'dropdown-pages',
+				'section' => 'sec_home_about',
+				'type' => 'dropdown-pages',
 				'allow_addition' => true,
 			)
 		);
@@ -435,36 +489,36 @@ function la_saphire_customizer( $wp_customize ){
 		// About Text of link 2
 		$wp_customize->add_setting(
 			'set_about_textlink2', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'About Me' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'About Me' ),
+				'sanitize_callback' => 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_about_textlink2', array(
-				'label'			=> esc_html__( 'About Us Text of Link 2', 'lasaphire' ),
-				'description'	=> esc_html__( 'La Saphire About Us Text of Link 2', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
+				'label' => esc_html__( 'About Us Text of Link 2', 'lasaphire' ),
+				'description' => esc_html__( 'La Saphire About Us Text of Link 2', 'lasaphire' ),
+				'section' => 'sec_home_about',
+				'type' => 'text'
 			)
 		);
 
 		// About link 2
 		$wp_customize->add_setting(
 			'set_about_link2', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'sanitize_text_field',
+				'type' => 'theme_mod',
+				'default' => '',
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_about_link2', array(
-				'label'			=> esc_html__( 'About Us Link 2', 'lasaphire' ),
+				'label' => esc_html__( 'About Us Link 2', 'lasaphire' ),
 				'description'	=> esc_html__( 'La Saphire About Us Link 2', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'dropdown-pages',
+				'section' => 'sec_home_about',
+				'type' => 'dropdown-pages',
 				'allow_addition' => true,
 			)
 		);
@@ -472,36 +526,36 @@ function la_saphire_customizer( $wp_customize ){
 		// About Text of link 3
 		$wp_customize->add_setting(
 			'set_about_textlink3', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Ars Poetics' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Ars Poetics' ),
+				'sanitize_callback' => 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_about_textlink3', array(
-				'label'			=> esc_html__( 'About Us Text of Link 3', 'lasaphire' ),
-				'description'	=> esc_html__( 'La Saphire About Us Text of Link 3', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
+				'label' => esc_html__( 'About Us Text of Link 3', 'lasaphire' ),
+				'description' => esc_html__( 'La Saphire About Us Text of Link 3', 'lasaphire' ),
+				'section' => 'sec_home_about',
+				'type' => 'text'
 			)
 		);
 
 		// About Text of link 3
 		$wp_customize->add_setting(
 			'set_about_link3', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'sanitize_text_field',
+				'type' => 'theme_mod',
+				'default' => '',
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_about_link3', array(
-				'label'			=> esc_html__( 'About Us Link 3', 'lasaphire' ),
-				'description'	=> esc_html__( 'La Saphire About Us Link 3', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'dropdown-pages',
+				'label' => esc_html__( 'About Us Link 3', 'lasaphire' ),
+				'description' => esc_html__( 'La Saphire About Us Link 3', 'lasaphire' ),
+				'section' => 'sec_home_about',
+				'type' => 'dropdown-pages',
 				'allow_addition' => true,
 			)
 		);
@@ -509,119 +563,136 @@ function la_saphire_customizer( $wp_customize ){
 		// About image
 		$wp_customize->add_setting(
 			'set_about_image', array(
-				'default'			=> '',
+				'default' => '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint',
+				'sanitize_callback' => 'absint',
 			)
 		);
 
 		$wp_customize->add_control(
 			new WP_Customize_Media_Control( $wp_customize, 'set_about_image',
 				array(
-					'label'			=> esc_html__( 'About Us Section Image Set.', 'lasaphire' ),
-					'description'	=> esc_html__( 'About Us Section Image Set.', 'lasaphire' ),
-					'section'		=> 'sec_home_page',
-					'mime_type'	=> 'image',
+					'label' => esc_html__( 'About Us Section Image Set.', 'lasaphire' ),
+					'description' => esc_html__( 'About Us Section Image Set.', 'lasaphire' ),
+					'section' => 'sec_home_about',
+					'mime_type' => 'image',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' =>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' =>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' => esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' => esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' => esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
 		);
 
+		// Home Page Our Values Section Settings
+		$wp_customize->add_section(
+			'sec_home_values', array(
+				'title' => esc_html__( 'Home Page Ars Poetics settings', 'lasaphire' ),
+				'description' => esc_html__( 'Home Page Ars Poetics settings Section', 'lasaphire' ),
+				'panel' => 'pa_home_page',
+			)
+		);
 
 		// Our Values Checkbox
 		$wp_customize->add_setting(
 			'set_values_show', array(
-				'type'				=> 'theme_mod',
-				'default'			=> false,
-				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
+				'type' => 'theme_mod',
+				'default' => false,
+				'sanitize_callback' => 'la_saphire_sanitize_checkbox'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_values_show', array(
-				'label'			=> esc_html__( 'Show Ars Poetics Cards?', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'checkbox'
+				'label' => esc_html__( 'Show Ars Poetics Cards?', 'lasaphire' ),
+				'section' => 'sec_home_values',
+				'type' => 'checkbox'
 			)
 		);
 
 		// Our Values card 1 title
 		$wp_customize->add_setting(
 			'set_values_card1_title', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'All natural skin care', 'lasaphire' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'All natural skin care', 'lasaphire' ),
+				'sanitize_callback' => 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_values_card1_title', array(
-				'label'			=> esc_html__( 'Ars Poetics Card-1 Title', 'lasaphire' ),
-				'description'	=> esc_html__( 'Ars Poetics Card-1 Title', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
+				'label' => esc_html__( 'Ars Poetics Card-1 Title', 'lasaphire' ),
+				'description' => esc_html__( 'Ars Poetics Card-1 Title', 'lasaphire' ),
+				'section' => 'sec_home_values',
+				'type' => 'text'
 			)
 		);
 
 		// Our Values card 2 title
 		$wp_customize->add_setting(
 			'set_values_card2_title', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Manufacture of small batches', 'lasaphire' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Manufacture of small batches', 'lasaphire' ),
+				'sanitize_callback' => 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_values_card2_title', array(
-				'label'			=> esc_html__( 'Ars Poetics Card-2 Title', 'lasaphire' ),
-				'description'	=> esc_html__( 'Ars Poetics Card-2 Title', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
+				'label' => esc_html__( 'Ars Poetics Card-2 Title', 'lasaphire' ),
+				'description' => esc_html__( 'Ars Poetics Card-2 Title', 'lasaphire' ),
+				'section' => 'sec_home_values',
+				'type' => 'text'
 			)
 		);
 
 		// Our Values card 3 title
 		$wp_customize->add_setting(
 			'set_values_card3_title', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Beauty with intent', 'lasaphire' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Beauty with intent', 'lasaphire' ),
+				'sanitize_callback' => 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_values_card3_title', array(
-				'label'			=> esc_html__( 'Ars Poetics Card-3 Title', 'lasaphire' ),
-				'description'	=> esc_html__( 'Ars Poetics Card-3 Title', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
+				'label' => esc_html__( 'Ars Poetics Card-3 Title', 'lasaphire' ),
+				'description' => esc_html__( 'Ars Poetics Card-3 Title', 'lasaphire' ),
+				'section' => 'sec_home_values',
+				'type' => 'text'
 			)
 		);
 
 		// Our Values card 4 title
 		$wp_customize->add_setting(
 			'set_values_card4_title', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Reliability', 'lasaphire' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Reliability', 'lasaphire' ),
+				'sanitize_callback' => 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_values_card4_title', array(
-				'label'			=> esc_html__( 'Ars Poetics Card-4 Title', 'lasaphire' ),
-				'description'	=> esc_html__( 'Ars Poetics Card-4 Title', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'text'
+				'label' => esc_html__( 'Ars Poetics Card-4 Title', 'lasaphire' ),
+				'description' => esc_html__( 'Ars Poetics Card-4 Title', 'lasaphire' ),
+				'section' => 'sec_home_values',
+				'type' => 'text'
+			)
+		);
+
+		// Home Page News (Blog) Section Settings
+		$wp_customize->add_section(
+			'sec_home_blog', array(
+				'title' => esc_html__( 'Home Page Blog settings', 'lasaphire' ),
+				'description' => esc_html__( 'Home Page Blog settings Section', 'lasaphire' ),
+				'panel' => 'pa_home_page',
 			)
 		);
 
@@ -638,7 +709,7 @@ function la_saphire_customizer( $wp_customize ){
 			'set_blog_title', array(
 				'label'			=> esc_html__( 'News Title', 'lasaphire' ),
 				'description'	=> esc_html__( 'La Saphire News Section title', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
+				'section'		=> 'sec_home_blog',
 				'type'			=> 'text'
 			)
 		);
@@ -657,7 +728,7 @@ function la_saphire_customizer( $wp_customize ){
 			'set_blog_button_text', array(
 				'label'			=> esc_html__( 'News Button Text', 'lasaphire' ),
 				'description'	=> esc_html__( 'La Saphire News (Blog) Button Text', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
+				'section'		=> 'sec_home_blog',
 				'type'			=> 'text'
 			)
 		);
@@ -665,18 +736,18 @@ function la_saphire_customizer( $wp_customize ){
 		// News (Blog) Button Url
 		$wp_customize->add_setting(
 			'set_blog_link', array(
-				'type'				=> 'theme_mod',
-				'default'			=> '',
-				'sanitize_callback'	=> 'sanitize_text_field',
+				'type' => 'theme_mod',
+				'default' => '',
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_blog_link', array(
-				'label'			=> esc_html__( 'Select page', 'lasaphire' ),
+				'label' => esc_html__( 'Select page', 'lasaphire' ),
 				'description'	=> esc_html__( 'Which side the button takes you to.', 'lasaphire' ),
-				'section'		=> 'sec_home_page',
-				'type'			=> 'dropdown-pages',
+				'section' => 'sec_home_blog',
+				'type' => 'dropdown-pages',
 				'allow_addition' => true,
 			)
 		);
@@ -684,105 +755,106 @@ function la_saphire_customizer( $wp_customize ){
 		// Newsletter Subscription Form
 		$wp_customize->add_section(
 			'sec_subscription', array(
-				'title'	=> esc_html__( 'Newsletter Subscription Form', 'lasaphire' ),
+				'title' => esc_html__( 'Newsletter Subscription Form', 'lasaphire' ),
 				'description'	=> esc_html__( 'Newsletter subscription form settings', 'lasaphire' ),
+				'panel' => 'pa_home_page',
 			)
 		);
 
 		//Subscribe checkbox
 		$wp_customize->add_setting(
 			'set_subscribe_show', array(
-				'type'				=> 'theme_mod',
-				'default'			=> true,
+				'type' => 'theme_mod',
+				'default' => true,
 				'sanitize_callback'	=> 'la_saphire_sanitize_checkbox'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_subscribe_show', array(
-				'label'			=> esc_html__( 'Show Subscribe Section?', 'lasaphire' ),
-				'section'		=> 'sec_subscription',
-				'type'			=> 'checkbox'
+				'label' => esc_html__( 'Show Subscribe Section?', 'lasaphire' ),
+				'section' => 'sec_subscription',
+				'type' => 'checkbox'
 			)
 		);
 
 		// Subscription Text
 		$wp_customize->add_setting(
 			'set_subscription_text', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Sign up to get to know the latest products, stories and nicest offers and tips!', 'lasaphire' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Sign up to get to know the latest products, stories and nicest offers and tips!', 'lasaphire' ),
+				'sanitize_callback' => 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_subscription_text', array(
-				'label'			=> esc_html__( 'Newsletter Subscription description', 'lasaphire' ),
-				'description'	=> esc_html__( 'La Saphire Newsletter subscription description', 'lasaphire' ),
-				'section'		=> 'sec_subscription',
-				'type'			=> 'text'
+				'label' => esc_html__( 'Newsletter Subscription description', 'lasaphire' ),
+				'description' => esc_html__( 'La Saphire Newsletter subscription description', 'lasaphire' ),
+				'section' => 'sec_subscription',
+				'type' => 'text'
 			)
 		);
 
 		// Name placeholder
 		$wp_customize->add_setting(
 			'set_name_placeholder', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'I am called...', 'lasaphire' ),
-				'sanitize_callback'	=> 'sanitize_text_field'
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'I am called...', 'lasaphire' ),
+				'sanitize_callback' => 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_name_placeholder', array(
-				'label'			=> esc_html__( 'Name placehoder text', 'lasaphire' ),
-				'description'	=> esc_html__( 'La Saphire Newsletter subscription name placeholder text', 'lasaphire' ),
-				'section'		=> 'sec_subscription',
-				'type'			=> 'text'
+				'label' => esc_html__( 'Name placehoder text', 'lasaphire' ),
+				'description' => esc_html__( 'La Saphire Newsletter subscription name placeholder text', 'lasaphire' ),
+				'section' => 'sec_subscription',
+				'type' => 'text'
 			)
 		);
 
 		// Email placeholder
 		$wp_customize->add_setting(
 			'set_email_placeholder', array(
-				'type'				=> 'theme_mod',
-				'default'			=> esc_html__( 'Email', 'lasaphire' ),
+				'type' => 'theme_mod',
+				'default' => esc_html__( 'Email', 'lasaphire' ),
 				'sanitize_callback'	=> 'sanitize_text_field'
 			)
 		);
 
 		$wp_customize->add_control(
 			'set_email_placeholder', array(
-				'label'			=> esc_html__( 'Email placehoder text', 'lasaphire' ),
-				'description'	=> esc_html__( 'La Saphire Newsletter subscription email placeholder text', 'lasaphire' ),
-				'section'		=> 'sec_subscription',
-				'type'			=> 'text'
+				'label' => esc_html__( 'Email placehoder text', 'lasaphire' ),
+				'description' => esc_html__( 'La Saphire Newsletter subscription email placeholder text', 'lasaphire' ),
+				'section' => 'sec_subscription',
+				'type' => 'text'
 			)
 		);
 
 		// subscribe background Image
 		$wp_customize->add_setting(
 			'set_subscribe_bg_image', array(
-				'default'			=> '',
+				'default' => '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'esc_url_raw',
+				'sanitize_callback' => 'esc_url_raw',
 			)
 		);
 
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control( $wp_customize, 'set_subscribe_bg_image',
 				array(
-					'label'			=> esc_html__( 'Subscribe Background Image Set.', 'lasaphire' ),
-					'description'	=> esc_html__( 'Subscribe Background Image Set.', 'lasaphire' ),
-					'section'		=> 'sec_subscription',
+					'label' => esc_html__( 'Subscribe Background Image Set.', 'lasaphire' ),
+					'description' => esc_html__( 'Subscribe Background Image Set.', 'lasaphire' ),
+					'section' => 'sec_subscription',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' =>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' =>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -792,38 +864,39 @@ function la_saphire_customizer( $wp_customize ){
 	// Image Gallery Section Settings
 	$wp_customize->add_section(
 		'sec_gallery', array(
-			'title'			=> esc_html__( 'Home Page Gallery Images Settings', 'lasaphire' ),
-			'description'	=> esc_html__( 'Home Page Gallery Section', 'lasaphire' )
+			'title' => esc_html__( 'Home Page Gallery Images Settings', 'lasaphire' ),
+			'description' => esc_html__( 'Home Page Gallery Section', 'lasaphire' ),
+			'panel' => 'pa_home_page',
 		)
 	);
 
 		//  Gallery Image 1
 		$wp_customize->add_setting(
 			'set_gallery_image1', array(
-				'default'			=> '',
+				'default' => '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
+				'sanitize_callback' => 'absint'
 			)
 		);
 
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image1',
 				array(
-					'label'			=> esc_html__( 'Home Gallery Image 1 Setting', 'lasaphire' ),
-					'description'	=> esc_html__( 'Home Gallery Image 1 Setting (size max 1500 x auto px)', 'lasaphire' ),
-					'section'		=> 'sec_gallery',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
+					'label' => esc_html__( 'Home Gallery Image 1 Setting', 'lasaphire' ),
+					'description' => esc_html__( 'Home Gallery Image 1 Setting (size max 1500 x auto px)', 'lasaphire' ),
+					'section' => 'sec_gallery',
+					'flex_width' => 'false',
+					'flex_height' => 'true',
+					'width' => 1500,
+					'height' => 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' => esc_html__( 'Select Image', 'lasaphire' ),
+						'change' => esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' => esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -832,30 +905,30 @@ function la_saphire_customizer( $wp_customize ){
 		//  Gallery Image 2
 		$wp_customize->add_setting(
 			'set_gallery_image2', array(
-				'default'			=> '',
+				'default' => '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
+				'sanitize_callback' => 'absint'
 			)
 		);
 
 		$wp_customize->add_control(
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image2',
 				array(
-					'label'			=> esc_html__( 'Home Gallery Image 2 Setting', 'lasaphire' ),
-					'description'	=> esc_html__( 'Home Gallery Image 2 Setting (size max 1500 x auto px)', 'lasaphire' ),
-					'section'		=> 'sec_gallery',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
+					'label' => esc_html__( 'Home Gallery Image 2 Setting', 'lasaphire' ),
+					'description' => esc_html__( 'Home Gallery Image 2 Setting (size max 1500 x auto px)', 'lasaphire' ),
+					'section' => 'sec_gallery',
+					'flex_width' => 'false',
+					'flex_height' => 'true',
+					'width' => 1500,
+					'height' => 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'change' =>  esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' =>  esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -864,9 +937,9 @@ function la_saphire_customizer( $wp_customize ){
 		//  Gallery Image 3
 		$wp_customize->add_setting(
 			'set_gallery_image3', array(
-				'default'			=> '',
+				'default' => '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
+				'sanitize_callback' => 'absint'
 			)
 		);
 
@@ -1380,47 +1453,55 @@ function la_saphire_customizer( $wp_customize ){
 			)
 		);
 
-	/**
-	 * For Me Page Settings
-	*/
-	$wp_customize->add_section(
-		'sec_forme', array(
-			'title' => esc_html__( 'For Me page', 'lasaphire' ),
-			'description'	=> esc_html__( 'For Me page elements setup.', 'lasaphire' )
+	//Other Page Settings
+	$wp_customize->add_panel(
+		'pa_other_page', array(
+			'title' => esc_html__('Other Pages', 'lasaphire'),
+			'priority' => 170,
 		)
 	);
 
-		// Forme grunge image
-		$wp_customize->add_setting(
-			'set_forme_grunge_image', array(
-				'default'			=> '',
-				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
-			)
-		);
+	// /**
+	//  * For Me Page Settings
+	// */
+	// $wp_customize->add_section(
+	// 	'sec_forme', array(
+	// 		'title' => esc_html__( 'For Me page', 'lasaphire' ),
+	// 		'description'	=> esc_html__( 'For Me page elements setup.', 'lasaphire' )
+	// 	)
+	// );
 
-		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_forme_grunge_image',
-				array(
-					'label'			=> esc_html__( 'For Me Grunge Image Set.', 'lasaphire' ),
-					'description'	=> esc_html__( 'For Me Page Grunge Image Set.', 'lasaphire' ),
-					'section'		=> 'sec_forme',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 640,
-					'height'		=> 'auto',
-					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
-					),
-				)
-			)
-		);
+	// 	// Forme grunge image
+	// 	$wp_customize->add_setting(
+	// 		'set_forme_grunge_image', array(
+	// 			'default'			=> '',
+	// 			'transport' => 'refresh',
+	// 			'sanitize_callback'	=> 'absint'
+	// 		)
+	// 	);
+
+	// 	$wp_customize->add_control(
+	// 		new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_forme_grunge_image',
+	// 			array(
+	// 				'label'			=> esc_html__( 'For Me Grunge Image Set.', 'lasaphire' ),
+	// 				'description'	=> esc_html__( 'For Me Page Grunge Image Set.', 'lasaphire' ),
+	// 				'section'		=> 'sec_forme',
+	// 				'flex_width'	=> 'false',
+	// 				'flex_height'	=> 'true',
+	// 				'width' 		=> 640,
+	// 				'height'		=> 'auto',
+	// 				'button_labels' => array( // Optional.
+	// 					'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
+	// 					'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
+	// 					'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
+	// 					'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
+	// 					'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
+	// 					'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
+	// 					'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+	// 				),
+	// 			)
+	// 		)
+	// 	);
 
 		/**
 		 * Contact Page Settings
@@ -1428,7 +1509,8 @@ function la_saphire_customizer( $wp_customize ){
 		$wp_customize->add_section(
 			'sec_contact', array(
 				'title' => esc_html__( 'Contact Page', 'lasaphire' ),
-				'description' => esc_html__( 'Contact Page elements setup.', 'lasaphire')
+				'description' => esc_html__( 'Contact Page elements setup.', 'lasaphire'),
+				'panel' => 'pa_other_page',
 			)
 		);
 
@@ -1638,12 +1720,13 @@ function la_saphire_customizer( $wp_customize ){
 
 		$wp_customize->add_section(
 				'sec_about', array(
-				'title'			=> esc_html__( 'About menu', 'lasaphire' ),
-				'description'	=> esc_html__( 'Settings for the submenus for the "About" menu', 'lasaphire' )
+				'title'			=> esc_html__( 'Ars Poetics page', 'lasaphire' ),
+				'description'	=> esc_html__( 'Ars Poetics Page settings', 'lasaphire' ),
+				'panel' => 'pa_other_page',
 			)
 		);
 
-				// Ourvalues video
+				// Ourvalues video banner
 		$wp_customize->add_setting(
 			'set_ourvalues_video', array(
 				'default'			=> '',
@@ -1671,6 +1754,46 @@ function la_saphire_customizer( $wp_customize ){
 				)
 			)
 		);
+
+// 		/* Test */
+
+// 		$wp_customize->add_section( 'homepage', array(
+// 		'title' => esc_html_x( 'Homepage Options', 'customizer section title', 'olsen-light-child' ),
+// 	) );
+
+// 	$wp_customize->add_setting( 'home_slider_category', array(
+// 		'default' => 0,
+// 		'sanitize_callback' => 'absint',
+// 	) );
+
+// 	$wp_customize->add_control( new LS_Dropdown_Category_Control( $wp_customize, 'home_slider_category', array(
+// 		'section'       => 'homepage',
+// 		'label'         => esc_html__( 'Slider posts category', 'olsen-light-child' ),
+// 		'description'   => esc_html__( 'Select the category that the slider will show posts from. If no category is selected, the slider will be disabled.', 'olsen-light-child' ),
+// 		'dropdown_args' => array(
+// 			'taxonomy' => 'category',
+// 		),
+// 	) ) );
+
+// 		// Test
+// 		$wp_customize->add_setting(
+// 			'home_slider_test', array(
+// 				'default' => '',
+// 				'sanitize_callback'	=> 'sanitize_text_field'
+// 			)
+// 		);
+
+// 		$wp_customize->add_control(new LS_Dropdown_Product_Control( $wp_customize, 'home_slider_test', array(
+// 				'section'	=> 'homepage',
+// 				'label' => esc_html__( 'Just a test', 'lasaphire' ),
+// 				'description'	=> esc_html__( 'La Saphire dropdown test.', 'lasaphire' ),
+// 				'dropdown_args' => array(
+// 					'post_type' => 'page',
+// 					'hierarchical' => 1,
+// 				),
+// 			),)
+// 		);
+
 }
 add_action( 'customize_register', 'la_saphire_customizer' );
 
