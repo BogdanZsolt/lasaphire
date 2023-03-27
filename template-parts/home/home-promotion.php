@@ -12,7 +12,7 @@ $showdeal = get_theme_mod( 'set_deal_show', false );
 $deal = get_theme_mod( 'set_deal' );
 if( $showdeal == 1 && ( !empty( $deal ) ) ):
 ?>
-<section id="promotion" class="mb-10">
+<section id="promotion" class="mb-5 mb-md-10 col-11 mx-auto">
   <div class="container">
     <div class="division__header row">
       <h5 class="division__title col-12 col-md-6">

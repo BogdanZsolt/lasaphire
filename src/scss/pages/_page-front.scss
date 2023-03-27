@@ -419,13 +419,13 @@ body.home {
 
 /* Section - About */
 .home-about {
-  margin-bottom: 6rem;
+  // margin-bottom: 6rem;
   position: relative;
   width: 100%;
 
   &__content {
     text-align: center;
-    padding: 5rem;
+    // padding: 5rem;
 
     @include atSmallMedium {
       padding: 7rem 1rem 7rem 5rem;
@@ -472,6 +472,7 @@ body.home {
     img {
       width: 100%;
       height: auto;
+      box-shadow: var(--box-shadow);
     }
   }
 }
@@ -874,6 +875,7 @@ a:hover {
   overflow: hidden;
   cursor: zoom-in;
   transition: var(--transition);
+  box-shadow: var(--box-shadow);
 }
 
 .gallery-content {

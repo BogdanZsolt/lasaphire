@@ -15,7 +15,7 @@
 <section id="about" class="home-about">
   <div class="container">
     <div class="row">
-      <div class="home-about__content col-12 col-md-6">
+      <div class="home-about__content col-11 col-md-6 mx-auto">
         <h4 class="home-about__subtitle">
           <?php echo esc_html( get_theme_mod( 'set_about_subtitle', __( 'Who we are?' ))); ?></h4>
         <h2 class="home-about__title">
@@ -31,7 +31,7 @@
             class="btn"><?php echo esc_html( get_theme_mod( 'set_about_textlink3', __( 'Ars Poetics' ) ) ); ?></a>
         </div>
       </div>
-      <div class="home-about__image col-12 col-md-6">
+      <div class="home-about__image col-11 col-md-6 mx-auto mb-5">
         <!-- <img src="https://en.lasaphire.hu/wp-content/uploads/sites/2/2021/06/image_6483441-2-255x255.jpg" alt="Petra"> -->
         <img src="<?php echo $img_src ?>" alt="Petra">
       </div>

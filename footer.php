@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<footer class="pt-5 pb-4">
+<footer class="py-5 pb-md-4">
   <div class="container">
     <div class="row">
       <a class="totop shadow">

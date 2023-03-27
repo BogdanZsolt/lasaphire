@@ -1420,10 +1420,46 @@ function la_saphire_customizer( $wp_customize ){
 	*/
 	$wp_customize->add_section(
 		'sec_footer', array(
-			'title'			=> esc_html__( 'Site Footer', 'lasaphire' ),
-			'description'	=> esc_html__( 'Site Footer elements setup.', 'lasaphire' )
+			'title' => esc_html__( 'Site Footer', 'lasaphire' ),
+			'description' => esc_html__( 'Site Footer elements setup.', 'lasaphire' )
 		)
 	);
+
+		//	Footer background Color
+		$wp_customize->add_setting(
+			'set_footer_bg_color', array(
+				'default' => '#FAF0D1',
+				'transport' => 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control( $wp_customize, 'set_footer_bg_color',
+				array(
+					'label' => esc_html__( 'Background Color', 'lasaphire' ),
+					'description' => esc_html__( 'Setup Footer Background Color', 'lasaphire' ),
+					'section' => 'sec_footer',
+				),
+			)
+		);
+
+		//	Footer Color
+		$wp_customize->add_setting(
+			'set_footer_color', array(
+				'default' => '#A37E33',
+				'transport' => 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control( $wp_customize, 'set_footer_color',
+				array(
+					'label' => esc_html__( 'Text, Icon Color', 'lasaphire' ),
+					'description' => esc_html__( 'Setup Footer Text, Icon Color', 'lasaphire' ),
+					'section' => 'sec_footer',
+				),
+			)
+		);
 
 		//- Footer Image
 		$wp_customize->add_setting(
@@ -1460,6 +1496,48 @@ function la_saphire_customizer( $wp_customize ){
 			'priority' => 170,
 		)
 	);
+
+	/**
+	 * Menu Style Settings
+	*/
+	$wp_customize->add_section(
+		'sec_style', array(
+			'title' => esc_html__( 'Style Settings', 'lasaphire' ),
+			'description'	=> esc_html__( 'Elements Style Setups.', 'lasaphire' )
+		)
+	);
+
+		// Forme grunge image
+		$wp_customize->add_setting(
+			'set_style_grunge_image', array(
+				'default' => '',
+				'transport' => 'refresh',
+				'sanitize_callback' => 'absint'
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_style_grunge_image',
+				array(
+					'label' => esc_html__( 'Background image Setup.', 'lasaphire' ),
+					'description' => esc_html__( 'Main Menu, Ingredient background image, and other elements grunge image Setup.', 'lasaphire' ),
+					'section' => 'sec_style',
+					'flex_width' => 'false',
+					'flex_height' => 'true',
+					'width' => 640,
+					'height' => 'auto',
+					'button_labels' => array( // Optional.
+						'select' => esc_html__( 'Select Image', 'lasaphire' ),
+						'change' => esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' => esc_html__( 'Remove', 'lasaphire' ),
+						'default' => esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' => esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' => esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' => esc_html__( 'Choose Image', 'lasaphire' ),
+					),
+				)
+			)
+		);
 
 	// /**
 	//  * For Me Page Settings
@@ -1818,6 +1896,88 @@ function hex2rgb($color) {
 	return $rgb;
 }
 
+function hex2hsl($color){
+	$hex = str_replace('#','', $color);
+	if(strlen($hex) == 3){
+		$R = hexdec(substr($hex,0,1).substr($hex,0,1));
+		$G = hexdec(substr($hex,1,1).substr($hex,1,1));
+		$B = hexdec(substr($hex,2,1).substr($hex,2,1));
+	} else {
+		$R = hexdec(substr($hex,0,2));
+		$G = hexdec(substr($hex,2,2));
+		$B = hexdec(substr($hex,4,2));
+	}
+	$r = $R/255;
+	$g = $G/255;
+	$b = $B/255;
+	$cmin = min($r, $g, $b);
+	$cmax = max($r, $g, $b);
+	$d = $cmax - $cmin;
+
+	if($d == 0){
+		$h = 0;
+	} elseif($cmax === $r){
+		$h = (($g - $b) / $d);
+	} elseif($cmax === $g){
+		$h = ($b - $r) / $d + 2;
+	} else {
+		$h = ($r - $gr) / $d + 4;
+	}
+
+	$h = round($h * 60);
+	if ($h < 0) {
+		$h += 360;
+	}
+
+	$l = (($cmax + $cmin) / 2);
+	$s = $d === 0 ? 0 : ($d / (1 - abs(2 * $l - 1)));
+
+	if ($s < 0) {
+		$s += 1;
+	}
+
+	$l = round($l*100);
+	$s = round($s*100);
+
+	return array(round($h, 2), round($s, 2), round($l, 2));
+}
+
+
+function hsl2hex($h,$s,$l){
+	$c=(1-abs(2*($l/100)-1))*$s/100;
+	$x=$c*(1-abs(fmod(($h/60),2)-1));
+	$m=($l/100)-($c/2);
+
+	if($h<60){
+		$r=$c;
+		$g=$x;
+		$b=0;
+	} elseif($h<120){
+		$r=$x;
+		$g=$c;
+		$b=0;
+	}elseif($h<180){
+		$r=0;
+		$g=$c;
+		$b=$x;
+	}elseif($h<240){
+		$r=0;
+		$g=$x;
+		$b=$c;
+	}elseif($h<300){
+		$r=$x;
+		$g=0;
+		$b=$c;
+	}else{
+		$r=$c;
+		$g=0;
+		$b=$x;
+	}
+
+	$hex = [dechex(round(($r+$m)*255)),dechex(round(($g+$m)*255)),dechex(round(($b+$m)*255))];
+	return '#' . $hex[0] . $hex[1] . $hex[2];
+}
+
 // Output Costumize CSS
 function lasaphire_customize_css(){ ?>
 
@@ -1843,6 +2003,22 @@ function lasaphire_customize_css(){ ?>
   ?>--cta-color: <?php echo $color;
   ?>;
   /* #f45404 */
+  <?php $color=get_theme_mod('set_footer_bg_color', '#FAF0D1');
+  $hsl=hex2hsl($color);
+  ?>--hue: <?php echo $hsl[0];
+  ?>;
+  --sat: <?php echo $hsl[1];
+  ?>;
+  --light: <?php echo $hsl[2];
+  ?>;
+  --threshold: 60;
+  --switch: calc((var(--light) - var(--threshold)) * -100%);
+  /* --footer-color: hsl(0, 0%, var(--switch)); */
+  --footer-bg-color: hsl(var(--hue), calc(var(--sat)*1%), calc(var(--light)*1%));
+  <?php $color=esc_html(get_theme_mod('set_footer_color', '#A37E33'));
+  ?>--footer-color: <?php echo $color;
+  ?>;
+  /* #A37E33 */
   <?php $color=get_theme_mod('set_primary_darker_color', '#ECC355');
   ?>--primary-darker-color: <?php echo $color;
   ?>;
@@ -1938,7 +2114,7 @@ footer {
 .mega-menu-parent.dropdown .dropdown-menu::after,
 #ls-ingredient.lasaphire .ingredient-filter::after,
 #ls-ingredient.lasaphire .ingredient-wrapper::after {
-  background-image: url('<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_forme_grunge_image' ), 'medium', false); ?>');
+  background-image: url('<?php echo wp_get_attachment_image_url(get_theme_mod( 'set_style_grunge_image' ), 'medium', false); ?>');
 }
 
 /* #for-me .container {

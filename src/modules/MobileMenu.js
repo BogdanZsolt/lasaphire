@@ -6,7 +6,7 @@ class MobileMenu {
 		if (document.querySelector("#menu-la-saphire-main-menu")) {
 			this.mainMenu = getElement("#menu-la-saphire-main-menu");
 			this.myAccount = getElement("#myaccount-link");
-			this.addMenu = getElement("#la-saphire-additional-menu");
+			this.addMenu = getElement("#menu-la-saphire-main-menu");
 			this.searchIcon = getElement("#search");
 			this.cart = getElement("#cart");
 			this.ChangeLang = getElement("#change-lang-link");
@@ -46,7 +46,7 @@ class MobileMenu {
 	}
 
 	moveBackNode() {
-		this.addMenu.insertBefore(this.myAccount, this.addMenu.childNodes[0]);
+		this.addMenu.appendChild(this.myAccount);
 		this.addMenu.appendChild(this.searchIcon);
 		this.addMenu.appendChild(this.cart);
 		this.addMenu.appendChild(this.ChangeLang);

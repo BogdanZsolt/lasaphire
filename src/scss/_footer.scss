@@ -2,7 +2,7 @@
 @use './mixins' as *;
 
 footer {
-  background-color: var(--primary-lightest-color);
+  background-color: var(--footer-bg-color);
   // border-top: 1px solid var(--primary-color);
   position: relative;
   background-repeat: no-repeat;
@@ -57,13 +57,45 @@ footer {
   }
 
   & .subscribe-text {
-    color: var(--secondary-color);
+    // color: var(--secondary-color);
+    color: var(--footer-color);
     text-align: center;
+  }
+
+  .social-menu {
+    & ul {
+      list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+    }
+
+    & .fab {
+      font-size: 1.5rem;
+      color: var(--footer-color);
+      padding: 0.5rem 0.7rem;
+      border: 2px solid var(--footer-color);
+      border-radius: var(--border-radius-md);
+      transition: var(--transition);
+
+      &.fa-facebook-f {
+        padding: 0.5rem 1.07rem;
+      }
+
+      &.fa-instagram {
+        padding: 0.5rem 0.875rem;
+      }
+
+      &:hover {
+        color: var(--secondary-darker-color);
+        border: 2px solid var(--secondary-darker-color);
+        box-shadow: 0 0.3125rem 1.5rem rgba(146, 50, 67, 0.3);
+      }
+    }
   }
 }
 
 #success-subscribe {
-  color: var(--secondary-color);
+  color: var(--footer-color);
   display: none;
 
   &.show {
@@ -83,7 +115,7 @@ footer {
     }
 
     & input::placeholder {
-        color: var(--secondary-color);
+        color: var(--secondary-darker-color);
     }
 
     & .form-control {
@@ -100,34 +132,34 @@ footer {
 }
 
 .social-menu {
-    & ul {
-        list-style: none;
-        padding: 0;
-        margin: 1rem 0;
+  & ul {
+    list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+  }
+
+  & .fab {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    padding: 0.5rem 0.7rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius-md);
+    transition: var(--transition);
+
+    &.fa-facebook-f {
+      padding: 0.5rem 1.07rem;
     }
 
-    & .fab {
-        font-size: 1.5rem;
-        color: var(--secondary-color);
-        padding: 0.5rem 0.7rem;
-        border: 2px solid var(--secondary-color);
-        border-radius: var(--border-radius-md);
-        transition: var(--transition);
-
-        &.fa-facebook-f {
-          padding: 0.5rem 1.07rem;
-        }
-
-        &.fa-instagram {
-          padding: 0.5rem 0.875rem;
-        }
-
-        &:hover {
-          color: var(--secondary-darker-color);
-          border: 2px solid var(--secondary-darker-color);
-          box-shadow: 0 0.3125rem 1.5rem rgba(146, 50, 67, 0.3);
-        }
+    &.fa-instagram {
+      padding: 0.5rem 0.875rem;
     }
+
+    &:hover {
+      color: var(--secondary-darker-color);
+      border: 2px solid var(--secondary-darker-color);
+      box-shadow: 0 0.3125rem 1.5rem rgba(146, 50, 67, 0.3);
+    }
+  }
 }
 
 
@@ -145,12 +177,14 @@ footer {
     & a {
         font-size: 0.75rem;
         font-weight: 300;
-        color: var(--primary-lightest-color);
+        // color: var(--primary-lightest-color);
+        color: var(--footer-color);
         text-decoration: none;
     }
 
     &.current-menu-item a {
-        color: var(--primary-lightest-color);
+        // color: var(--primary-lightest-color);
+        color: var(--footer-color);
     }
 }
 
@@ -167,7 +201,8 @@ footer .brand a {
 .footer-brand-logo {
   font-family: "Marhaban";
   font-size: 3.5rem;
-  color: var(--primary-lightest-color);
+  // color: var(--primary-lightest-color);
+  color: var(--footer-color);
   margin: 1rem 0;
 }
 
@@ -177,7 +212,8 @@ footer .brand a {
 
 .footer-logo {
   width: 7.625rem;
-  stroke: var(--primary-lightest-color);
+  // stroke: var(--primary-lightest-color);
+  stroke: var(--footer-color);
   stroke-width: 2;
   height: auto;
   transition: transform 0.5s ease;
@@ -197,19 +233,22 @@ footer .brand a {
 
 .copyright-text {
   font-size: 0.875rem;
-  color: var(--primary-lightest-color);
+  // color: var(--primary-lightest-color);
+  color: var(--footer-color);
   font-weight: 500;
   text-align: center;
 }
 
 .madeby-text {
   font-size: 0.875rem;
-  color: var(--primary-lightest-color);
+  // color: var(--primary-lightest-color);
+  color: var(--footer-color);
   font-weight: 600;
   text-align: center;
 
   a {
-    color: var(--primary-lightest-color);
+  // color: var(--primary-lightest-color);
+    color: var(--footer-color);
     text-decoration: underline;
   }
 }

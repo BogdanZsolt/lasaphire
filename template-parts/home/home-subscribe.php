@@ -9,7 +9,7 @@
 <?php
 	if( get_theme_mod( 'set_subscribe_show', true ) == 1 ) :
 ?>
-<section class="home-subscribe">
+<section class="home-subscribe col-11 mx-auto">
   <div class="container">
     <div class="home-subscribe__message">
       <p class="home-subscribe__text">

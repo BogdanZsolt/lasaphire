@@ -30,7 +30,7 @@ require get_theme_file_path( '/inc/search-route.php' );
 
 function la_saphire_scripts(){
 	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', null, '3.6.0', true );
-	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), '4.6.1', true );
+	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), '4.6.1', true );
 	wp_enqueue_script( 'main-lasaphire-js', get_template_directory_uri() . '/build/index.js', array(), '1.0', true );
 	wp_enqueue_style( 'google-poppins', 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap' );
 	wp_enqueue_style( 'google-fondamento', 'https://fonts.googleapis.com/css2?family=Fondamento&display=swap' );
@@ -38,7 +38,7 @@ function la_saphire_scripts(){
 	// wp_enqueue_style( 'google-pattaya', 'https://fonts.googleapis.com/css2?family=Pattaya&display=swap' );
 	wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', array(), '5.15.3', 'all' );
 
-	wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css', array(), '4.6.1', 'all' );
+	wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css', array(), '4.6.1', 'all' );
 	wp_enqueue_style( 'la-saphire-style', get_template_directory_uri() . '/build/index.css', array(), '1.0', 'all' );
 
 	wp_localize_script('main-lasaphire-js', 'lasaphireData', array(
@@ -69,60 +69,10 @@ function lasaphire_custom_rest(){
 add_action('rest_api_init', 'lasaphire_custom_rest');
 
 function la_saphire_config(){
-	register_nav_menus(
-		array(
-			'la_saphire_main_menu'	=> esc_html__( 'La Saphire Main Menu', 'lasaphire' ),
-			'la_saphire_footer_menu' => esc_html__( 'La Saphire Footer Menu', 'lasaphire' ),
-			'la_saphire_social_menu' => esc_html__( 'La Saphire Social Menu', 'lasaphire' ),
-			'la_sapire_shop_nav' => esc_html__( 'La Saphire Shop Category Menu', 'lasaphire' ),
-		)
-	);
 
-	$location = 'la_saphire_main_menu';
-	$css_class = 'mega-menu-parent';
-	$locations = get_nav_menu_locations();
-	if ( isset( $locations[ $location ] ) ) {
-		$menu = get_term( $locations[ $location ], 'nav_menu' );
-		if ( $items = wp_get_nav_menu_items( $menu->name ) ) {
-			foreach ( $items as $item ) {
-				if ( in_array( $css_class, $item->classes ) ) {
-					register_sidebar( array(
-						'id'   => 'mega-menu-item-' . $item->ID,
-						'description' => 'Mega Menu items',
-						'name' => $item->title . ' - Mega Menu',
-						'before_widget' => '<li id="%1$s" class="mega-menu-item">',
-						'after_widget' => '</li>',
-					));
-				}
-			}
-		}
-	}
+	require get_theme_file_path( '/inc/nav-functions.php' );
 
 	// var_dump(get_pages(array('post_type' => 'product')));
-
-function ls_nav_menu_add_megamenu_items_title_image( $title, $menu_item ) {
-
-	$menu_item_classes = $menu_item->classes;
-
-
-	// If menu item doesn't have any classes or children, return unchanged title.
-	if ( empty( $menu_item_classes ) || ! in_array( 'mega-column', $menu_item_classes ) ) {
-		return $title;
-	}
-
-	$image = has_post_thumbnail($menu_item->object_id) ? esc_url(get_the_post_thumbnail_url($menu_item->object_id, 'thumbnail')) : '';
-
-	// Add div around original text to separate it from down arrow
-	// (if you need a way to select only the text with CSS)
-	$output_title = '<h5>' . $title . '</h5>';
-	$output_title .= '<div class="mega-img">';
-	$output_title .= '<img src="' . $image . '">';
-	$output_title .= '</div>';
-
-	return $output_title;
-}
-
-add_filter( 'nav_menu_item_title', 'ls_nav_menu_add_megamenu_items_title_image', 10, 2 );
 
 	/**
 		* Gutenberg block editor disabled
@@ -141,26 +91,26 @@ add_filter( 'nav_menu_item_title', 'ls_nav_menu_add_megamenu_items_title_image',
 	// WooCommerce Support Setup
 	add_theme_support( 'woocommerce', array(
 		'thumbnail_image_width' => 255,
-		'single_image_width'	=> 255,
-		'product_grid'			=> array(
-			'default_rows'		=> 4,
-			'min_rows'			=> 1,
-			'max_rows'			=> 10,
-			'default_columns'	=> 4,
-			'min_columns'		=> 1,
-			'max_columns'		=> 6,
+		'single_image_width' => 255,
+		'product_grid' => array(
+			'default_rows' => 4,
+			'min_rows' => 1,
+			'max_rows' => 10,
+			'default_columns' => 4,
+			'min_columns' => 1,
+			'max_columns' => 6,
 		)
-	) );
+	));
 
 	// add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-slider' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 
 	add_theme_support( 'custom-logo', array(
-		'height' 		=> 85,
-		'width'			=> 160,
-		'flex_height'	=> true,
-		'flex_width'	=> true,
+		'width' => 200,
+		'height' => 100,
+		'flex_height' => true,
+		'flex_width' => true,
 	) );
 
 	//add featured image
@@ -215,57 +165,57 @@ add_action( 'widgets_init', 'la_saphire_sidebars' );
 function la_saphire_sidebars(){
 	register_sidebar(
 		array(
-			'name'										=> esc_html__( 'La Saphire Main Sidebar', 'lasaphire' ),
-			'id'												=> 'la_saphire-sidebar-1',
-			'description'			=> esc_html__( 'Drag and drop your widgets here', 'lasaphire' ),
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
-			'after_widget'		=> '</div>',
-			'before_title'		=> '<h4 class="widget-title">',
-			'after_title'			=> '</h4>',
+			'name' => esc_html__( 'La Saphire Main Sidebar', 'lasaphire' ),
+			'id' => 'la_saphire-sidebar-1',
+			'description' => esc_html__( 'Drag and drop your widgets here', 'lasaphire' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		)
 	);
 	register_sidebar(
 		array(
-			'name'										=> esc_html__( 'La Saphire Sidebar Shop', 'lasaphire' ),
-			'id'												=> 'la_saphire-sidebar-shop',
-			'description'			=> esc_html__( 'Drag and drop your WooCommerce widgets here', 'lasaphire' ),
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
-			'after_widget'		=> '</div>',
-			'before_title'		=> '<h4 class="widget-title">',
-			'after_title'			=> '</h4>',
+			'name' => esc_html__( 'La Saphire Sidebar Shop', 'lasaphire' ),
+			'id' => 'la_saphire-sidebar-shop',
+			'description' => esc_html__( 'Drag and drop your WooCommerce widgets here', 'lasaphire' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		)
 	);
 	register_sidebar(
 		array(
-			'name'										=> esc_html__('La Saphire Footer Sidebar 1', 'lasaphire' ),
-			'id'												=> 'la_saphire-footer-sidebar-1',
-			'description'			=> esc_html__('Drag and drop your widgets here', 'lasaphire' ),
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
-			'after_widget'		=> '</div>',
-			'before_title'		=> '<h4 class="widget-title">',
-			'after_title'			=> '</h4>',
+			'name' => esc_html__('La Saphire Footer Sidebar 1', 'lasaphire' ),
+			'id' => 'la_saphire-footer-sidebar-1',
+			'description' => esc_html__('Drag and drop your widgets here', 'lasaphire' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		)
 	);
 	register_sidebar(
 		array(
-			'name'										=> esc_html__( 'La Saphire Footer Sidebar 2', 'lasaphire' ),
-			'id'												=> 'la_saphire-footer-sidebar-2',
-			'description'			=> esc_html__( 'Drag and drop your widgets here', 'lasaphire' ),
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
-			'after_widget'		=> '</div>',
-			'before_title'		=> '<h4 class="widget-title">',
-			'after_title'			=> '</h4>',
+			'name' => esc_html__( 'La Saphire Footer Sidebar 2', 'lasaphire' ),
+			'id' => 'la_saphire-footer-sidebar-2',
+			'description' => esc_html__( 'Drag and drop your widgets here', 'lasaphire' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		)
 	);
 	register_sidebar(
 		array(
-			'name'										=> esc_html__( 'La Saphire Footer Sidebar 3', 'lasaphire' ),
-			'id'												=> 'la_saphire-footer-sidebar-3',
-			'description'			=> esc_html__( 'Drag and drop your widgets here', 'lasaphire' ),
+			'name' => esc_html__( 'La Saphire Footer Sidebar 3', 'lasaphire' ),
+			'id' => 'la_saphire-footer-sidebar-3',
+			'description' => esc_html__( 'Drag and drop your widgets here', 'lasaphire' ),
 			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
-			'after_widget'		=> '</div>',
-			'before_title'		=> '<h4 class="widget-title">',
-			'after_title'			=> '</h4>',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		)
 	);
 }

@@ -37,17 +37,78 @@
   --box-shadow: 0 1rem 2rem -1rem var(--secondary-darker-color);
 }
 
-.mt-10 {
-  margin-top: 6rem;
+.pl-10, .px-10 {
+  padding-left: 6rem !important;
 }
 
-.mb-10 {
-  margin-bottom: 6rem;
+.pr-10, .px-10 {
+  padding-right: 6rem !important;
 }
 
-.my-10 {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+@media (min-width: 768px){
+  .pl-md-10, .px-md-10 {
+    padding-left: 0.25rem!important;
+  }
+
+  .pr-md-10, .px-md-10 {
+    padding-right: 6rem !important;
+  }
+}
+
+.pt-10, .py-10 {
+  padding-top: 6rem !important;
+}
+
+.pb-10, .py-10 {
+  padding-bottom: 6rem !important;
+}
+
+@media (min-width: 768){
+  .pt-md-10, .py-md-10 {
+    padding-top: 6rem !important;
+  }
+
+  .pb-md-10, .py-md-10 {
+    padding-bottom: 6rem !important;
+  }
+}
+
+.ml-10, .mx-10 {
+  margin-left: 6rem !important;
+}
+
+.mr-10, .mx-10 {
+  margin-right: 6rem !important;
+}
+
+@media (min-width: 768){
+  .ml-md-10, .mx-md-10 {
+    margin-left: 6rem !important;
+  }
+
+  .mr-md-10, .mx-md-10 {
+    margin-right: 6rem !important;
+  }
+}
+
+.mt-10, .my-10 {
+  margin-top: 6rem !important;
+}
+
+.mb-10, .my-10 {
+  margin-bottom: 6rem !important;
+}
+
+@media (min-width: 768){
+  .mt-md-10, .my-md-10 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+  }
+
+  .mb-md-10, .my-md-10 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+  }
 }
 
 * {
@@ -100,6 +161,10 @@ input {
 
 .hidden {
   display: none;
+}
+
+.img-shadow {
+  box-shadow: var(--box-shadow);
 }
 
 input:-webkit-autofill,

@@ -37,7 +37,7 @@
   <!-- <svg class="decor-cat">
 		<use href="#decor-cat"></use>
 	</svg> -->
-  <div class="container col-7">
+  <div class="container col-10 col-xl-8">
     <div class="division__header row">
       <h5 class="division__title col-12 col-md-6">
         <?php echo esc_html( get_theme_mod( 'set_products_title', __( 'Products', 'lasaphire' ) ) ); ?>

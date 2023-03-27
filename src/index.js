@@ -35,14 +35,20 @@ document.addEventListener("DOMContentLoaded", () => {
 				'<span class="next-button"></span>',
 			],
 			responsive: {
+				1280: {
+					items: 5,
+				},
 				1024: {
 					items: 4,
 				},
 				960: {
 					items: 3,
 				},
-				600: {
+				500: {
 					items: 2,
+				},
+				0: {
+					items: 1,
 				},
 			},
 		});
