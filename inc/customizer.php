@@ -2118,7 +2118,7 @@ footer {
 }
 
 /* #for-me .container {
-  background-image: url(<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_forme_bg_image', '' ), 'la-saphire-page-banner', false);
+  background-image: url(<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_forme_bg_image', '' ), 'la-saphire-banner', false);
   ?>);
 } */
 </style>

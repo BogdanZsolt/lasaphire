@@ -30,9 +30,11 @@
 
         <a href="<?php the_permalink(); ?>">
           <?php
-							if( has_post_thumbnail() ):
-							the_post_thumbnail( 'la-saphire-blog', array( 'class' => 'img-fluid' ) );
-							endif;
+							if( has_post_thumbnail() ){
+							  the_post_thumbnail( 'la-saphire-blog', array( 'class' => 'img-fluid' ) );
+							} else {
+                echo '<img src="' . get_placeholder_image('la-saphire-blog') . '" class="img-fluid">';
+              };
 							?>
           <h4 class="py-3 post-title"><?php the_title(); ?></h4>
           <div class="excerpt text-beauty"><?php wp_trim_words(the_excerpt(),18); ?></div>

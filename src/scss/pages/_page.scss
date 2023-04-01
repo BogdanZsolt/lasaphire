@@ -57,6 +57,11 @@
     visibility: visible;
     opacity: 1;
   }
+
+  &.img-mobile {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 .banner-content {

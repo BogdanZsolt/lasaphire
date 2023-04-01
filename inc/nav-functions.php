@@ -102,7 +102,7 @@ function ls_nav_menu_add_megamenu_items_title_image( $title, $menu_item ) {
 		return $title;
 	}
 
-	$image = has_post_thumbnail($menu_item->object_id) ? esc_url(get_the_post_thumbnail_url($menu_item->object_id, 'thumbnail')) : '';
+	$image = has_post_thumbnail($menu_item->object_id) ? esc_url(get_the_post_thumbnail_url($menu_item->object_id, 'thumbnail')) : get_placeholder_image('thumbnail');
 
 	// Add div around original text to separate it from down arrow
 	// (if you need a way to select only the text with CSS)

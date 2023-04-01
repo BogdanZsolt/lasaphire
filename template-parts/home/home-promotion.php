@@ -22,7 +22,9 @@ if( $showdeal == 1 && ( !empty( $deal ) ) ):
     </div>
     <div class="row no-gutters border-rounded">
       <div class="image col-12 col-md-6">
-        <?php echo get_the_post_thumbnail( $deal, 'large', array( 'class' => 'img-fluid' ) ); ?>
+        <?php $img = get_the_post_thumbnail( $deal, 'large', array( 'class' => 'img-fluid' ) );
+          echo !empty($img) ? $img : '<img src="' . get_placeholder_image('large') . '" class="img-fluid">';
+        ?>
       </div>
       <div class="content col-12 col-md-6"
         style="background-image: url(<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_deal_bg_image', '' ), 'full', false); ?>);">

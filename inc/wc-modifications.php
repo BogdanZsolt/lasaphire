@@ -9,8 +9,10 @@ function la_saphire_wc_modify(){
 		$id = wc_get_page_id( 'shop' );
 		$page = get_page_by_path( 'contact' );
 		$page = get_permalink( $page->ID );
-		$src = wp_get_attachment_image_url(get_post_thumbnail_id( $id ), 'la-saphire-page-banner', false);
-		$src_mobile = wp_get_attachment_image_url(get_post_thumbnail_id( $id ), 'woocommerce_thumbnail', false);
+		$src = wp_get_attachment_image_url(get_post_thumbnail_id( $id ), 'la-saphire-banner', false);
+		$src = $src ? $src : get_placeholder_image('la-saphire-banner');
+		$src_mobile = wp_get_attachment_image_url(get_post_thumbnail_id( $id ), 'la-saphire-mobile', false);
+		$src_mobile = $src_mobile ? $src_mobile : get_placeholder_image('la-saphire-mobile');
 		echo '<div class="banner mb-5">
 				<img src="' . esc_url($src) . '" id="shop-img" class="img-fluid" alt="shop banner photo">
 				<img src="' . esc_url($src_mobile) . '" id="shop-img-mobile" class="img-mobile" alt="shop mobile banner photo">

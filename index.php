@@ -13,8 +13,8 @@
  */
 
 get_header();
-$src = get_the_post_thumbnail_url( get_option( 'page_for_posts' ), 'la-saphire-page-banner' );
-$src_mobile = get_the_post_thumbnail_url( get_option( 'page_for_posts' ), 'woocommerce_thumbnail' );
+$src = has_post_thumbnail(get_option( 'page_for_posts' )) ? get_the_post_thumbnail_url( get_option( 'page_for_posts' ), 'la-saphire-banner' ) : get_placeholder_image('la-saphire-banner');
+$src_mobile = has_post_thumbnail(get_option( 'page_for_posts' )) ? get_the_post_thumbnail_url( get_option( 'page_for_posts' ), 'la-saphire-mobile' ) : get_placeholder_image('la-saphire-mobile');
 ?>
 <div class="content-area">
   <main>

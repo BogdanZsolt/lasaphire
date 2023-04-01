@@ -107,8 +107,8 @@ function la_saphire_config(){
 	add_theme_support( 'wc-product-gallery-lightbox' );
 
 	add_theme_support( 'custom-logo', array(
-		'width' => 200,
-		'height' => 100,
+		'width' => 200, /* 160 */
+		'height' => 100, /* 85 */
 		'flex_height' => true,
 		'flex_width' => true,
 	) );
@@ -117,10 +117,15 @@ function la_saphire_config(){
 	add_theme_support( 'post-thumbnails' );
 
 	// Register new image size
-	add_image_size( 'la-saphire-slider', 1920, 1080, array( 'center', 'center' ) );
-	add_image_size( 'la-saphire-page-banner', 1920, 540, array( 'center', 'top') );
-	// add_image_size( 'la-saphire-page-banner', 1280, 180, array( 'center', 'center' ) );
-	add_image_size( 'la-saphire-blog', 960, 640, array( 'center', 'center' ) );
+	// add_image_size( 'la-saphire-slider', 1920, 1080, array( 'center', 'center' ) );
+	add_image_size( 'la-saphire-background', 1920, 1080, array( 'center', 'center' ) );
+	// add_image_size( 'la-saphire-page-banner', 1920, 540, array( 'center', 'top') );
+	add_image_size( 'la-saphire-banner', 1048, 250, array( 'center', 'top') );
+	add_image_size( 'la-saphire-mobile', 300, 300, array( 'center', 'center' ) );
+	add_image_size( 'la-saphire-featured-landscape', 1200, 900, array( 'center', 'top') );
+	add_image_size( 'la-saphire-featured-portrait', 900, 1200, array( 'center', 'top') );
+	// add_image_size( 'la-saphire-blog', 960, 640, array( 'center', 'center' ) );
+	add_image_size( 'la-saphire-blog', 1200, 630, array( 'center', 'center' ) );
 
 	if ( ! isset( $content_width ) ) {
 		$content_width = 600;
@@ -129,7 +134,6 @@ function la_saphire_config(){
 	// SEO Titles
 	add_theme_support( 'title-tag' );
 }
-
 add_action( 'after_setup_theme', 'la_saphire_config', 0 );
 
 if( class_exists( 'WooCommerce' )){
@@ -139,7 +143,6 @@ if( class_exists( 'WooCommerce' )){
 /**
  * Show cart contents / total Ajax
  */
-add_filter( 'woocommerce_add_to_cart_fragments', 'la_saphire_woocommerce_header_add_to_cart_fragment' );
 
 function la_saphire_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	global $woocommerce;
@@ -152,6 +155,14 @@ function la_saphire_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	$fragments['span.items'] = ob_get_clean();
 	return $fragments;
 }
+add_filter( 'woocommerce_add_to_cart_fragments', 'la_saphire_woocommerce_header_add_to_cart_fragment' );
+
+function la_saphire_wc_placeholder_src($src){
+	var_dump($size);
+	$src = get_template_directory_uri() . '/img/placeholders/placeholder-woocommerce_thumbnail.webp';
+	return $src;
+}
+add_filter('woocommerce_placeholder_img_src', 'la_saphire_wc_placeholder_src');
 
 // add_action( 'customize_register', 'ls_customize_register' );
 // function ls_customize_register( WP_Customize_Manager $wp_customize ) {
@@ -223,6 +234,11 @@ function la_saphire_sidebars(){
 // Implement Custom Post Type Setup
 
 require get_template_directory() . '/inc/add-cpt.php';
+
+function get_placeholder_image($size){
+	$output = get_template_directory_uri() . '/img/placeholders/placeholder-' . $size . '.webp';
+	return $output;
+}
 
 
 // Send Contact Mail

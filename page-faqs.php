@@ -5,8 +5,8 @@ Template Name: FAQs Page
 
 get_header();
 	while( have_posts() ): the_post();
-		$src = get_the_post_thumbnail_url( null, 'la-saphire-page-banner' );
-		$src_mobile = get_the_post_thumbnail_url( null, 'woocommerce_thumbnail' );
+		$src = get_the_post_thumbnail_url( null, 'la-saphire-banner' );
+		$src_mobile = get_the_post_thumbnail_url( null, 'la-saphire-mobile' );
 	?>
 <section id="faqs" class="mb-5" data-spy="scroll" data-target="#faq-category-list" data-offset="0">
   <div class="banner mb-5">

@@ -830,16 +830,37 @@ a:hover {
 /* Home Gallery */
 .gallery-content {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 5vw);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(10, 10vw);
   grid-template-areas:
-    "item-01 item-01 item-02 item-03 item-03 item-04"
-    "item-01 item-01 item-02 item-03 item-03 item-04"
-    "item-05 item-05 item-02 item-03 item-03 item-08"
-    "item-05 item-05 item-07 item-07 item-07 item-08"
-    "item-06 item-06 item-07 item-07 item-07 item-08";
+    "item-01 item-01 item-02"
+    "item-01 item-01 item-02"
+    "item-06 item-06 item-02"
+    "item-04 item-05 item-05"
+    "item-04 item-05 item-05"
+    "item-07 item-07 item-07"
+    "item-07 item-07 item-07"
+    "item-03 item-03 item-08"
+    "item-03 item-03 item-08"
+    "item-03 item-03 item-08";
   gap: 0.625rem;
   padding: 0.625rem;
+}
+
+@media (min-width: 768px){
+  .gallery-content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 5vw);
+    grid-template-areas:
+      "item-01 item-01 item-02 item-03 item-03 item-04"
+      "item-01 item-01 item-02 item-03 item-03 item-04"
+      "item-05 item-05 item-02 item-03 item-03 item-08"
+      "item-05 item-05 item-07 item-07 item-07 item-08"
+      "item-06 item-06 item-07 item-07 item-07 item-08";
+    gap: 0.625rem;
+    padding: 0.625rem;
+  }
 }
 
 .item-1 {

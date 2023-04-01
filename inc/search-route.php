@@ -2,25 +2,25 @@
 
 function lasaphireRegisterSearch(){
 	register_rest_route( 'lasaphire/v1', 'search', array(
-		'methods'		=> WP_REST_SERVER::READABLE,
-		'callback'	=> 'lasaphireSearchResults',
+		'methods' => WP_REST_SERVER::READABLE,
+		'callback' => 'lasaphireSearchResults',
 	) );
 }
 add_action( 'rest_api_init', 'lasaphireRegisterSearch' );
 
 function lasaphireSearchResults($data){
 	$mainQuery = new WP_Query( array(
-		'post_type'						=> array('post', 'page', 'ls-ingredient', 'product', 'ls_faq'),
+		'post_type' => array('post', 'page', 'ls-ingredient', 'product', 'ls_faq'),
 		'posts_per_page' => -1,
-		's'														=> sanitize_text_field( $data['term'] ),
+		's' => sanitize_text_field( $data['term'] ),
 	));
 
 	$results = array(
-		'products'					=> array(),
-		'ingredients'		=> array(),
-		'posts'								=>	array(),
-		'pages'							 => array(),
-		'faqs'									=> array(),
+		'products' => array(),
+		'ingredients' => array(),
+		'posts' => array(),
+		'pages' => array(),
+		'faqs' => array(),
 	);
 
 	while( $mainQuery->have_posts() ){
@@ -35,13 +35,13 @@ function lasaphireSearchResults($data){
 			}
 
 			array_push( $results['posts'], array(
-				'title'							=> get_the_title(),
-				'permalink'			=> get_the_permalink(),
-				'authorName'		=> get_the_author(),
-				'authorLink'		=> get_author_posts_url(get_the_author_ID()),
-				'image'							=> get_the_post_thumbnail_url(0, 'la-saphire-blog'),
-				'date'								=> get_the_date(),
-				'description'	=> $description,
+				'title' => get_the_title(),
+				'permalink' => get_the_permalink(),
+				'authorName' => get_the_author(),
+				'authorLink' => get_author_posts_url(get_the_author_ID()),
+				'image' => get_the_post_thumbnail_url(0, 'la-saphire-blog'),
+				'date' => get_the_date(),
+				'description' => $description,
 			));
 		}
 
@@ -50,9 +50,9 @@ function lasaphireSearchResults($data){
 			$content = wp_trim_words(get_the_content(), 25);
 
 			array_push( $results['pages'], array(
-				'title'						=> get_the_title(),
-				'permalink'		=> get_the_permalink(),
-				'content'				=> $content,
+				'title' => get_the_title(),
+				'permalink' => get_the_permalink(),
+				'content' => $content,
 			));
 		}
 
@@ -65,11 +65,11 @@ function lasaphireSearchResults($data){
 			}
 
 			array_push( $results['ingredients'], array(
-				'id'										=> get_the_id(),
-				'title'							=> get_the_title(),
-				'permalink'			=> get_the_permalink(),
-				'image'							=> get_the_post_thumbnail_url( 0, array( '75' ) ),
-				'description'	=> $description,
+				'id' => get_the_id(),
+				'title' => get_the_title(),
+				'permalink' => get_the_permalink(),
+				'image' => get_the_post_thumbnail_url( 0, array( '75' ) ),
+				'description' => $description,
 			));
 		}
 
@@ -96,22 +96,22 @@ function lasaphireSearchResults($data){
 			}
 
 			array_push( $results['products'], array(
-				'title'								=> get_the_title(),
-				'permalink'				=> get_the_permalink(),
-				'image'								=> get_the_post_thumbnail_url(0, 'woocommerce_thumbnail'),
-				'description'		=> $description,
-				'type' 								=> $product->get_type(),
-				'status'							=> $product->get_status(),
-				'price'								=> $price,
-				'regularPrice'	=> $regularPrice,
-				'salePrice'				=> $salePrice,
+				'title' => get_the_title(),
+				'permalink' => get_the_permalink(),
+				'image' => get_the_post_thumbnail_url(0, 'woocommerce_thumbnail'),
+				'description' => $description,
+				'type' => $product->get_type(),
+				'status' => $product->get_status(),
+				'price' => $price,
+				'regularPrice' => $regularPrice,
+				'salePrice' => $salePrice,
 			));
 		}
 
 		if(get_post_type() === 'ls_faq'){
 			array_push( $results['faqs'], array(
-				'title'			=> get_the_title(),
-				'permalink'		=> get_the_permalink(),
+				'title' => get_the_title(),
+				'permalink' => get_the_permalink(),
 			));
 		}
 	}
@@ -122,15 +122,15 @@ function lasaphireSearchResults($data){
 
 		foreach($results['ingredients'] as $item){
 			array_push($ingredientsMetaQuery, array(
-					'key' 					=> '_ingredient_select',
-					'compare'		=> 'LIKE',
-					'value'				=> '"' . $item['id'] . '"',
+					'key' => '_ingredient_select',
+					'compare' => 'LIKE',
+					'value' => '"' . $item['id'] . '"',
 			));
 		}
 
 		$ingredientRelationshipQuery = new WP_Query(array(
-			'post_type' 	=> 'product',
-			'meta_query'	=> $ingredientsMetaQuery,
+			'post_type' => 'product',
+			'meta_query' => $ingredientsMetaQuery,
 		));
 
 		while($ingredientRelationshipQuery->have_posts()){
@@ -160,15 +160,15 @@ function lasaphireSearchResults($data){
 				}
 
 				array_push( $results['products'], array(
-				'title'								=> get_the_title(),
-				'permalink'				=> get_the_permalink(),
-				'image'								=> get_the_post_thumbnail_url(0, 'woocommerce_thumbnail'),
-				'description'		=> $description,
-				'type' 								=> $product->get_type(),
-				'status'							=> $product->get_status(),
-				'price'								=> $price,
-				'regularPrice'	=> $regularPrice,
-				'salePrice'				=> $salePrice,
+				'title' => get_the_title(),
+				'permalink' => get_the_permalink(),
+				'image' => get_the_post_thumbnail_url(0, 'woocommerce_thumbnail'),
+				'description' => $description,
+				'type' => $product->get_type(),
+				'status' => $product->get_status(),
+				'price' => $price,
+				'regularPrice' => $regularPrice,
+				'salePrice' => $salePrice,
 				));
 			}
 		}

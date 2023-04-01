@@ -14,10 +14,12 @@
   </h2>
   <div class="post-thumbnail">
     <?php
-		if( has_post_thumbnail() ):
+		if( has_post_thumbnail() ){
 			the_post_thumbnail( 'la-saphire-blog', array( 'class' => 'img-fluid img-shadow' ) );
-		endif;
-		?>
+    } else {
+      echo '<img src="' . get_placeholder_image('la-saphire-blog') . '" class="img-fluid img-shadow">';
+    }
+    ?>
   </div>
   <div class="meta">
     <p><?php _e( 'Published by', 'lasaphire' ); ?> <?php the_author_posts_link(); ?> <?php echo get_the_date(); ?>

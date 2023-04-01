@@ -14,22 +14,22 @@
 
 get_header();
 	while( have_posts() ): the_post();
-		$src = get_the_post_thumbnail_url( null, 'la-saphire-page-banner' );
-		$src_mobile = get_the_post_thumbnail_url( null, 'woocommerce_thumbnail' );
+		$src = get_the_post_thumbnail_url( null, 'la-saphire-banner' );
+		$src_mobile = get_the_post_thumbnail_url( null, 'la-saphire-mobile' );
 	?>
-	<section id="ingredients-section">
-		<div class="banner mb-5">
-			<img src="<?php echo esc_url($src) ?>" class="img-fluid" alt="banner photo">
-			<img src="<?php echo esc_url($src_mobile) ?>" class="img-mobile" alt="banner photo">
-			<div class="banner-content overlay">
-				<h1><?php the_title(); ?></h1>
-			</div>
-		</div>
-		<div class="container">
-		<?php
+<section id="ingredients-section">
+  <div class="banner mb-5">
+    <img src="<?php echo esc_url($src) ?>" class="img-fluid" alt="banner photo">
+    <img src="<?php echo esc_url($src_mobile) ?>" class="img-mobile" alt="banner photo">
+    <div class="banner-content overlay">
+      <h1><?php the_title(); ?></h1>
+    </div>
+  </div>
+  <div class="container">
+    <?php
 			echo do_shortcode("[ls_ingredients_list]");
 			endwhile;
 		?>
-		</div>
-	</section>
+  </div>
+</section>
 <?php get_footer(); ?>

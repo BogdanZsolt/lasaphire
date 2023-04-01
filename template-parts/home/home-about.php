@@ -9,7 +9,8 @@
 <?php
 	$showabout = get_theme_mod( 'set_about_show', true );
 	if( $showabout == true ) :
-		$img_src = esc_url( wp_get_attachment_image_url( get_theme_mod( 'set_about_image', '' ), 'woocommerce_thumbnail', false ) );
+		$img_src = wp_get_attachment_image_url( get_theme_mod( 'set_about_image', '' ), 'la-saphire-mobile', false );
+    $img_src = $img_src ? $img_src : get_placeholder_image('la-saphire-mobile');
 		// $img_src = wp_get_attachment_image_url( attachment_url_to_postid( esc_url(get_theme_mod( 'set_about_image', 0 ) ) ), 'woocommerce_thumbnail', false );
 ?>
 <section id="about" class="home-about">
@@ -32,8 +33,7 @@
         </div>
       </div>
       <div class="home-about__image col-11 col-md-6 mx-auto mb-5">
-        <!-- <img src="https://en.lasaphire.hu/wp-content/uploads/sites/2/2021/06/image_6483441-2-255x255.jpg" alt="Petra"> -->
-        <img src="<?php echo $img_src ?>" alt="Petra">
+        <img src="<?php echo esc_url($img_src); ?>" alt="Petra">
       </div>
 
     </div>
