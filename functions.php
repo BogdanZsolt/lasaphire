@@ -58,6 +58,7 @@ add_action('wp_enqueue_scripts', 'la_saphire_scripts');
 
 function la_saphire__admin_scripts( $hook ) {
 	wp_enqueue_script ( 'main-admin-js', get_template_directory_uri() . '/build/main-admin.js' );
+	wp_enqueue_style('la-saphire-admin-style', get_template_directory_uri() . '/build/main-admin.css', array(), '1.0', 'all');
 }
 add_action('admin_enqueue_scripts', 'la_saphire__admin_scripts');
 
@@ -90,8 +91,7 @@ function la_saphire_config(){
 
 	// WooCommerce Support Setup
 	add_theme_support( 'woocommerce', array(
-		'thumbnail_image_width' => 255,
-		'single_image_width' => 255,
+		'thumbnail_image_width' => 300,
 		'product_grid' => array(
 			'default_rows' => 4,
 			'min_rows' => 1,
@@ -116,25 +116,57 @@ function la_saphire_config(){
 	//add featured image
 	add_theme_support( 'post-thumbnails' );
 
+	// add_filter( 'big_image_size_threshold', '__return_false');
+	// function ls_remove_default_image_sizes( $sizes ) {
+	// 	/* With WooCommerce */
+	// 	unset( $sizes[ '1536x1536' ]);
+	// 	unset( $sizes[ '2048x2048' ]);
+
+	//   return $sizes;
+	// }
+	// add_filter( 'intermediate_image_sizes_advanced', 'ls_remove_default_image_sizes' );
+
+	// Large Size Thumbnail
+	if(!get_option( 'large_crop')){
+		add_option('large_crop', '1');
+	} else {
+		update_option('large_crop', '1');
+	}
+
+	update_option('large_size_w', 900);
+	update_option('large_size_h', 900);
+
+	remove_image_size( '1536x1536' );
+	remove_image_size( '2048x2048' );
+
 	// Register new image size
-	// add_image_size( 'la-saphire-slider', 1920, 1080, array( 'center', 'center' ) );
-	add_image_size( 'la-saphire-background', 1920, 1080, array( 'center', 'center' ) );
-	// add_image_size( 'la-saphire-page-banner', 1920, 540, array( 'center', 'top') );
-	add_image_size( 'la-saphire-banner', 1048, 250, array( 'center', 'top') );
+	add_image_size( 'la-saphire-background', 1600, 900, array( 'center', 'center' ) );
+	add_image_size( 'la-saphire-banner', 1280, 360, array( 'center', 'center') );
 	add_image_size( 'la-saphire-mobile', 300, 300, array( 'center', 'center' ) );
-	add_image_size( 'la-saphire-featured-landscape', 1200, 900, array( 'center', 'top') );
-	add_image_size( 'la-saphire-featured-portrait', 900, 1200, array( 'center', 'top') );
-	// add_image_size( 'la-saphire-blog', 960, 640, array( 'center', 'center' ) );
-	add_image_size( 'la-saphire-blog', 1200, 630, array( 'center', 'center' ) );
+	add_image_size( 'la-saphire-featured-landscape', 640, 360, array( 'center', 'center') );
+	add_image_size( 'la-saphire-featured-portrait', 360, 640, array( 'center', 'center') );
+	// add_image_size( 'la-saphire-blog', 960, 540, array( 'center', 'center' ) );
 
 	if ( ! isset( $content_width ) ) {
-		$content_width = 600;
+		$content_width = 640;
 	}
 
 	// SEO Titles
 	add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'la_saphire_config', 0 );
+
+add_filter('intermediate_image_sizes', function($sizes) {
+  return array_diff($sizes, ['medium_large']);  // Medium Large (768 x 0)
+});
+
+add_filter('woocommerce_get_image_size_single', function($size){
+	return array(
+		'width' => 640,
+		'height' => 360,
+		'crop' => 1,
+	);
+});
 
 if( class_exists( 'WooCommerce' )){
 	require get_template_directory() . '/inc/wc-modifications.php';
@@ -158,7 +190,6 @@ function la_saphire_woocommerce_header_add_to_cart_fragment( $fragments ) {
 add_filter( 'woocommerce_add_to_cart_fragments', 'la_saphire_woocommerce_header_add_to_cart_fragment' );
 
 function la_saphire_wc_placeholder_src($src){
-	var_dump($size);
 	$src = get_template_directory_uri() . '/img/placeholders/placeholder-woocommerce_thumbnail.webp';
 	return $src;
 }
@@ -171,6 +202,24 @@ add_filter('woocommerce_placeholder_img_src', 'la_saphire_wc_placeholder_src');
 // }
 
 // Widgets Setup
+
+function images_sizes_set() {
+ global $_wp_additional_image_sizes;
+ $get_sizes = get_intermediate_image_sizes();
+ $list = "<ul>";
+ foreach($get_sizes as $image){
+  $list .= "<li>".$image."</li>";
+ }
+ $list .= "<ul>";
+ echo $list;
+}
+
+ add_action( 'wp_dashboard_setup', 'md_dashboard_add_widgets');
+ function md_dashboard_add_widgets() {
+  if (current_user_can('manage_options')){
+   wp_add_dashboard_widget( 'md_dashboard_widget_images_set', 'Image sizes set on this site', 'images_sizes_set' );
+  }
+ }
 
 add_action( 'widgets_init', 'la_saphire_sidebars' );
 function la_saphire_sidebars(){
@@ -324,20 +373,9 @@ function send_smtp_email( $phpmailer ){
 }
 add_action( 'phpmailer_init', 'send_smtp_email' );
 
-//MailerLite Get Subscribe Group
-add_action( 'wp_ajax_get_newsletter_group', 'get_newsletter_group' );
-add_action( 'wp_ajax_nopriv_get_newsletter_group', 'get_newsletter_group' );
 function get_newsletter_group(){
 	$return = array();
-	if( !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ){
-		$return = array(
-			'status' => 'error',
-			'message' => 'nonce error',
-		);
-		wp_send_json( $return, 401);
-		die();
-	}
-	$apikey = get_option( 'lasaphire_newsletter_apikey_field' );
+	$apikey = sanitize_text_field(get_option( 'lasaphire_newsletter_apikey_field' ));
 	$url = 'https://api.mailerlite.com/api/v2/groups';
 	$args = array(
 		'headers' => array(
@@ -347,28 +385,110 @@ function get_newsletter_group(){
 	);
 	$response = wp_remote_get($url, $args);
 	$response_code = wp_remote_retrieve_response_code($response);
-
-	if( 401 === $response_code) {
-		$return = array(
-			'status' => 'error',
-			'message' => 'Unauthorized access',
-		);
-	};
-	if ( 200 !== $response_code){
-		$return = array(
-			'status' => 'error',
-			'message' => 'Error in pinging API',
-		);
+	if( 200 !== $response_code){
+		return array();
 	} else {
-		$return = array(
-			'status' => 'success',
-			'message' => 'Subscribe is success',
-		);
-	};
-
-	wp_send_json($return);
-	wp_die();
+		$temps = json_decode($response['body']);
+		$return = array();
+		foreach($temps as $temp){
+			$tmp = array(
+				'id' => $temp->id,
+				'name' => $temp->name,
+			);
+			array_push($return, $tmp);
+		}
+		return $return;
+	}
 }
+
+function get_newsletter_account_stats(){
+	$return = array();
+	$apikey = sanitize_text_field(get_option( 'lasaphire_newsletter_apikey_field' ));
+	$url = 'https://api.mailerlite.com/api/v2/stats';
+	$args = array(
+		'headers' => array(
+			'Content-Type' => 'application/json',
+			'X-MailerLite-Apikey' => $apikey,
+		)
+	);
+	$response = wp_remote_get($url, $args);
+	$response_code = wp_remote_retrieve_response_code($response);
+	if( 200 !== $response_code){
+		return $return;
+	} else {
+		$return = json_decode($response['body']);
+	}
+	return $return;
+}
+
+function get_newsletter_groups_stats(){
+	$return = array();
+	$apikey = sanitize_text_field(get_option( 'lasaphire_newsletter_apikey_field' ));
+	$groupid = sanitize_text_field(get_option('lasaphire_newsletter_group'));
+	$url = 'https://api.mailerlite.com/api/v2/groups/' . $groupid;
+	$args = array(
+		'headers' => array(
+			'Content-Type' => 'application/json',
+			'X-MailerLite-Apikey' => $apikey,
+		),
+	);
+	$response = wp_remote_get($url, $args);
+	$response_code = wp_remote_retrieve_response_code($response);
+	if( 200 !== $response_code || empty($groupid)){
+		return $return;
+	} else {
+		$return = json_decode($response['body']);
+	}
+	return $return;
+}
+
+//MailerLite Get Subscribe Group
+// add_action( 'wp_ajax_get_newsletter_group', 'get_newsletter_group' );
+// add_action( 'wp_ajax_nopriv_get_newsletter_group', 'get_newsletter_group' );
+// function get_newsletter_group(){
+// 	$return = array();
+// 	if( !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ){
+// 		$return = array(
+// 			'status' => 'error',
+// 			'message' => 'nonce error',
+// 		);
+// 		wp_send_json( $return, 401);
+// 		die();
+// 	}
+// 	$apikey = get_option( 'lasaphire_newsletter_apikey_field' );
+// 	$url = 'https://api.mailerlite.com/api/v2/groups';
+// 	$args = array(
+// 		'headers' => array(
+// 			'Content-Type' => 'application/json',
+// 			'X-MailerLite-ApiKey' => $apikey,
+// 		)
+// 	);
+// 	$response = wp_remote_get($url, $args);
+// 	$response_code = wp_remote_retrieve_response_code($response);
+
+// 	if( 401 === $response_code) {
+// 		$return = array(
+// 			'status' => 'error',
+// 			'message' => 'Unauthorized access',
+// 		);
+// 	};
+// 	if ( 200 !== $response_code){
+// 		$return = array(
+// 			'status' => 'error',
+// 			'message' => 'Error in pinging API',
+// 		);
+// 	} else {
+// 		$return = array(
+// 			'status' => 'success',
+// 			'message' => 'Subscribe is success',
+// 		);
+// 	};
+
+// 	wp_send_json($return);
+// 	wp_die();
+// }
+
+
 
 // MailerLite Subscribe
 add_action( 'wp_ajax_newsletter_subscribe', 'newsletter_subscribe' );
@@ -384,6 +504,7 @@ function newsletter_subscribe(){
 		die();
 	}
 	$apikey = get_option( 'lasaphire_newsletter_apikey_field' ); //0871466cb349fda223fc4f8c3ddd8e9f
+	var_dump($apikey);
 	$group = get_option( 'lasaphire_newsletter_group' ); //108724643
 	$url = 'https://api.mailerlite.com/api/v2/groups/' . $group . '/subscribers';
 	$name = sanitize_text_field( $_POST['name'] );
@@ -423,6 +544,64 @@ function newsletter_subscribe(){
 
 	wp_send_json($return);
 	wp_die();
+}
+
+/**
+ * Install require plugins
+ */
+require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
+add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+
+function my_theme_register_required_plugins() {
+	$plugins = array(
+		array(
+			'name' => 'La Saphire Our Values',
+			'slug' => 'la-saphire-our-values',
+			'source' => get_stylesheet_directory() . '/bundled-plugins/la-saphire-our-values.zip',
+			'required' => true,
+		),
+		array(
+			'name' => 'La Saphire Ingredient',
+			'slug' => 'ls-ingredien',
+			'source' => get_stylesheet_directory() . '/bundled-plugins/ls-ingredient.zip',
+			'required' => true,
+		),
+		array(
+			'name' => 'ZSB Slider',
+			'slug' => 'zsb-slider',
+			'source' => get_stylesheet_directory() . '/bundled-plugins/zsb-slider.zip',
+			'required' => true,
+		),
+		array(
+			'name' => 'WooCommerce',
+			'slug' => 'woocommerce',
+			'required' => true,
+		),
+		array(
+			'name' => 'Regenerate Thumbnails',
+			'slug' => 'regenerate-thumbnails',
+			'required' => true
+		),
+	);
+
+	$config = array(
+		'id' => 'lasaphire',
+		'default_path' => '',
+		'menu' => 'tgmpa-install-plugins',
+		'parent_slug' => 'themes.php',
+		'capability' => 'edit_theme_options',
+		'has_notices' => true,
+		'dismissable' => true,
+		'dismiss_msg' => '',
+		'is_automatic' => false,
+		'message' => '',
+		'strings' => array(
+			'page_title' => __( 'Install Required Plugins', 'lasaphire' ),
+			'menu_title' => __( 'Install Plugins', 'lasaphire' ),
+			'nag_type' => 'updated',
+		)
+	);
+	tgmpa( $plugins, $config );
 }
 
 

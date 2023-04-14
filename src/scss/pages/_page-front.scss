@@ -478,6 +478,79 @@ body.home {
 }
 
 /* Section - Subscribe */
+// .home-subscribe {
+//   .ml-form-embedContainer{
+//     &.ml-subscribe-form {
+//       max-width: 91.666667%;
+//     }
+
+//     .ml-form-align-center{
+//       padding-left: 15px;
+//       padding-right: 15px;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+
+//     .ml-form-embedWrapper {
+//       background-color: var(--secondary-color) !important;
+
+//       &.embedForm {
+//         max-width: unset !important;
+//       }
+
+//       .ml-form-embedBody{
+//         form {
+//           display: flex;
+//           flex-direction: column;
+//           justify-content: center;
+//           align-items: flex-start;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// #rc-anchor-container {
+//   background-color: transparent;
+// }
+
+// @media (min-width: 768px) {
+//   .home-subscribe {
+//     .ml-form-embedContainer{
+//       &.ml-subscribe-form {
+//         max-width: 720px;
+//       }
+//     }
+//   }
+// }
+
+// @media (min-width: 1200px){
+//   .home-subscribe {
+//     .ml-form-embedContainer{
+//       &.ml-subscribe-form {
+//         max-width: 1140px;
+//       }
+
+//       .ml-form-embedWrapper {
+//         .ml-form-embedBody {
+//           form {
+//             flex-direction: row;
+//             gap: 0.5rem;
+//             justify-content: center;
+//             align-items: center;
+//           }
+
+//           .ml-form-formContent {
+//             flex: 0 0 50%;
+//             display: flex;
+//             gap: 0.5rem;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
 .home-subscribe {
   .container {
     background: var(--tertiary-darker-color);

@@ -39,11 +39,11 @@
 	</svg> -->
   <div class="container col-10 col-xl-8">
     <div class="division__header row">
-      <h5 class="division__title col-12 col-md-6">
+      <h5 class="division__title col-12 col-md-6 text-center text-md-left">
         <?php echo esc_html( get_theme_mod( 'set_products_title', __( 'Products', 'lasaphire' ) ) ); ?>
       </h5>
       <a href="<?php echo esc_url( get_permalink( get_theme_mod( 'set_products_link', '' ) ) ); ?>"
-        class="division__link btn-txt col-12 col-md-6"><?php echo esc_html( get_theme_mod( 'set_products_button_text', __( 'Browse Products', 'lasaphire' ) ) ); ?></a>
+        class="division__link btn-txt col-12 col-md-6 text-center text-md-right"><?php echo esc_html( get_theme_mod( 'set_products_button_text', __( 'Browse Products', 'lasaphire' ) ) ); ?></a>
     </div>
     <?php echo do_shortcode( '[products limit="-1" columns="4" orderby="date" class="tiny-slider"]' ); ?>
   </div>

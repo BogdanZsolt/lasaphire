@@ -5,8 +5,8 @@ Template Name: FAQs Page
 
 get_header();
 	while( have_posts() ): the_post();
-		$src = get_the_post_thumbnail_url( null, 'la-saphire-banner' );
-		$src_mobile = get_the_post_thumbnail_url( null, 'la-saphire-mobile' );
+		$src = has_post_thumbnail() ? get_the_post_thumbnail_url( null, 'la-saphire-banner' ) : get_placeholder_image('la-saphire-banner');
+		$src_mobile = has_post_thumbnail() ? get_the_post_thumbnail_url( null, 'la-saphire-mobile' ) : get_placeholder_image('la-saphire-mobile');
 	?>
 <section id="faqs" class="mb-5" data-spy="scroll" data-target="#faq-category-list" data-offset="0">
   <div class="banner mb-5">

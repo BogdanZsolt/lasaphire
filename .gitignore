@@ -3,3 +3,5 @@ package-lock.json
 src/scss/*-bkp.scss
 temp.txt
 *_backup
+template-parts/home/*_temp.php
+changed-files/

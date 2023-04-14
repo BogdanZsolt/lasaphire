@@ -1,15 +1,22 @@
 <form id="contact-email-form">
   <div class="form-group">
+    <?php $user = wp_get_current_user();
+      var_dump($user->user_nicename);
+      if($user != 0){
+        $email = $user->user_email;
+        $name = !empty($user->user_nicename) ? $user->user_nicename : '';
+      };
+    ?>
     <!-- <label for="name"><?php _e( 'Name', 'lasaphire' ); ?></label> -->
     <input type="text" class="form-control" id="name" name="name"
       placeholder="<?php echo esc_html( get_theme_mod( 'set_contactform_name_place', __( 'Name...', 'lasaphire' ) ) ); ?>"
-      required>
+      <?php echo $user != 0 && !empty($name) ? 'value="' . esc_html($name) . '"' : null; ?> required>
   </div>
   <div class="form-group">
     <!-- <label for="email"><?php _e( 'Email address', 'lasaphire' ); ?></label> -->
     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
       placeholder="<?php echo esc_html( get_theme_mod( 'set_contactform_email_place', __( 'Email...', 'lasaphire' ) ) ); ?>"
-      required>
+      <?php echo $user != 0 ? 'value="' . esc_html($user->user_email) . '"' : null; ?> required>
     <small id="emailHelp"
       class="form-text text-muted"><?php echo esc_html( get_theme_mod( 'set_contactform_email_note', __( 'We′ll never share your email with anyone else.', 'lasaphire' ) ) ); ?></small>
   </div>

@@ -9,16 +9,16 @@
 <section id="news" class="blog my-10">
   <div class="container">
     <div class="division__header row">
-      <h5 class="division__title col-12 col-md-6">
+      <h5 class="division__title col-12 col-md-6 text-center text-md-left">
         <?php echo esc_html( get_theme_mod( 'set_blog_title', __( 'La\'Saphire Blog', 'lasaphire' ) ) ); ?></h5>
       <a href="<?php echo esc_url( get_permalink( get_theme_mod( 'set_blog_link', '' ) ) ); ?>"
-        class="division__link btn-txt col-12 col-md-6"><?php echo esc_html( get_theme_mod( 'set_blog_button_text', __('Check the posts', 'lasaphire') ) ); ?></a>
+        class="division__link btn-txt col-12 col-md-6 text-center text-md-right"><?php echo esc_html( get_theme_mod( 'set_blog_button_text', __('Check the posts', 'lasaphire') ) ); ?></a>
     </div>
     <div class="row">
       <?php
 				$args = array(
-					'post_type'			=> 'post',
-					'posts_per_page'	=> 3,
+					'post_type' => 'post',
+					'posts_per_page' => 3,
 				);
 
 				$blog_posts = new WP_Query( $args );
@@ -31,9 +31,9 @@
         <a href="<?php the_permalink(); ?>">
           <?php
 							if( has_post_thumbnail() ){
-							  the_post_thumbnail( 'la-saphire-blog', array( 'class' => 'img-fluid' ) );
+							  the_post_thumbnail( 'la-saphire-featured-landscape', array( 'class' => 'img-fluid' ) );
 							} else {
-                echo '<img src="' . get_placeholder_image('la-saphire-blog') . '" class="img-fluid">';
+                echo '<img src="' . get_placeholder_image('la-saphire-featured-landscape') . '" class="img-fluid">';
               };
 							?>
           <h4 class="py-3 post-title"><?php the_title(); ?></h4>

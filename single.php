@@ -12,7 +12,13 @@ get_header();
 <div id="primary" class="content-area">
   <div id="main">
     <div class="banner mb-5">
-      <?php the_post_thumbnail( 'la-saphire-banner', array( 'class' => 'img-fluid' )  ); ?>
+      <?php
+        if(has_post_thumbnail()){
+          the_post_thumbnail( 'la-saphire-banner', array( 'class' => 'img-fluid' )  );
+        } else {
+          echo '<img src="' . get_placeholder_image('la-saphire-banner') . '" class="img-fluid">';
+        };
+      ?>
       <div class="banner-content overlay">
         <div class="banner-title">
           <h1><?php the_title(); ?></h1>

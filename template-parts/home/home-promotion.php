@@ -15,10 +15,10 @@ if( $showdeal == 1 && ( !empty( $deal ) ) ):
 <section id="promotion" class="mb-5 mb-md-10 col-11 mx-auto">
   <div class="container">
     <div class="division__header row">
-      <h5 class="division__title col-12 col-md-6">
+      <h5 class="division__title col-12 col-md-6 text-center text-md-left">
         <?php echo esc_html( get_theme_mod( 'set_deal_title', __( 'Featured Stuff', 'lasaphire' ) ) ); ?></h5>
       <a href="<?php echo esc_url( get_permalink( get_theme_mod( 'set_deal_link' ), '' ) ); ?>"
-        class="division__link btn-txt col-12 col-md-6"><?php echo esc_html( get_theme_mod( 'set_deal_button_text', __( 'Browse Products', 'lasaphire' ) ) ); ?></a>
+        class="division__link btn-txt col-12 col-md-6 text-center text-md-right"><?php echo esc_html( get_theme_mod( 'set_deal_button_text', __( 'Browse Products', 'lasaphire' ) ) ); ?></a>
     </div>
     <div class="row no-gutters border-rounded">
       <div class="image col-12 col-md-6">

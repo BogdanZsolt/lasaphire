@@ -117,7 +117,7 @@ function la_saphire_customizer( $wp_customize ){
 			);
 
 			$wp_customize->add_control(
-				'set_products_link', array(
+				'set_products_test', array(
 					'label' => esc_html__( 'Select test', 'lasaphire' ),
 					'description' => esc_html__( 'Test dropdown selection.', 'lasaphire' ),
 					'section' => 'sec_home_prod_slider',

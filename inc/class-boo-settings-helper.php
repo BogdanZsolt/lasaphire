@@ -544,14 +544,14 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 			}
 
 			?>
-            <div class="metabox-holder">
-				<?php
+<div class="metabox-holder">
+  <?php
 				if ( $this->is_tabs ) {
 					$this->show_navigation();
 				}
 				?>
-                <form method="post" action="options.php">
-					<?php
+  <form method="post" action="options.php">
+    <?php
 
 					if ( $this->is_tabs ) {
 						foreach ( $this->settings_sections as $section ) :
@@ -572,19 +572,19 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 					}
 
 					?>
-                    <div style="padding-left: 10px">
-						<?php submit_button(); ?>
-                    </div>
+    <div style="padding-left: 10px">
+      <?php submit_button(); ?>
+    </div>
 
-                </form>
-            </div>
-			<?php
+  </form>
+</div>
+<?php
 
 			// Call General Scripts
 			$this->script_general();
 			?>
-            </div>
-			<?php
+</div>
+<?php
 		}
 
 		public function add_settings_section() {
@@ -781,14 +781,14 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 		function callback_text( $args ) {
 
 			$html = sprintf(
-				'<input 
-                        type="%1$s" 
-                        class="%2$s-text %8$s" 
-                        id="%3$s[%4$s]" 
-                        name="%7$s" 
-                        value="%5$s"
-                        %6$s
-                        />',
+				'<input
+					type="%1$s"
+					class="%2$s-text %8$s"
+					id="%3$s[%4$s]"
+					name="%7$s"
+					value="%5$s"
+					%6$s
+				/>',
 				$args['type'],
 				$args['size'],
 				$args['section'],
@@ -853,16 +853,16 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 
 			$html = sprintf(
 				'<input
-                        type="%1$s"
-                        class="%2$s-text"
-                        id="%3$s[%4$s]"
-                        name="%10$s"
-                        value="%5$s"
-                        %6$s
-                        %7$s
-                        %8$s
-                        %9$s
-                        />',
+					type="%1$s"
+					class="%2$s-text"
+					id="%3$s[%4$s]"
+					name="%10$s"
+					value="%5$s"
+					%6$s
+					%7$s
+					%8$s
+					%9$s
+				/>',
 				$args['type'],
 				$args['size'],
 				$args['section'],
@@ -984,14 +984,15 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 		function callback_textarea( $args ) {
 
 			$html = sprintf(
-				'<textarea 
-                        rows="5" 
-                        cols="55" 
-                        class="%1$s-text" 
-                        id="%2$s" 
-                        name="%5$s"
-                        %3$s
-                        >%4$s</textarea>',
+				'<textarea
+					rows="5"
+					cols="55"
+					class="%1$s-text"
+					id="%2$s"
+					name="%5$s"
+					%3$s
+					>%4$s
+				</textarea>',
 				$args['size'], $args['id'], $this->get_markup_placeholder( $args['placeholder'] ), $args['value'], $args['name'] );
 			$html .= $this->get_field_description( $args );
 
@@ -1062,15 +1063,15 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 			$max_width = $max_width . "px";
 			// Print HTML field
 			echo '
-                <div class="upload" style="max-width:' . $max_width . ';">
-                    <img data-src="' . $default_image . '" src="' . $src . '" ' . $image_style . '/>
-                    <div>
-                        <input type="hidden" name="' . $args['name'] . '" id="' . $args['name'] . '" value="' . $value . '" />
-                        <button type="submit" class="boospot-image-upload button">' . $text . '</button>
-                        <button type="submit" class="boospot-image-remove button">&times;</button>
-                    </div>
-                </div>
-            ';
+				<div class="upload" style="max-width:' . $max_width . ';">
+						<img data-src="' . $default_image . '" src="' . $src . '" ' . $image_style . '/>
+						<div>
+								<input type="hidden" name="' . $args['name'] . '" id="' . $args['name'] . '" value="' . $value . '" />
+								<button type="submit" class="boospot-image-upload button">' . $text . '</button>
+								<button type="submit" class="boospot-image-remove button">&times;</button>
+						</div>
+				</div>
+			';
 
 			$this->get_field_description( $args );
 
@@ -1228,92 +1229,92 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 		 */
 		public function script_general() {
 			?>
-            <script>
-                jQuery(document).ready(function ($) {
-                    //Initiate Color Picker
-                    if ($('.wp-color-picker-field').length > 0) {
-                        $('.wp-color-picker-field').wpColorPicker();
-                    }
+<script>
+jQuery(document).ready(function($) {
+  //Initiate Color Picker
+  if ($('.wp-color-picker-field').length > 0) {
+    $('.wp-color-picker-field').wpColorPicker();
+  }
 
 
-                    // For Files Upload
-                    $('.boospot-browse-button').on('click', function (event) {
-                        event.preventDefault();
+  // For Files Upload
+  $('.boospot-browse-button').on('click', function(event) {
+    event.preventDefault();
 
-                        var self = $(this);
+    var self = $(this);
 
-                        // Create the media frame.
-                        var file_frame = wp.media.frames.file_frame = wp.media({
-                            title: self.data('uploader_title'),
-                            button: {
-                                text: self.data('uploader_button_text'),
-                            },
-                            multiple: false
-                        });
+    // Create the media frame.
+    var file_frame = wp.media.frames.file_frame = wp.media({
+      title: self.data('uploader_title'),
+      button: {
+        text: self.data('uploader_button_text'),
+      },
+      multiple: false
+    });
 
-                        file_frame.on('select', function () {
-                            attachment = file_frame.state().get('selection').first().toJSON();
-                            self.prev('.wpsa-url').val(attachment.url).change();
-                        });
+    file_frame.on('select', function() {
+      attachment = file_frame.state().get('selection').first().toJSON();
+      self.prev('.wpsa-url').val(attachment.url).change();
+    });
 
-                        // Finally, open the modal
-                        file_frame.open();
-                    });
-
-
-                    // Prevent page navigation for un-saved changes
-                    $(function () {
-                        var changed = false;
-
-                        $('input, textarea, select, checkbox').change(function () {
-                            changed = true;
-                        });
-
-                        $('.nav-tab-wrapper a').click(function () {
-                            if (changed) {
-                                window.onbeforeunload = function () {
-                                    return "Changes you made may not be saved."
-                                };
-                            } else {
-                                window.onbeforeunload = '';
-                            }
-                        });
-
-                        $('.submit :input').click(function () {
-                            window.onbeforeunload = '';
-                        });
-                    });
+    // Finally, open the modal
+    file_frame.open();
+  });
 
 
-                    // The "Upload" button
-                    $('.boospot-image-upload').click(function () {
-                        var send_attachment_bkp = wp.media.editor.send.attachment;
-                        var button = $(this);
-                        wp.media.editor.send.attachment = function (props, attachment) {
-                            $(button).parent().prev().attr('src', attachment.url);
-                            if (attachment.id) {
-                                $(button).prev().val(attachment.id);
-                            }
-                            wp.media.editor.send.attachment = send_attachment_bkp;
-                        }
-                        wp.media.editor.open(button);
-                        return false;
-                    });
+  // Prevent page navigation for un-saved changes
+  $(function() {
+    var changed = false;
 
-                    // The "Remove" button (remove the value from input type='hidden')
-                    $('.boospot-image-remove').click(function () {
-                        var answer = confirm('Are you sure?');
-                        if (answer == true) {
-                            var src = $(this).parent().prev().attr('data-src');
-                            $(this).parent().prev().attr('src', src);
-                            $(this).prev().prev().val('');
-                        }
-                        return false;
-                    });
+    $('input, textarea, select, checkbox').change(function() {
+      changed = true;
+    });
 
-                });
-            </script>
-			<?php
+    $('.nav-tab-wrapper a').click(function() {
+      if (changed) {
+        window.onbeforeunload = function() {
+          return "Changes you made may not be saved."
+        };
+      } else {
+        window.onbeforeunload = '';
+      }
+    });
+
+    $('.submit :input').click(function() {
+      window.onbeforeunload = '';
+    });
+  });
+
+
+  // The "Upload" button
+  $('.boospot-image-upload').click(function() {
+    var send_attachment_bkp = wp.media.editor.send.attachment;
+    var button = $(this);
+    wp.media.editor.send.attachment = function(props, attachment) {
+      $(button).parent().prev().attr('src', attachment.url);
+      if (attachment.id) {
+        $(button).prev().val(attachment.id);
+      }
+      wp.media.editor.send.attachment = send_attachment_bkp;
+    }
+    wp.media.editor.open(button);
+    return false;
+  });
+
+  // The "Remove" button (remove the value from input type='hidden')
+  $('.boospot-image-remove').click(function() {
+    var answer = confirm('Are you sure?');
+    if (answer == true) {
+      var src = $(this).parent().prev().attr('data-src');
+      $(this).parent().prev().attr('src', src);
+      $(this).prev().prev().val('');
+    }
+    return false;
+  });
+
+});
+</script>
+<?php
 		}
 
 		public function get_settings_sections() {

@@ -1,3 +1,5 @@
+import "./admin.scss";
+
 document.addEventListener("DOMContentLoaded", () => {
 	const endpoint = "";
 	if (document.querySelector("select#product-type")) {
