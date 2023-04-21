@@ -561,7 +561,7 @@ function my_theme_register_required_plugins() {
 			'required' => true,
 		),
 		array(
-			'name' => 'La Saphire Ingredient',
+			'name' => 'LS Ingredient',
 			'slug' => 'ls-ingredien',
 			'source' => get_stylesheet_directory() . '/bundled-plugins/ls-ingredient.zip',
 			'required' => true,

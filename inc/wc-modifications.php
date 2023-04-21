@@ -29,8 +29,8 @@ function la_saphire_wc_modify(){
 		add_action('woocommerce_before_main_content', 'la_saphire_open_category_menu_container_row', 2);
 		function la_saphire_open_category_menu_container_row() {
 			echo '<div class="container-fluid">
-					<div class="row">
-						<div class="shop-category-menu col text-center">';
+							<div class="row">
+								<div class="shop-category-menu col text-center">';
 		}
 
 		add_action('woocommerce_before_main_content', 'la_saphire_add_category_menu', 3);
@@ -111,7 +111,7 @@ function la_saphire_wc_modify(){
 	add_action ( "woocommerce_before_shop_loop_item", "after_li_start", 5 );
 
 	function after_li_start () {
-    	echo '<div data-koa="zoom">';
+		echo '<div data-koa="zoom">';
 	}
 
 	add_action( 'woocommerce_before_shop_loop_item_title', 'add_product_image_wrapper', 8 );
