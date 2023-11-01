@@ -573,6 +573,12 @@ function my_theme_register_required_plugins() {
 			'required' => true,
 		),
 		array(
+			'name' => 'Network Media Library',
+			'slug' => 'network-media-library',
+			'source' => get_stylesheet_directory() . '/bundled-plugins/network-media-library.zip',
+			'required' => true,
+		),
+		array(
 			'name' => 'WooCommerce',
 			'slug' => 'woocommerce',
 			'required' => true,
@@ -603,7 +609,6 @@ function my_theme_register_required_plugins() {
 	);
 	tgmpa( $plugins, $config );
 }
-
 
 // add_action('pre_get_posts', 'exclude_product_category');
 // function exclude_product_category( $query ) {

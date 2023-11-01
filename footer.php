@@ -31,6 +31,10 @@
   </div>
 </div>
 
+<?php if(!is_front_page()){ ?>
+<?php get_template_part('template-parts/content/form', 'subscribe'); ?>
+<?php } ?>
+
 <footer class="py-5 pb-md-4">
   <div class="container">
     <div class="row">
@@ -38,10 +42,6 @@
         <i class="fas fa-chevron-up"></i>
       </a>
     </div>
-    <!-- form subscribe -->
-    <?php if( !is_front_page() ) : ?>
-    <?php get_template_part( 'template-parts/content/form', 'subscribe' ); ?>
-    <?php endif; ?>
     <!-- Social Media Menu -->
     <div class="row">
       <div class="social-menu col text-center">

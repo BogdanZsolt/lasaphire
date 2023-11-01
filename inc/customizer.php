@@ -873,22 +873,18 @@ function la_saphire_customizer( $wp_customize ){
 		//  Gallery Image 1
 		$wp_customize->add_setting(
 			'set_gallery_image1', array(
-				'default' => '',
+				'default'			=> '',
 				'transport' => 'refresh',
-				'sanitize_callback' => 'absint'
+				'sanitize_callback'	=> 'esc_url_raw'
 			)
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image1',
+			new WP_Customize_Image_Control( $wp_customize, 'set_gallery_image1',
 				array(
-					'label' => esc_html__( 'Home Gallery Image 1 Setting', 'lasaphire' ),
-					'description' => esc_html__( 'Home Gallery Image 1 Setting (size max 1500 x auto px)', 'lasaphire' ),
-					'section' => 'sec_gallery',
-					'flex_width' => 'false',
-					'flex_height' => 'true',
-					'width' => 1500,
-					'height' => 'auto',
+					'label'			=> esc_html__( 'Home Gallery Image 1 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 1 Setting', 'lasaphire' ),
+					'section'		=> 'sec_gallery',
 					'button_labels' => array( // Optional.
 						'select' => esc_html__( 'Select Image', 'lasaphire' ),
 						'change' => esc_html__( 'Change Image', 'lasaphire' ),
@@ -902,29 +898,56 @@ function la_saphire_customizer( $wp_customize ){
 			)
 		);
 
+		// $wp_customize->add_setting(
+		// 	'set_gallery_image1', array(
+		// 		'default' => '',
+		// 		'transport' => 'refresh',
+		// 		'sanitize_callback' => 'absint'
+		// 	)
+		// );
+
+		// $wp_customize->add_control(
+		// 	new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image1',
+		// 		array(
+		// 			'label' => esc_html__( 'Home Gallery Image 1 Setting', 'lasaphire' ),
+		// 			'description' => esc_html__( 'Home Gallery Image 1 Setting (size max 1500 x auto px)', 'lasaphire' ),
+		// 			'section' => 'sec_gallery',
+		// 			'flex_width' => 'false',
+		// 			'flex_height' => 'true',
+		// 			'width' => 1500,
+		// 			'height' => 'auto',
+		// 			'button_labels' => array( // Optional.
+		// 				'select' => esc_html__( 'Select Image', 'lasaphire' ),
+		// 				'change' => esc_html__( 'Change Image', 'lasaphire' ),
+		// 				'remove' => esc_html__( 'Remove', 'lasaphire' ),
+		// 				'default' =>  esc_html__( 'Default', 'lasaphire' ),
+		// 				'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+		// 				'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+		// 				'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
+		// 			),
+		// 		)
+		// 	)
+		// );
+
 		//  Gallery Image 2
 		$wp_customize->add_setting(
 			'set_gallery_image2', array(
-				'default' => '',
+				'default'			=> '',
 				'transport' => 'refresh',
-				'sanitize_callback' => 'absint'
+				'sanitize_callback'	=> 'esc_url_raw'
 			)
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image2',
+			new WP_Customize_Image_Control( $wp_customize, 'set_gallery_image2',
 				array(
-					'label' => esc_html__( 'Home Gallery Image 2 Setting', 'lasaphire' ),
-					'description' => esc_html__( 'Home Gallery Image 2 Setting (size max 1500 x auto px)', 'lasaphire' ),
-					'section' => 'sec_gallery',
-					'flex_width' => 'false',
-					'flex_height' => 'true',
-					'width' => 1500,
-					'height' => 'auto',
+					'label'			=> esc_html__( 'Home Gallery Image 2 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 2 Setting', 'lasaphire' ),
+					'section'		=> 'sec_gallery',
 					'button_labels' => array( // Optional.
-						'select' =>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' =>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' =>  esc_html__( 'Remove', 'lasaphire' ),
+						'select' => esc_html__( 'Select Image', 'lasaphire' ),
+						'change' => esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' => esc_html__( 'Remove', 'lasaphire' ),
 						'default' =>  esc_html__( 'Default', 'lasaphire' ),
 						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
 						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
@@ -937,62 +960,54 @@ function la_saphire_customizer( $wp_customize ){
 		//  Gallery Image 3
 		$wp_customize->add_setting(
 			'set_gallery_image3', array(
-				'default' => '',
+				'default'			=> '',
 				'transport' => 'refresh',
-				'sanitize_callback' => 'absint'
+				'sanitize_callback'	=> 'esc_url_raw'
 			)
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image3',
+			new WP_Customize_Image_Control( $wp_customize, 'set_gallery_image3',
 				array(
-					'label'			=> esc_html__( 'Home Gallery Image 3 Setting', 'lasaphire' ),
-					'description'	=> esc_html__( 'Home Gallery Image 3 Setting (size max 1500 x auto px)', 'lasaphire' ),
-					'section'		=> 'sec_gallery',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
+					'label' => esc_html__( 'Home Gallery Image 3 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 3 Setting', 'lasaphire' ),
+					'section'	=> 'sec_gallery',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' => esc_html__( 'Select Image', 'lasaphire' ),
+						'change' => esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' => esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
 		);
 
 		// Gallery Image 4
-		$wp_customize->add_setting(
+$wp_customize->add_setting(
 			'set_gallery_image4', array(
 				'default'			=> '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
+				'sanitize_callback'	=> 'esc_url_raw'
 			)
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image4',
+			new WP_Customize_Image_Control( $wp_customize, 'set_gallery_image4',
 				array(
 					'label'			=> esc_html__( 'Home Gallery Image 4 Setting', 'lasaphire' ),
-					'description'	=> esc_html__( 'Home Gallery Image 4 Setting (size max 1500 x auto px)', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 4 Setting', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' => esc_html__( 'Select Image', 'lasaphire' ),
+						'change' => esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' => esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -1003,28 +1018,24 @@ function la_saphire_customizer( $wp_customize ){
 			'set_gallery_image5', array(
 				'default'			=> '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
+				'sanitize_callback'	=> 'esc_url_raw'
 			)
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image5',
+			new WP_Customize_Image_Control( $wp_customize, 'set_gallery_image5',
 				array(
 					'label'			=> esc_html__( 'Home Gallery Image 5 Setting', 'lasaphire' ),
-					'description'	=> esc_html__( 'Home Gallery Image 5 Setting (size max 1500 x auto px)', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 5 Setting', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' => esc_html__( 'Select Image', 'lasaphire' ),
+						'change' => esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' => esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -1035,28 +1046,24 @@ function la_saphire_customizer( $wp_customize ){
 			'set_gallery_image6', array(
 				'default'			=> '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
+				'sanitize_callback'	=> 'esc_url_raw'
 			)
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image6',
+			new WP_Customize_Image_Control( $wp_customize, 'set_gallery_image6',
 				array(
 					'label'			=> esc_html__( 'Home Gallery Image 6 Setting', 'lasaphire' ),
-					'description'	=> esc_html__( 'Home Gallery Image 6 Setting (size max 1500 x auto px)', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 6 Setting', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' => esc_html__( 'Select Image', 'lasaphire' ),
+						'change' => esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' => esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -1067,60 +1074,52 @@ function la_saphire_customizer( $wp_customize ){
 			'set_gallery_image7', array(
 				'default'			=> '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
+				'sanitize_callback'	=> 'esc_url_raw'
 			)
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image7',
+			new WP_Customize_Image_Control( $wp_customize, 'set_gallery_image7',
 				array(
 					'label'			=> esc_html__( 'Home Gallery Image 7 Setting', 'lasaphire' ),
-					'description'	=> esc_html__( 'Home Gallery Image 7 Setting (size max 1500 x auto px)', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 7 Setting', 'lasaphire' ),
 					'section'		=> 'sec_gallery',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' => esc_html__( 'Select Image', 'lasaphire' ),
+						'change' => esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' => esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
 		);
 
 		// Gallery Image 8
-		$wp_customize->add_setting(
+$wp_customize->add_setting(
 			'set_gallery_image8', array(
-				'default'			=> '',
+				'default' => '',
 				'transport' => 'refresh',
-				'sanitize_callback'	=> 'absint'
+				'sanitize_callback' => 'esc_url_raw'
 			)
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Cropped_Image_Control( $wp_customize, 'set_gallery_image8',
+			new WP_Customize_Image_Control( $wp_customize, 'set_gallery_image8',
 				array(
-					'label'			=> esc_html__( 'Home Gallery Image 8 Setting', 'lasaphire' ),
-					'description'	=> esc_html__( 'Home Gallery Image 8 Setting (size max 1500 x auto px)', 'lasaphire' ),
-					'section'		=> 'sec_gallery',
-					'flex_width'	=> 'false',
-					'flex_height'	=> 'true',
-					'width' 		=> 1500,
-					'height'		=> 'auto',
+					'label' => esc_html__( 'Home Gallery Image 8 Setting', 'lasaphire' ),
+					'description'	=> esc_html__( 'Home Gallery Image 8 Setting', 'lasaphire' ),
+					'section'	=> 'sec_gallery',
 					'button_labels' => array( // Optional.
-						'select' 		=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'change' 		=>  esc_html__( 'Change Image', 'lasaphire' ),
-						'remove' 		=>  esc_html__( 'Remove', 'lasaphire' ),
-						'default' 		=>  esc_html__( 'Default', 'lasaphire' ),
-						'placeholder' 	=>  esc_html__( 'No image selected', 'lasaphire' ),
-						'frame_title' 	=>  esc_html__( 'Select Image', 'lasaphire' ),
-						'frame_button' 	=>  esc_html__( 'Choose Image', 'lasaphire' ),
+						'select' => esc_html__( 'Select Image', 'lasaphire' ),
+						'change' => esc_html__( 'Change Image', 'lasaphire' ),
+						'remove' => esc_html__( 'Remove', 'lasaphire' ),
+						'default' =>  esc_html__( 'Default', 'lasaphire' ),
+						'placeholder' =>  esc_html__( 'No image selected', 'lasaphire' ),
+						'frame_title' =>  esc_html__( 'Select Image', 'lasaphire' ),
+						'frame_button' =>  esc_html__( 'Choose Image', 'lasaphire' ),
 					),
 				)
 			)
@@ -2103,7 +2102,8 @@ footer {
   ?>);
 }
 
-.home-subscribe .container {
+.home-subscribe .container,
+.subscribe .container {
   background-image: url('<?php echo esc_url( get_theme_mod( 'set_subscribe_bg_image', '' ) ); ?>');
 }
 

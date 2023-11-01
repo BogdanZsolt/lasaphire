@@ -4,10 +4,10 @@ Template Name: Home Page
 */
 get_header();
 ?>
-	<div class="content-area">
-		<main>
+<div class="content-area">
+  <main>
 
-			<?php
+    <?php
 				get_template_part( 'template-parts/home/home', 'slider' );
 				if( class_exists( 'WooCommerce' ) ) {
 					get_template_part('template-parts/home/home', 'message');
@@ -18,17 +18,17 @@ get_header();
 					get_template_part('template-parts/home/home', 'forme');
 					get_template_part('template-parts/home/home', 'about');
 					get_template_part('template-parts/home/home', 'ourvalues');
-					get_template_part('template-parts/home/home', 'subscribe');
+					get_template_part('template-parts/content/form', 'subscribe');
 					get_template_part('template-parts/home/home', 'news');
 					get_template_part('template-parts/home/home', 'gallery');
 					?>
-					<div class="container">
-						<article class="col">
-							<div><?php the_content(); ?></div>
-						</article>
-					</div>
-					<?php
+    <div class="container">
+      <article class="col">
+        <div><?php the_content(); ?></div>
+      </article>
+    </div>
+    <?php
 			?>
-		</main>
-	</div>
+  </main>
+</div>
 <?php get_footer(); ?>
