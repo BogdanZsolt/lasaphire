@@ -44,13 +44,15 @@ endpoint = '<?php echo admin_url('admin-ajax.php'); ?>';
 const successSubscribe = document.querySelector('.subscribe #success-subscribe');
 subscribeForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  console.log(subscribeForm);
   const formData = new URLSearchParams(new FormData(subscribeForm));
+  console.log(formData);
   fetch(endpoint, {
       method: 'POST',
       body: formData,
     })
     .then(response => response.json())
-    .catch(error => console.log('error', error))
+    .catch(error => console.log('error: ', error))
     .then(result => {
       console.log(result['status']);
       if (result['status'] == 'success') {
